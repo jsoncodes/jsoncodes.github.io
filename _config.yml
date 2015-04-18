@@ -1,0 +1,12 @@
+# Site settings
+title: Jason Mitchell
+email: contact@jason-mitchell.com
+description: > # this means to ignore newlines until "baseurl:"
+  Jason Mitchell .NET developer something something
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://json.codes" # the base hostname & protocol for your site
+twitter_username: jmitch18
+github_username:  jasonmitchell
+
+# Build settings
+markdown: kramdown
