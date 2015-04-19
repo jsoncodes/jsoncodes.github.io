@@ -2,7 +2,7 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
-
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
 
 
 // Our variables
@@ -49,6 +49,7 @@ $on-laptop:        800px;
 @import
         "base",
         "header",
+        "hero",
         "footer",
         "page",
         "post",
