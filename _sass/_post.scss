@@ -1,6 +1,24 @@
 /**
  * Posts
  */
+
+.recent-posts {
+    padding: 30px 0;
+
+    .view-all {
+        float: right;
+    }
+
+    .post-excerpt {
+        clear: both;
+        padding: 10px 0;
+    }
+
+    .read-more {
+        float: right;
+    }
+}
+
 .post-header {
     margin-bottom: $spacing-unit;
 }

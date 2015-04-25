@@ -33,3 +33,17 @@ layout: main
     </div>
 
 </header>
+
+<section class="wrapper recent-posts">
+    <a class="view-all" href="{{ site.baseUrl}}/blog">View all</a>
+    <h2>Recent posts</h2>
+
+    {% for post in site.posts limit:3 %}
+        <article class="post-excerpt">
+            <h3>
+                <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a></h3>
+            {{ post.excerpt }}
+            <a href="{{ post.url | prepend: site.baseUrl }}" class="read-more">Read more</a>
+        </article>
+    {% endfor %}
+</section>
