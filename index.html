@@ -35,7 +35,7 @@ layout: main
 </header>
 
 <section class="wrapper recent-posts">
-    <a class="view-all" href="{{ site.baseUrl}}/blog">View all</a>
+    <a class="view-all" href="{{ site.baseUrl }}/blog">View all</a>
     <h2>Recent posts</h2>
 
     {% for post in site.posts limit:3 %}
@@ -47,3 +47,5 @@ layout: main
         </article>
     {% endfor %}
 </section>
+
+{% include footer.html %}
