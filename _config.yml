@@ -10,3 +10,4 @@ github_username:  jasonmitchell
 
 # Build settings
 markdown: kramdown
+paginate: 5
