@@ -13,19 +13,19 @@ layout: main
 
         <nav class="links">
 
-            <a href="https://github.com/{{ site.github_username }}">
+            <a href="https://github.com/{{ site.github_username }}" title="Github">
                 <i class="fa fa-github"></i>
             </a>
 
-            <a href="https://twitter.com/{{ site.twitter_username}}">
+            <a href="https://twitter.com/{{ site.twitter_username}}" title="Twitter">
                 <i class="fa fa-twitter"></i>
             </a>
 
-            <a href="mailto:{{ site.email }}">
+            <a href="mailto:{{ site.email }}" title="Email">
                 <i class="fa fa-envelope"></i>
             </a>
 
-            <a href="/feed.xml">
+            <a href="{{ site.baseUrl }}/blog" title="Blog">
                 <i class="fa fa-rss"></i>
             </a>
 
@@ -36,14 +36,14 @@ layout: main
 
 <section class="wrapper recent-posts">
     <a class="view-all" href="{{ site.baseUrl }}/blog">View all</a>
-    <h2>Recent posts</h2>
+    <h1>Recent posts</h1>
 
     {% for post in site.posts limit:3 %}
         <article class="post-excerpt">
-            <h3>
-                <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a></h3>
+            <h2>
+                <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a>
+            </h2>
             {{ post.excerpt }}
-            <a href="{{ post.url | prepend: site.baseUrl }}" class="read-more">Read more</a>
         </article>
     {% endfor %}
 </section>
