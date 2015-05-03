@@ -6,8 +6,6 @@ layout: post
 slug: xna-camera-for-2d-games
 title: XNA camera for 2D games
 wordpress_id: 177
-categories:
-- Game Development
 tags:
 - 2D Graphics
 - c#
@@ -23,7 +21,7 @@ I recently noticed that it was possible to pass a transform matrix into the spri
 
 Below is the code for my Camera class that can be used for 2D games:
 
-    
+
     public class Camera
     {
         public Camera()
@@ -31,11 +29,11 @@ Below is the code for my Camera class that can be used for 2D games:
             Position = Vector2.Zero;
             Zoom = 1f;
         }
-    
+
         public Vector2 Position { get; set; }
         public float Rotation { get; set; }
         public float Zoom { get; set; }
-    
+
         public Matrix TransformMatrix
         {
             get
@@ -51,7 +49,7 @@ This code is all pretty simple so I’m not going to explain much.  I would jus
 
 To use this class, all that needs to be done is create a new instance, perform your updates to the position, rotation and zoom then use the TransformMatrix property in the Begin method of your spriteBatch instance like so:
 
-    
+
     spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Texture, SaveStateMode.None,
                        camera.TransformMatrix);
     spriteBatch.Draw(texture, Vector2.Zero, Color.White);

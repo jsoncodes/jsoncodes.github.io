@@ -6,8 +6,6 @@ layout: post
 slug: windows-phone-7-slide-and-xna-demo
 title: Windows Phone 7 Presentation Slides and XNA Demo
 wordpress_id: 215
-categories:
-- University
 tags:
 - sample
 - talks

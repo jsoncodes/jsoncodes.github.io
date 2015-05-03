@@ -6,8 +6,6 @@ layout: post
 slug: use-of-spcontext-current-in-sharepoint-code
 title: Use of SPContext.Current in SharePoint Code
 wordpress_id: 561
-categories:
-- Web Development
 tags:
 - sharepoint
 ---

@@ -6,8 +6,6 @@ layout: post
 slug: visual-studio-regions-make-me-cringe
 title: Visual Studio Regions Make Me Cringe
 wordpress_id: 723
-categories:
-- Software Development
 tags:
 - microsoft
 - regions
@@ -37,7 +35,7 @@ Regardless of the reason, if you feel that you need to hide code in order to kee
 
 **Recently I discovered a great Visual Studio plugin for those who hate regions.**  It's fittingly called "I Hate #Regions" and can be downloaded at [http://visualstudiogallery.msdn.microsoft.com/0ca60d35-1e02-43b7-bf59-ac7deb9afbca](http://visualstudiogallery.msdn.microsoft.com/0ca60d35-1e02-43b7-bf59-ac7deb9afbca).  This plugin will automatically expand regions when you open a file and make the #region directives less visible.
 
-**However for those of you who are borderline insane **you might be interested to try "Regionizer" ([http://regionizer.codeplex.com/](http://regionizer.codeplex.com/)).  This "delightful" plugin will wrap your code in #regions and even alphabetize it for you.  Sweet...
+**However for those of you who are borderline insane** you might be interested to try "Regionizer" ([http://regionizer.codeplex.com/](http://regionizer.codeplex.com/)).  This "delightful" plugin will wrap your code in #regions and even alphabetize it for you.  Sweet...
 
 
 

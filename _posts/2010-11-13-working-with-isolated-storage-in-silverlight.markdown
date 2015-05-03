@@ -6,8 +6,6 @@ layout: post
 slug: working-with-isolated-storage-in-silverlight
 title: Working with Isolated Storage in Silverlight
 wordpress_id: 211
-categories:
-- Mobile Development
 tags:
 - c#
 - data access
@@ -25,7 +23,7 @@ Since the Windows Phone 7 developer tools were released, I have playing around w
 
 **IsolatedStorageHelper**
 
-    
+
     public static class IsolatedStorageHelper
     {
         public static object FileOperation(string fileName, FileMode fileMode, FileAccess fileAccess, Func<Stream, object> fileOperation)
@@ -38,7 +36,7 @@ Since the Windows Phone 7 developer tools were released, I have playing around w
                 }
             }
         }
-    
+
         public static void FileOperation(string fileName, FileMode fileMode, FileAccess fileAccess, Action<Stream> fileOperation)
         {
             FileOperation(fileName, fileMode, fileAccess, stream =>
@@ -52,5 +50,5 @@ Since the Windows Phone 7 developer tools were released, I have playing around w
 
 Using this class is pretty simple.  I use it frequently in my test Windows Phone 7 applications to load and save XML.  Here’s an example:
 
-    
+
     xDoc = IsolatedStorageHelper.FileOperation("myFile.xml", FileMode.Open, FileAccess.Read, stream => XDocument.Load(stream)) as XDocument;

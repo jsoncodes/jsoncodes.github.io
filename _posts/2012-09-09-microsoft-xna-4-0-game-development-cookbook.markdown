@@ -3,6 +3,7 @@ author: jmitch18
 comments: true
 date: 2012-09-09 20:14:44+00:00
 layout: post
+published: false
 slug: microsoft-xna-4-0-game-development-cookbook
 title: Microsoft XNA 4.0 Game Development Cookbook
 wordpress_id: 564
@@ -17,31 +18,31 @@ Book contents (see Amazon for a more detailed table of contents):
 
 
 
-	
+
   * Applying special effects; shadows, lens flare, smoke, explosions
 
-	
+
   * 2D and 3D terrain; includes 2D isometric maps and Minecraft-style block terrain
 
-	
+
   * Procedural Modeling; includes a nice recipe for procedural tree generation
 
-	
+
   * Creating Water and Sky
 
-	
+
   * Non-Player Characters; A*, state machines and dialogue
 
-	
+
   * Animation; SkinnedEffect, Kinect and rag doll physics
 
-	
+
   * Creating Vehicles
 
-	
+
   * Receiving player input
 
-	
+
   * Networking
 
 

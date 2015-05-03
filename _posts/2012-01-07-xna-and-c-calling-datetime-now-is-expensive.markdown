@@ -6,8 +6,6 @@ layout: post
 slug: xna-and-c-calling-datetime-now-is-expensive
 title: 'XNA and C#: Calling DateTime.Now is Expensive'
 wordpress_id: 429
-categories:
-- Game Development
 tags:
 - performance
 - xna

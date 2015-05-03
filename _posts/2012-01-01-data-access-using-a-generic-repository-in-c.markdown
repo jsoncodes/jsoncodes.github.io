@@ -6,8 +6,6 @@ layout: post
 slug: data-access-using-a-generic-repository-in-c
 title: Data Access Using a Generic Repository in C#
 wordpress_id: 407
-categories:
-- Software Development
 tags:
 - c#
 - data access
@@ -28,8 +26,7 @@ When I started looking at the repository pattern I found that a lot of the sampl
 
 
 
-
-[gist file="IRepository.cs"]https://gist.github.com/jasonmitchell/4322305[/gist]
+{% gist jasonmitchell/4322305 IRepository.cs %}
 
 
 
@@ -43,8 +40,7 @@ The following class is an implementation of IRepository which has been implement
 
 
 
-
-[gist file="EntityFrameworkRepository.cs"]https://gist.github.com/jasonmitchell/4322305[/gist]
+{% gist jasonmitchell/4322305 EntityFrameworkRepository.cs %}
 
 
 
@@ -54,7 +50,7 @@ There's nothing particularly complicated about this class so  I'm just going to
 
 
 
-[gist file="Customer.cs"]https://gist.github.com/jasonmitchell/4322305[/gist]
+{% gist jasonmitchell/4322305 Customer.cs %}
 
 
 
@@ -63,8 +59,7 @@ You could query your customer data really easily using a LINQ expression or a la
 
 
 
-
-[gist file="Sample.cs"]https://gist.github.com/jasonmitchell/4322305[/gist]
+{% gist jasonmitchell/4322305 Sample.cs %}
 
 
 

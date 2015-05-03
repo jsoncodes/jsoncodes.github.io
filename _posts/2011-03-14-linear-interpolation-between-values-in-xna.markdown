@@ -6,8 +6,6 @@ layout: post
 slug: linear-interpolation-between-values-in-xna
 title: Linear Interpolation Between Values in XNA
 wordpress_id: 273
-categories:
-- Game Development
 tags:
 - c#
 - sample
@@ -20,41 +18,41 @@ I thought that I would take some time to write up a quick article about using li
 
 Performing linear interpolation between two values is incredibly simple thanks to the MathHelper.Lerp method provided by the XNA Framework.  The method signature is:
 
-    
+
     float MathHelper.Lerp(float value1, float value2, float amount)
 
 
-The parameters **_value1_** and **_value2_** are the two values we want to interpolate between.  The **_amount_** parameter is a value between 0 and 1 which determines the result of the interpolation between the two input values.  The closer the **_amount_** value is to 0, the closer the result will be to **_value1 _**and the closer the **_amount_** value is to 1, the closer the result will be to **_value2_**.
+The parameters **_value1_** and **_value2_** are the two values we want to interpolate between.  The **_amount_** parameter is a value between 0 and 1 which determines the result of the interpolation between the two input values.  The closer the **_amount_** value is to 0, the closer the result will be to **_value1_** and the closer the **_amount_** value is to 1, the closer the result will be to **_value2_**.
 
-As I said above, I typically use this for time based interpolation so I’m going to do a quick example of that but you can calculate the value of the _**amount** _parameter any way you want.  What the following demo application will do is simply interpolate the colour used for the GraphicsDevice.Clear method between red and green over a period of 5 seconds.
+As I said above, I typically use this for time based interpolation so I’m going to do a quick example of that but you can calculate the value of the _**amount**_ parameter any way you want.  What the following demo application will do is simply interpolate the colour used for the GraphicsDevice.Clear method between red and green over a period of 5 seconds.
 
 You will find the code for the application below and then I will briefly highlight some of the key areas.  I won’t be including a download with this article since the following class is literally all there is to it; not counting Program.cs.  I’ve also trimmed away all of the excess methods that I’m not using for this example.
 
-    
+
     public class Game1 : Game
     {
         private GraphicsDeviceManager graphics;
-    
+
         private const int Duration = 5000;
         private Color backgroundColor = Color.Red;
         private float elapsedTime;
-    
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
         }
-    
+
         protected override void Update(GameTime gameTime)
         {
             elapsedTime += (float) gameTime.ElapsedGameTime.TotalMilliseconds;
             float amount = MathHelper.Clamp(elapsedTime / Duration, 0, 1);
-    
+
             byte value = (byte) MathHelper.Lerp(255, 0, amount);
-    
+
             backgroundColor.R = value;
             backgroundColor.G = (byte) (255 - value);
         }
-    
+
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(backgroundColor);

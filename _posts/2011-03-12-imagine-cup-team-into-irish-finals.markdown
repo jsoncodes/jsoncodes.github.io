@@ -6,8 +6,6 @@ layout: post
 slug: imagine-cup-team-into-irish-finals
 title: Imagine Cup Team into Irish Finals
 wordpress_id: 268
-categories:
-- University
 tags:
 - Imagine Cup
 ---

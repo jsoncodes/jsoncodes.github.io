@@ -6,8 +6,6 @@ layout: post
 slug: 3d-particle-system-for-xna
 title: 3D Particle System for XNA
 wordpress_id: 204
-categories:
-- Game Development
 tags:
 - 3D Graphics
 - c#
@@ -19,10 +17,10 @@ I’m currently working on a 3D XNA 3.1 (need to use 3.1 for the third party lib
 
 
 
-	
+
   1. I wanted to keep it lightweight and not include unnecessary functions
 
-	
+
   2. In the future I want to combine my particle systems together
 
 
@@ -36,10 +34,10 @@ Naturally in 2D I just used SpriteBatch and it met all my needs, however in 3D I
 
 My basic TextureQuad class looks like:
 
-    
+
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-    
+
     namespace Particles
     {
         public class TextureQuad
@@ -48,44 +46,44 @@ My basic TextureQuad class looks like:
             private static readonly Vector2 UpperRight = new Vector2(1, 0);
             private static readonly Vector2 BottomLeft = new Vector2(0, 1);
             private static readonly Vector2 BottomRight = new Vector2(1, 1);
-    
+
             private readonly VertexBuffer vertexBuffer;
             private readonly VertexDeclaration vertexDeclaration;
             private readonly BasicEffect effect;
-    
+
             public TextureQuad(GraphicsDevice graphicsDevice, Texture2D texture, int width, int height)
             {
                 VertexPositionTexture[] vertices = CreateQuadVertices(width, height);
                 vertexBuffer = new VertexBuffer(graphicsDevice, VertexPositionTexture.SizeInBytes * vertices.Length, BufferUsage.WriteOnly);
                 vertexBuffer.SetData(vertices, 0, vertices.Length);
-    
+
                 vertexDeclaration = new VertexDeclaration(graphicsDevice, VertexPositionTexture.VertexElements);
                 effect = new BasicEffect(graphicsDevice, null) { TextureEnabled = true, Texture = texture};
             }
-    
+
             private static VertexPositionTexture[] CreateQuadVertices(int width, int height)
             {
                 int halfWidth = width / 2;
                 int halfHeight = height / 2;
-    
+
                 VertexPositionTexture[] vertices = new VertexPositionTexture[4];
-    
+
                 vertices[0] = new VertexPositionTexture(new Vector3(-halfWidth, halfHeight, 0), UpperLeft);
                 vertices[1] = new VertexPositionTexture(new Vector3(halfWidth, halfHeight, 0), UpperRight);
                 vertices[2] = new VertexPositionTexture(new Vector3(-halfWidth, -halfHeight, 0), BottomLeft);
                 vertices[3] = new VertexPositionTexture(new Vector3(halfWidth, -halfHeight, 0), BottomRight);
-    
+
                 return vertices;
             }
-    
+
             public void Draw(GraphicsDevice graphicsDevice, Matrix viewMatrix, Matrix projectionMatrix, Matrix worldMatrix)
             {
                 graphicsDevice.VertexDeclaration = vertexDeclaration;
-    
+
                 effect.World = worldMatrix;
                 effect.Projection = projectionMatrix;
                 effect.View = viewMatrix;
-    
+
                 effect.Begin();
                 foreach (EffectPass pass in effect.CurrentTechnique.Passes)
                 {
@@ -96,7 +94,7 @@ My basic TextureQuad class looks like:
                 }
                 effect.End();
             }
-    
+
             public float Alpha
             {
                 get { return effect.Alpha; }
@@ -114,6 +112,4 @@ This really bugged me for a bit since there’s no use in using transparent text
 
 ![](http://www.jason-mitchell.com/images/particlesWorking.png)
 
-As promised, here’s the download link: [http://www.jason-mitchell.com/uploads/particles.zip](http://www.jason-mitchell.com/uploads/particles.zip)
-
-**XNA 4 Download: **[http://www.jason-mitchell.com/uploads/particles_xna4.zip](http://www.jason-mitchell.com/uploads/particles_xna4.zip)
+As promised, here’s the download link: [http://www.jason-mitchell.com/uploads/particles_xna4.zip](http://www.jason-mitchell.com/uploads/particles_xna4.zip)

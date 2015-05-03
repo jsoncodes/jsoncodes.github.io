@@ -6,8 +6,6 @@ layout: post
 slug: basic-xna-and-kinect-sdk-sample
 title: Basic XNA and Kinect SDK Sample
 wordpress_id: 357
-categories:
-- Game Development
 tags:
 - c#
 - kinect

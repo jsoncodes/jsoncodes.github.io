@@ -6,8 +6,6 @@ layout: post
 slug: quick-tip-fixing-incorrectly-sized-bounding-sphere-for-3ds-model-in-xna
 title: 'Quick Tip: Fixing Incorrectly Sized Bounding Sphere for 3DS Model in XNA'
 wordpress_id: 478
-categories:
-- Quick Tip
 tags:
 - 3D Graphics
 - c#

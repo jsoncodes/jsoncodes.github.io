@@ -6,8 +6,6 @@ layout: post
 slug: imagine-cup-irish-finals-2011
 title: Imagine Cup Irish Finals 2011
 wordpress_id: 294
-categories:
-- University
 tags:
 - Imagine Cup
 ---

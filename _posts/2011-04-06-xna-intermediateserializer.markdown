@@ -6,8 +6,6 @@ layout: post
 slug: xna-intermediateserializer
 title: XNA IntermediateSerializer
 wordpress_id: 282
-categories:
-- Game Development
 tags:
 - c#
 - xna

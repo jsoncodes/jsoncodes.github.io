@@ -6,8 +6,6 @@ layout: post
 slug: 2d-particle-system-for-xna
 title: 2D Particle System for XNA
 wordpress_id: 202
-categories:
-- Game Development
 tags:
 - 2D Graphics
 - c#
@@ -52,16 +50,16 @@ I don’t want to describe all of the modifiers here since that could take a bit
 
 
 
-	
+
   * **AlphaAgeTransform** – This will fade a particle in/out based on it’s “age” _(Practically all my effects use this)_
 
-	
+
   * **ColorAgeTransform** – Transitions between two sets of RGB values based on a particles “age”
 
-	
+
   * **DirectionalPull** – Modifies the velocity of the particle to pull it in a certain direction (nice when combined with Randomize force)
 
-	
+
   * **GravityPoint** – Sets a point in 2D space to pull particles towards.  It provides some control by allowing users to define pull strength and area of effect radius
 
 
@@ -71,16 +69,16 @@ Ideally I would prefer to save the particle effects to a custom file format that
 
 To use the particle effect there are four steps:
 
-	
+
   1. Initialize the effect (from file or programmatically)
 
-	
+
   2. Emit particles
 
-	
+
   3. Update effect
 
-	
+
   4. Draw effect
 
 

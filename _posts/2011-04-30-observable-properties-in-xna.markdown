@@ -6,8 +6,6 @@ layout: post
 slug: observable-properties-in-xna
 title: Observable Properties in XNA
 wordpress_id: 304
-categories:
-- Game Development
 tags:
 - c#
 - infrastructure
@@ -22,34 +20,34 @@ I like to experiment a lot with XNA to try and find ways of doing things which I
 
 The implementation of this seemed pretty simple.  I create a new class called Observable which provides methods for (un)subscribing and a property to access the actual value held by the class.  It uses a generic type to define the the value property so it should work in most cases.  So here is the class:
 
-    
+
     public class Observable<T>
     {
         private readonly List<Action<T>> subscriptions = new List<Action<T>>();
         private T observableValue;
-    
+
         public Action<T> Subscribe(Action<T> callback)
         {
             subscriptions.Add(callback);
             return callback;
         }
-    
+
         public void Unsubscribe(Action<T> callback)
         {
             subscriptions.Remove(callback);
         }
-    
+
         public void UnsubscribeAll()
         {
             subscriptions.Clear();
         }
-    
+
         private void NotifyValueChanged()
         {
             foreach (Action<T> callback in subscriptions)
                 callback(observableValue);
         }
-    
+
         public T Value
         {
             get { return observableValue; }

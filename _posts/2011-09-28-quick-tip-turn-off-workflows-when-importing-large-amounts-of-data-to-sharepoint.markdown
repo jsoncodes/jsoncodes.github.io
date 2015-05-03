@@ -6,8 +6,6 @@ layout: post
 slug: quick-tip-turn-off-workflows-when-importing-large-amounts-of-data-to-sharepoint
 title: 'Quick Tip: Turn off workflows when importing large amounts of data to SharePoint'
 wordpress_id: 381
-categories:
-- Web Development
 tags:
 - data migration
 - performance
@@ -26,28 +24,28 @@ The following PowerShell code shows a basic function which can be used to toggle
 
 
 
-    
+
     $snapin = "Microsoft.SharePoint.PowerShell"
     if((Get-PSSnapin -Name $snapin -ErrorAction SilentlyContinue) -eq $null)
     {
         Add-PsSnapin $snapin
     }
-    
+
     $spWeb = Get-SPWeb http://sharepoint-site-url
-    
+
     function toggle-workflows($listName, $enabled)
     {
         $prevVersionPattern = ".+`(Previous.+`)"
         $spList = $spWeb.GetList("/Lists/$listName")
         $spListWorkflows = $spList.WorkflowAssociations
-    
+
         $latestWorkflow = $spListWorkflows | where-object {
               -not ($_.Name -match $prevVersionPattern) } | select-object -first 1
         if($latestWorkflow)
         {
             write-host "$listname workflow: $enabled" -fore yellow
-        	$latestWorkflow.AutoStartCreate = $enabled
-        	$spListWorkflows.Update($latestWorkflow)
+            $latestWorkflow.AutoStartCreate = $enabled
+            $spListWorkflows.Update($latestWorkflow)
         }
     }
 

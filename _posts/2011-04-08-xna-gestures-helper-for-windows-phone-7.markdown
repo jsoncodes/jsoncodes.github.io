@@ -6,8 +6,6 @@ layout: post
 slug: xna-gestures-helper-for-windows-phone-7
 title: XNA Gestures Helper for Windows Phone 7
 wordpress_id: 285
-categories:
-- Game Development
 tags:
 - c#
 - nui
@@ -23,35 +21,35 @@ For my final year project at university I’ve been doing a bit of work with Win
 
 The class I created is basically an XNA game component which maintains a dictionary of gestures and an associated list of delegates and provides some obvious methods to add and remove gesture callbacks.  The Update method will take care of reading in the gestures from the touch screen and then calling the delegates for any gesture detected.  The code is listed below:
 
-    
+
     using System;
     using System.Collections.Generic;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Input.Touch;
-    
+
     namespace GestureHelperTest
     {
         public class GestureHelper : GameComponent
         {
             public static GestureHelper Instance { get; private set; }
-    
+
             public static void Initialize(Game game)
             {
                 if (Instance != null)
                     throw new InvalidOperationException("Only one instance of GestureHelper can be created.");
-    
+
                 Instance = new GestureHelper(game);
                 game.Components.Add(Instance);
             }
-    
+
             private Dictionary<GestureType, List<Action<GestureSample>>> gestureCallbacks;
-    
+
             private GestureHelper(Game game) : base(game)
             {
                 TouchPanel.EnabledGestures = GestureType.None;
                 gestureCallbacks = new Dictionary<GestureType, List<Action<GestureSample>>>();
             }
-    
+
             public void AddCallback(GestureType gestureType, Action<GestureSample> callback)
             {
                 if (!gestureCallbacks.ContainsKey(gestureType))
@@ -59,35 +57,35 @@ The class I created is basically an XNA game component which maintains a diction
                     TouchPanel.EnabledGestures |= gestureType;
                     gestureCallbacks.Add(gestureType, new List<Action<GestureSample>>());
                 }
-    
+
                 gestureCallbacks[gestureType].Add(callback);
             }
-    
+
             public void Clear()
             {
                 TouchPanel.EnabledGestures = GestureType.None;
                 gestureCallbacks.Clear();
             }
-    
+
             public void ClearGesture(GestureType gestureType)
             {
                 TouchPanel.EnabledGestures -= gestureType;
                 gestureCallbacks.Remove(gestureType);
             }
-    
+
             public override void Update(GameTime gameTime)
             {
                 while (TouchPanel.IsGestureAvailable)
                 {
                     GestureSample gestureSample = TouchPanel.ReadGesture();
-    
+
                     if (gestureCallbacks.ContainsKey(gestureSample.GestureType))
                     {
                         foreach (Action<GestureSample> callback in gestureCallbacks[gestureSample.GestureType])
                             callback(gestureSample);
                     }
                 }
-    
+
                 base.Update(gameTime);
             }
         }
@@ -98,17 +96,17 @@ The class is basically implemented as a singleton but with a little bit of a dev
 
 In the sample project I’ve created, I provide the following examples of how to handle a gesture with my GestureHelper class:
 
-    
+
     protected override void Initialize()
     {
         GestureHelper.Initialize(this);
         GestureHelper.Instance.AddCallback(GestureType.FreeDrag, gestureSample => position = gestureSample.Position);
         GestureHelper.Instance.AddCallback(GestureType.Hold, gestureSample => scale = 1);
         GestureHelper.Instance.AddCallback(GestureType.Tap, ScaleSquare);
-    
+
         base.Initialize();
     }
-    
+
     private void ScaleSquare(GestureSample gestureSample)
     {
         scale += 0.1f;

@@ -6,8 +6,6 @@ layout: post
 slug: setting-alpha-value-for-spritebatch-draw-in-xna-4
 title: Setting Alpha Value for SpriteBatch.Draw in XNA 4
 wordpress_id: 270
-categories:
-- Game Development
 tags:
 - 2D Graphics
 - c#
@@ -23,7 +21,7 @@ I immediately set about trying to hunt down the offending piece of code but came
 
 In XNA 3.1 all that was needed to be done to fade a texture out in a SpriteBatch draw call was to enable alpha blending (now enabled by default in XNA 4.0) and set the “A” property of your Color object appropriately like so:
 
-    
+
     Color myColor = Color.White;
     myColor.A = 50;
     spriteBatch.Draw(texture, position, sourceRect, myColor, ...... );
@@ -31,7 +29,7 @@ In XNA 3.1 all that was needed to be done to fade a texture out in a SpriteBatch
 
 Now it seems that changing the alpha value on a Color instance to be used with SpriteBatch doesn’t make a difference.  What we now must do in XNA 4.0 is to define the alpha separately to the colour as a float with a value between 0 and 1.  Then the selected colour must then be multiplied by this float to set the transparency:
 
-    
+
     spriteBatch.Draw(texture, position, sourceRect, Color.White * 0.5f, .......);
 
 

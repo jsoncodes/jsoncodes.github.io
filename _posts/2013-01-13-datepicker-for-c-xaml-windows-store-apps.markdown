@@ -6,8 +6,6 @@ layout: post
 slug: datepicker-for-c-xaml-windows-store-apps
 title: Date Picker for C# & XAML Windows Store Apps
 wordpress_id: 584
-categories:
-- Software Development
 tags:
 - c#
 - windows 8

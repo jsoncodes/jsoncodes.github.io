@@ -6,8 +6,6 @@ layout: post
 slug: supernova-particle-system-for-monogame
 title: Supernova Particle System for MonoGame
 wordpress_id: 684
-categories:
-- Game Development
 tags:
 - c#
 - monogame

@@ -6,8 +6,6 @@ layout: post
 slug: using-winmerge-with-git-in-windows
 title: Using WinMerge with Git in Windows
 wordpress_id: 595
-categories:
-- Developer Tools
 tags:
 - git
 - tools
@@ -19,7 +17,7 @@ Recently I've started using Git as my main source control system after several m
 
 My one major gripe with using Git was the lack of an integrated visual diff tool; I just couldn't make sense of the git bash diff output.  A little bit of Googling found some StackOverflow questions that roughly pointed me in the right direction but didn't quite get things working for me.  In the end I toyed around with the settings in my .gitconfig file and came up with the following configuration which works for me:
 
-    
+
     [user]
         name = Jason Mitchell
         email = <email address>

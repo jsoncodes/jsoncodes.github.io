@@ -6,8 +6,6 @@ layout: post
 slug: toggle-visual-states-with-a-custom-action-in-silverlight
 title: Toggle Visual States with a Custom Action in Silverlight
 wordpress_id: 155
-categories:
-- Software Development
 tags:
 - c#
 - sample
@@ -20,12 +18,12 @@ I was recently working on a project in [Silverlight](http://www.silverlight.net)
 
 This is just a quick article and since there is nothing too complex here I have just posted the code here:
 
-    
+
     using System.Collections;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Interactivity;
-    
+
     namespace IssueTracker.Actions
     {
         [DefaultTrigger(typeof(FrameworkElement), typeof(System.Windows.Interactivity.EventTrigger),
@@ -35,35 +33,35 @@ This is just a quick article and since there is nothing too complex here I have 
             public static readonly DependencyProperty OffStateProperty;
             public static readonly DependencyProperty OnStateProperty;
             public static readonly DependencyProperty UseTransitionsProperty;
-    
+
             private bool isOnStateActive;
-    
+
             static ToggleStateAction()
             {
-                OffStateProperty = DependencyProperty.Register("OffState", typeof(string), 
+                OffStateProperty = DependencyProperty.Register("OffState", typeof(string),
                                           typeof(ToggleStateAction), null);
-                OnStateProperty = DependencyProperty.Register("OnState", typeof(string), 
+                OnStateProperty = DependencyProperty.Register("OnState", typeof(string),
                                            typeof(ToggleStateAction), null);
                 UseTransitionsProperty = DependencyProperty.Register("UseTransitions", typeof(bool),
                                                   typeof(ToggleStateAction), null);
             }
-    
+
             protected override void Invoke(object o)
             {
                 Control control = FindTargetElement(Target) as Control;
-    
+
                 if (isOnStateActive)
                     VisualStateManager.GoToState(control, OffState, UseTransitions);
                 else
                     VisualStateManager.GoToState(control, OnState, UseTransitions);
-    
+
                 isOnStateActive = !isOnStateActive;
             }
-    
+
             private static FrameworkElement FindTargetElement(FrameworkElement element)
             {
                 FrameworkElement parent = element;
-    
+
                 while (parent != null)
                 {
                     IList vsgs = VisualStateManager.GetVisualStateGroups(parent);
@@ -76,22 +74,22 @@ This is just a quick article and since there is nothing too complex here I have 
                     }
                     parent = parent.Parent as FrameworkElement;
                 }
-    
+
                 return null;
             }
-    
+
             public string OffState
             {
                 get { return (string)GetValue(OffStateProperty); }
                 set { SetValue(OffStateProperty, value); }
             }
-    
+
             public string OnState
             {
                 get { return (string)GetValue(OnStateProperty); }
                 set { SetValue(OnStateProperty, value); }
             }
-    
+
             public bool UseTransitions
             {
                 get { return (bool)GetValue(UseTransitionsProperty); }

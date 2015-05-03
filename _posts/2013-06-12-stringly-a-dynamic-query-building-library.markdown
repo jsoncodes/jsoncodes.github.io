@@ -6,8 +6,6 @@ layout: post
 slug: stringly-a-dynamic-query-building-library
 title: Stringly - Dynamic Query Building Library
 wordpress_id: 700
-categories:
-- Software Development
 tags:
 - c#
 - data access

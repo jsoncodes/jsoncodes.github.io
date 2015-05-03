@@ -6,8 +6,6 @@ layout: post
 slug: xna-3d-terrain
 title: XNA 3D Terrain
 wordpress_id: 99
-categories:
-- Game Development
 tags:
 - 3D Graphics
 - c#
@@ -47,17 +45,9 @@ The image on the left was caused by the SpriteBatch object disabling the depth b
 
 
 
-    
-    GraphicsDevice.RenderState.DepthBufferEnable = <span class="kwrd">true</span>;
 
-
-
-    
+    GraphicsDevice.RenderState.DepthBufferEnable = true;
     GraphicsDevice.SamplerStates[0].AddressU = TextureAddressMode.Wrap;
-
-
-
-    
     GraphicsDevice.SamplerStates[0].AddressV = TextureAddressMode.Wrap;
 
 

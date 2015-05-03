@@ -6,8 +6,6 @@ layout: post
 slug: theme-aware-panorama-control-for-windows-phone
 title: Theme Aware Panorama Control for Windows Phone
 wordpress_id: 526
-categories:
-- Mobile Development
 tags:
 - c#
 - silverlight
@@ -23,14 +21,14 @@ A quick search found [this article](http://blog.jayway.com/2010/12/16/theme-awar
 
 First I set up a basic UIHelper class to help me determine if the light theme is active:
 
-[gist file="UIHelper.cs"]https://gist.github.com/jasonmitchell/4462646[/gist]
+{% gist jasonmitchell/4462646 UIHelper.cs %}
 
 Next I added a new class to my project called ThemeAwarePanorama:
 
-[gist file="ThemeAwarePanorama.cs"]https://gist.github.com/jasonmitchell/4462646[/gist]
+{% gist jasonmitchell/4462646 ThemeAwarePanorama.cs %}
 
 All that was left then was to create this control in my XAML:
 
-[gist file="UIHelper.cs"]https://gist.github.com/jasonmitchell/4462646[/gist]
+{% gist jasonmitchell/4462646 SamplePage.xaml %}
 
 And now my background image will switch based on my phone's theme.  Better yet is that this also works in Expression Blend so I can easily toggle the theme within it and preview the styles without needing to start up the emulator.

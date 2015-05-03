@@ -6,8 +6,6 @@ layout: post
 slug: mvvm-for-silverlight-windows-phone-7-app
 title: MVVM for Silverlight (Windows Phone 7 App)
 wordpress_id: 136
-categories:
-- Mobile Development
 tags:
 - c#
 - mvvm
@@ -42,9 +40,9 @@ Next I added a simple class called Tweet to represent all tweets in the user's t
 
 
 
-    
+
     using System;
-    
+
     namespace TwitterTimelineDemo
     {
         public class Tweet
@@ -67,15 +65,15 @@ Now we will create our **ViewModel** class called TweetViewModel.  The ViewMode
 
 
 
-    
+
     using System.Collections.ObjectModel;
-    
+
     namespace TwitterTimelineDemo
     {
         public class TweetViewModel
         {
             private readonly ObservableCollection<Tweet> tweets = new ObservableCollection<Tweet>();
-    
+
             public ObservableCollection<Tweet> Tweets
             {
                 get { return tweets; }
@@ -101,7 +99,7 @@ Now we need to add our TweetView control to MainPage.xaml.  Drag TweetView from
 
 
 
-    
+
     <phoneNavigation:PhoneApplicationPage
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -111,23 +109,23 @@ Now we need to add our TweetView control to MainPage.xaml.  Drag TweetView from
         FontFamily="{StaticResource PhoneFontFamilyNormal}"
         FontSize="{StaticResource PhoneFontSizeNormal}"
         Foreground="{StaticResource PhoneForegroundBrush}">
-    
+
         <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneBackgroundBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-    
+
             <Grid x:Name="TitleGrid" Grid.Row="0">
                 <TextBlock Text="Twitter Timeline" x:Name="textBlockPageTitle" Style="{StaticResource PhoneTextPageTitle1Style}"/>
                 <TextBlock Text="jmitch18" x:Name="textBlockListTitle" Style="{StaticResource PhoneTextPageTitle2Style}"/>
             </Grid>
-    
+
             <Grid x:Name="ContentGrid" Grid.Row="1">
                 <local:TweetView/>
             </Grid>
         </Grid>
-    
+
     </phoneNavigation:PhoneApplicationPage>
 
 
@@ -138,19 +136,19 @@ Now, we need to populate the ViewModel's tweet collection with real data.  Twit
 
 
 
-    
+
     private IEnumerable<Tweet> GetTwitterEntries(string twitterFeed)
     {
         XNamespace atomNS = "http://www.w3.org/2005/Atom";
         XDocument feed = XDocument.Parse(twitterFeed);
-    
+
         IEnumerable<Tweet> entries = from tweet in feed.Descendants(atomNS + "entry")
                                      select new Tweet
                                      {
                                          Status = (string)tweet.Element(atomNS + "title"),
                                          Date = DateTime.Parse((string)tweet.Element(atomNS + "published"))
                                      };
-    
+
         return entries;
     }
 
@@ -162,14 +160,14 @@ To get tweets for my username (jmitch18) I would use the URL [http://search.twit
 
 
 
-    
+
     public TweetViewModel()
     {
         WebClient webClient = new WebClient();
         webClient.DownloadStringCompleted += new DownloadStringCompletedEventHandler(DownloadStringCompleted);
         webClient.DownloadStringAsync(new Uri("http://search.twitter.com/search.atom?q=from%3Ajmitch18", UriKind.Absolute));
     }
-    
+
     private void DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
     {
         foreach (Tweet tweet in GetTwitterEntries(e.Result))
@@ -187,4 +185,4 @@ The last required step is to bind the ViewModel to the View.  I opened TweetVie
 This article is based on my current understanding of the MVVM pattern.  I would not say this code is production ready but I am open to constructive feedback and suggested improvements on the topic of this article.  Please feel free to contact me or use the comments section.
 
 
-**Sample project: **[http://www.jason-mitchell.com/uploads/TwitterTimelineDemo.zip](http://www.jason-mitchell.com/uploads/TwitterTimelineDemo.zip)
+**Sample project:** [http://www.jason-mitchell.com/uploads/TwitterTimelineDemo.zip](http://www.jason-mitchell.com/uploads/TwitterTimelineDemo.zip)

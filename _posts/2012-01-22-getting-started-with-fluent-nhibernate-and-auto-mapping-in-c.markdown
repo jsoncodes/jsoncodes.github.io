@@ -6,8 +6,6 @@ layout: post
 slug: getting-started-with-fluent-nhibernate-and-auto-mapping-in-c
 title: Getting Started With Fluent NHibernate and Auto Mapping in C#
 wordpress_id: 457
-categories:
-- Web Development
 tags:
 - data access
 - nhibernate
@@ -39,7 +37,7 @@ I created the following class to represent a single record from tUser in my appl
 
 
 
-    
+
     public class User
     {
         public virtual int ID { get; set; }
@@ -73,14 +71,14 @@ I wanted to only create a single session factory for the entire application and 
 
 
 
-    
+
     public class Global : System.Web.HttpApplication
     {
         protected void Application_Start(object sender, EventArgs e)
         {
             Application["NHSessionFactory"] = CreateSessionFactory();
         }
-    
+
         private static ISessionFactory CreateSessionFactory()
         {
             return Fluently.Configure()
@@ -89,26 +87,26 @@ I wanted to only create a single session factory for the entire application and 
                 .Mappings(m => m.AutoMappings.Add(CreateAutomappings))
                 .BuildSessionFactory();
         }
-    
+
         private static AutoPersistenceModel CreateAutomappings()
         {
             return AutoMap
                 .AssemblyOf<AutomappingConfiguration>(new AutomappingConfiguration())
                 .Override<User>(u => u.Table("tUser"));
         }
-    
+
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
             ISessionFactory sessionFactory = (ISessionFactory) Application["NHSessionFactory"];
             Context.Items["NHSession"] = sessionFactory.OpenSession();
         }
-    
+
         protected void Application_EndRequest(object sender, EventArgs e)
         {
             ISession session = (ISession) Context.Items["NHSession"];
             session.Dispose();
         }
-    
+
         protected void Application_End(object sender, EventArgs e)
         {
             ISessionFactory sessionFactory = (ISessionFactory)Application["NHSessionFactory"];
@@ -129,19 +127,19 @@ In the Application_BeginRequest method I retrieve the my application's session f
 
 
 
-    
+
     protected void Page_Load(object sender, EventArgs e)
     {
         ISession session = (ISession) Context.Items["NHSession"];
         CreateUsers(session);
-    
+
         var users = from u in session.Query<User>()
                     select u;
-    
+
         grdUsers.DataSource = users;
         grdUsers.DataBind();
     }
-    
+
     private void CreateUsers(ISession session)
     {
         if(session.Query<User>().Count() < 3)
@@ -157,7 +155,7 @@ In the Application_BeginRequest method I retrieve the my application's session f
                     };
                     session.Save(user);
                 }
-    
+
                 transaction.Commit();
             }
         }

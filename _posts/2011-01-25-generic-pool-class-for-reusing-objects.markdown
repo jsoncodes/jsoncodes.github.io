@@ -6,8 +6,6 @@ layout: post
 slug: generic-pool-class-for-reusing-objects
 title: Generic Pool Class for Reusing Objects
 wordpress_id: 227
-categories:
-- Game Development
 tags:
 - c#
 - data structures
@@ -22,42 +20,42 @@ When I am working with [XNA](http://create.msdn.com), I frequently found myself 
 
 **Source for Pool class:**
 
-    
+
     public class Pool<T>
     {
         private readonly List<T> items = new List<T>();
         private readonly Queue<T> freeItems = new Queue<T>();
-    
+
         private readonly Func<T> createItemAction;
-    
+
         public Pool(Func<T> createItemAction)
         {
             this.createItemAction = createItemAction;
         }
-    
+
         public void FlagFreeItem(T item)
         {
             freeItems.Enqueue(item);
         }
-    
+
         public T GetFreeItem()
         {
             if (freeItems.Count == 0)
             {
                 T item = createItemAction();
                 items.Add(item);
-    
+
                 return item;
             }
-    
+
             return freeItems.Dequeue();
         }
-    
+
         public List<T> Items
         {
             get { return items; }
         }
-    
+
         public void Clear()
         {
             items.Clear();
@@ -72,9 +70,9 @@ The code here is fairly simple; call GetFreeItem() to get a free item in the poo
 
 And lastly, an example of how to use this code:
 
-    
+
     private Pool<GameObject> objectPool = new Pool<GameObject>(() => new GameObject());
-    
+
     public void Initialize()
     {
         GameObject gameObject = objectPool.GetFreeItem();

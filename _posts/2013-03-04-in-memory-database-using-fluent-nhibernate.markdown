@@ -6,8 +6,6 @@ layout: post
 slug: in-memory-database-using-fluent-nhibernate
 title: In-Memory Database Using Fluent NHibernate
 wordpress_id: 625
-categories:
-- Software Development
 tags:
 - c#
 - data access
@@ -18,10 +16,10 @@ When writing unit tests dealing with code that communicates with the database ca
 
 
 
-	
+
   *  Implement the Repository pattern and mock out the interfaces
 
-	
+
   * Use an in-memory database
 
 
@@ -33,7 +31,7 @@ When writing unit tests dealing with code that communicates with the database ca
 
 This class is responsible for creating my ISessionFactory and ISession instances.  It's implemented as a singleton so I can easily access a single ISessionFactory instance anywhere I need it.  The CreateSessionFactory method configures a single ISessionFactory instance to use SQLite, adds the mappings from my main project and provides access to the database configuration object.  The OpenSession method will create a new ISession instance and create a new database for it to use.
 
-[gist file="InMemorySessionFactoryProvider.cs"]https://gist.github.com/jasonmitchell/5073089[/gist]
+{% gist jasonmitchell/5073089 InMemorySessionFactoryProvider.cs %}
 
 
 ### TestSetupFixture.cs
@@ -41,7 +39,7 @@ This class is responsible for creating my ISessionFactory and ISession instances
 
 TestSetupFixture is configured as a NUnit setup fixture which will execute it's setup and teardown methods once for any test run no matter how many tests are being executed.
 
-[gist file="TestSetupFixture.cs"]https://gist.github.com/jasonmitchell/5073089[/gist]
+{% gist jasonmitchell/5073089 TestSetupFixture.cs %}
 
 
 ### AbstractInMemoryDataFixture.cs
@@ -49,6 +47,6 @@ TestSetupFixture is configured as a NUnit setup fixture which will execute it'
 
 This class only exists to automatically open a new session for each test and dispose of it afterwards.  All my fixtures which require data access inherit from this class.
 
-[gist file="AbstractInMemoryDataFixture.cs"]https://gist.github.com/jasonmitchell/5073089[/gist]
+{% gist jasonmitchell/5073089 AbstractInMemoryDataFixture.cs %}
 
 In my opinion this approach is fairly simple and helps to make unit testing a bit simpler.  I also no longer like using the Repository pattern (which I plan to write about soon) so this provides a nice way of avoiding touching the database without mocking objects.

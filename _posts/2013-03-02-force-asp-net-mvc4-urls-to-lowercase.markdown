@@ -6,8 +6,6 @@ layout: post
 slug: force-asp-net-mvc4-urls-to-lowercase
 title: Force ASP.NET MVC 4 URLs To Lowercase
 wordpress_id: 622
-categories:
-- Quick Tip
 tags:
 - ASP.NET MVC
 ---
