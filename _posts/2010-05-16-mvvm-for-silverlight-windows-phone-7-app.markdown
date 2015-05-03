@@ -16,7 +16,7 @@ tags:
 For a little while now I've had a bit of interest in the Model View ViewModel ([MVVM](http://en.wikipedia.org/wiki/MVVM)) pattern for [Silverlight](http://www.silverlight.net) and [WPF](http://msdn.microsoft.com/en-us/library/ms754130.aspx) so I thought I would finally give it a go and see if I could get an understanding of how to use this pattern.
 
 
-<!-- more -->[![Twitter timeline application](http://www.jason-mitchell.com/images/blog/MVVMforSilverlightWindowsPhone7App_E533/image_thumb.png)](http://www.jason-mitchell.com/images/blog/MVVMforSilverlightWindowsPhone7App_E533/image.png)
+<!-- more -->[![Twitter timeline application](/images/blog/MVVMforSilverlightWindowsPhone7App_E533/image_thumb.png)](/images/blog/MVVMforSilverlightWindowsPhone7App_E533/image.png)
 
 
 I had no prior knowledge of the details of MVVM so I needed to do a bit of research.  Thankfully, there seems to be no shortage of information on the web about it.  I found Wikipedia to have a useful article about it at [http://en.wikipedia.org/wiki/MVVM](http://en.wikipedia.org/wiki/MVVM) (especially the "Pattern Description" section) and also an article on [MSDN](http://msdn.microsoft.com/) by [Shawn Wildermuth](http://wildermuth.com/) at [http://msdn.microsoft.com/en-us/magazine/dd458800.aspx](http://msdn.microsoft.com/en-us/magazine/dd458800.aspx).  The second article is for Silverlight 2 so it's a little bit outdated, however I still found it incredibly useful.
@@ -83,7 +83,7 @@ Now we will create our **ViewModel** class called TweetViewModel.  The ViewMode
 
 
 
-[![image](http://www.jason-mitchell.com/images/blog/MVVMforSilverlightWindowsPhone7App_E533/image_thumb_3.png)](http://www.jason-mitchell.com/images/blog/MVVMforSilverlightWindowsPhone7App_E533/image_3.png) Next, I created the **View** for my application.  The View refers to all our visual elements and will bind to our ViewModel.  At this point, we can now use Blend's sample data feature to style our View without needing to write any code to download tweets.  This is a great feature for designing an application in Blend.  We can create our sample data from an existing class in our project but first we will need to build it from Blend's project menu.  Once it has been built, we can open the Data pane on the right-hand side, click the second button from the right, and then select "Create Sample Data from Class..." and then select our TweetViewModel class from the list.
+[![image](/images/blog/MVVMforSilverlightWindowsPhone7App_E533/image_thumb_3.png)](/images/blog/MVVMforSilverlightWindowsPhone7App_E533/image_3.png) Next, I created the **View** for my application.  The View refers to all our visual elements and will bind to our ViewModel.  At this point, we can now use Blend's sample data feature to style our View without needing to write any code to download tweets.  This is a great feature for designing an application in Blend.  We can create our sample data from an existing class in our project but first we will need to build it from Blend's project menu.  Once it has been built, we can open the Data pane on the right-hand side, click the second button from the right, and then select "Create Sample Data from Class..." and then select our TweetViewModel class from the list.
 
 
 

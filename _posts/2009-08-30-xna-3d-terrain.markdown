@@ -28,7 +28,7 @@ Despite using a ready made processor for loading my terrain, my experience with 
 
 
 
-[![renderError](http://www.jason-mitchell.com/images/blog/XNA3DTerrain_E030/renderError_thumb.jpg)](http://www.jason-mitchell.com/images/blog/XNA3DTerrain_E030/renderError.jpg) [![textureStretch](http://www.jason-mitchell.com/images/blog/XNA3DTerrain_E030/textureStretch_thumb.jpg)](http://www.jason-mitchell.com/images/blog/XNA3DTerrain_E030/textureStretch.jpg)
+[![renderError](/images/blog/XNA3DTerrain_E030/renderError_thumb.jpg)](/images/blog/XNA3DTerrain_E030/renderError.jpg) [![textureStretch](/images/blog/XNA3DTerrain_E030/textureStretch_thumb.jpg)](/images/blog/XNA3DTerrain_E030/textureStretch.jpg)
 
 
 
@@ -62,4 +62,4 @@ For more information on the effects a SpriteBatch object will have on your rende
 
 After figuring all that out thanks to help of the community on the XNA Creators Club website, I got my terrain working quite well and looking relatively nice:
 
-[![terrain](http://www.jason-mitchell.com/images/blog/XNA3DTerrain_E030/terrain_thumb.jpg)](http://www.jason-mitchell.com/images/blog/XNA3DTerrain_E030/terrain.jpg)
+[![terrain](/images/blog/XNA3DTerrain_E030/terrain_thumb.jpg)](/images/blog/XNA3DTerrain_E030/terrain.jpg)
