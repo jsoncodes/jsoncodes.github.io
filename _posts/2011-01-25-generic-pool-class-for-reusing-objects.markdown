@@ -1,5 +1,4 @@
 ---
-author: jmitch18
 comments: true
 date: 2011-01-25 19:29:48+00:00
 layout: post

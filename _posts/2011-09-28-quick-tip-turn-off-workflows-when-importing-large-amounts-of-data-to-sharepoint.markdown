@@ -1,6 +1,4 @@
 ---
-author: jmitch18
-comments: true
 date: 2011-09-28 21:49:24+00:00
 layout: post
 slug: quick-tip-turn-off-workflows-when-importing-large-amounts-of-data-to-sharepoint
