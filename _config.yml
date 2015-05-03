@@ -3,7 +3,7 @@
 title: Jason Mitchell
 email: contact@jason-mitchell.com
 description: > # this means to ignore newlines until "baseurl:"
-  Jason Mitchell .NET developer something something
+  I write code.  I care about quality. I love to learn.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://json.codes" # the base hostname & protocol for your site
 twitter_username: jmitch18
