@@ -9,14 +9,14 @@
         float: right;
     }
 
-    .post-excerpt {
-        clear: both;
-        padding: 10px 0;
-    }
-
     .read-more {
         float: right;
     }
+}
+
+.post-excerpt {
+    clear: both;
+    padding: 10px 0;
 }
 
 .post-header {
@@ -57,6 +57,18 @@
 
         @include media-query($on-laptop) {
             font-size: 18px;
+        }
+    }
+}
+
+.pagination {
+    margin-top: 40px;
+
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
         }
     }
 }
