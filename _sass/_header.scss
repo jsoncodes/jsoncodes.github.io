@@ -10,6 +10,10 @@
 
     // Positioning context for the mobile navigation icon
     position: relative;
+
+    h1 {
+        margin: 0;
+    }
 }
 
 .site-title {
@@ -24,6 +28,10 @@
 .site-nav {
     float: right;
     line-height: 56px;
+
+    a {
+        text-decoration: none;
+    }
 
     .menu-icon {
         display: none;
