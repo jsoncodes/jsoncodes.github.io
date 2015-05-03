@@ -87,4 +87,4 @@ Again we have to convert our click location into a geocode to give to the web se
 
 That’s basically it!  Overall I’m very impressed with Microsoft’s Bing Maps support in Silverlight both in terms of the SDK and the documentation available online.  The demo application took no time at all to whip up after a few minutes spent researching.
 
-**_Demo Project Download:_** [http://www.jason-mitchell.com/Uploads/BingMapsDemo-12_03_11.zip](http://www.jason-mitchell.com/Uploads/BingMapsDemo-12_03_11.zip)
+**_Demo Project Download:_** [/uploads/BingMapsDemo-12_03_11.zip](/uploads/BingMapsDemo-12_03_11.zip)

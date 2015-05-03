@@ -184,4 +184,4 @@ The last required step is to bind the ViewModel to the View.  I opened TweetVie
 This article is based on my current understanding of the MVVM pattern.  I would not say this code is production ready but I am open to constructive feedback and suggested improvements on the topic of this article.  Please feel free to contact me or use the comments section.
 
 
-**Sample project:** [http://www.jason-mitchell.com/uploads/TwitterTimelineDemo.zip](http://www.jason-mitchell.com/uploads/TwitterTimelineDemo.zip)
+**Sample project:** [/uploads/TwitterTimelineDemo.zip](/uploads/TwitterTimelineDemo.zip)

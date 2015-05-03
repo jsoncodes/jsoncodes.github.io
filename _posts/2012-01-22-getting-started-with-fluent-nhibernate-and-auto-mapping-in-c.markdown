@@ -173,4 +173,4 @@ This basic set up of Fluent NHibernate is okay but it could be improved upon so 
 
 
 
-**Download Link:** [http://www.jason-mitchell.com/Uploads/Fluent_NHibernate_Getting_started.zip](http://www.jason-mitchell.com/Uploads/Fluent_NHibernate_Getting_started.zip)
+**Download Link:** [/uploads/Fluent_NHibernate_Getting_started.zip](/uploads/Fluent_NHibernate_Getting_started.zip)

@@ -55,4 +55,4 @@ To use this class, all that needs to be done is create a new instance, perform y
     spriteBatch.End();
 
 
-And there it is!  A nice camera solution for 2D games and it should also work for Windows Phone 7!  And here is the [source](http://www.jason-mitchell.com/Uploads/MatrixTransformCamera.zip) and XNA 3.1 demo project.
+And there it is!  A nice camera solution for 2D games and it should also work for Windows Phone 7!  And here is the [source](/uploads/MatrixTransformCamera.zip) and XNA 3.1 demo project.

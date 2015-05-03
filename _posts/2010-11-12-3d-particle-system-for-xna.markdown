@@ -105,10 +105,10 @@ My basic TextureQuad class looks like:
 
 It’s not hugely complicated and is essentially just an reusable approach to the sample I linked to on Riemer Grootjan’s site.  One issue I encountered using this approach is best described using an image so here it is:
 
-![](http://www.jason-mitchell.com/images/particles.jpg)
+![](/images/particles.jpg)
 
 This really bugged me for a bit since there’s no use in using transparent textures if we will always see what would appear to be the quad the texture is applied to.  Thankfully, [@BobTheCBuilder](http://www.twitter.com/bobthecbuilder) was able to point out that this was simply because the particles are unordered and advised me to set the DepthBufferWriteEnable property on the graphics device render state to false to solve the issue.  And it did:
 
-![](http://www.jason-mitchell.com/images/particlesWorking.png)
+![](/images/particlesWorking.png)
 
-As promised, here’s the download link: [http://www.jason-mitchell.com/uploads/particles_xna4.zip](http://www.jason-mitchell.com/uploads/particles_xna4.zip)
+As promised, here’s the download link: [/uploads/particles_xna4.zip](/uploads/particles_xna4.zip)

@@ -116,4 +116,4 @@ The first two examples pass lambda expressions to the AddCallback method and the
 
 This class is the result of a bit of experimentation that has been working out well for me.  I’d really appreciate any opinions that others might have on this approach to handling gestures.
 
-_**Sample Project: [http://www.jason-mitchell.com/Uploads/GestureHelperTest-08_04_11.zip](http://www.jason-mitchell.com/Uploads/GestureHelperTest-08_04_11.zip)**_
+_**Sample Project: [/uploads/GestureHelperTest-08_04_11.zip](/uploads/GestureHelperTest-08_04_11.zip)**_

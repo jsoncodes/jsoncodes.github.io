@@ -52,4 +52,4 @@ This showed that by adding a new service reference, we not only get a proxy clas
 
 The biggest benefit I have found in using duplex WCF services is that it allows for a publish-subscribe approach to exchanging data between devices.  When an application starts up it could call a service method called Subscribe and supply some form of identifier to associate it’s callback channel in a dictionary.  Then clients could communicate via a service method called Publish which would iterate the callbacks stored in the dictionary and send the message through each of them.
 
-**Download:** [http://www.jason-mitchell.com/Uploads/WCFDuplexHTTP.zip](http://www.jason-mitchell.com/Uploads/WCFDuplexHTTP.zip)
+**Download:** [/uploads/WCFDuplexHTTP.zip](/uploads/WCFDuplexHTTP.zip)

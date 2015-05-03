@@ -12,4 +12,4 @@ tags:
 - xna
 ---
 
-I have uploaded the slides and [XNA](http://create.msdn.com) demo project from my Windows Phone 7 presentation I gave at my University on Wednesday.  You can download them [here](http://www.jason-mitchell.com/Uploads/WP7Presentation.zip).
+I have uploaded the slides and [XNA](http://create.msdn.com) demo project from my Windows Phone 7 presentation I gave at my University on Wednesday.  You can download them [here](/uploads/WP7Presentation.zip).
