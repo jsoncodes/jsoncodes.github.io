@@ -66,15 +66,17 @@
 }
 
 .post-navigation {
-    padding-bottom: 30px;
+    padding: 10px 0;
 
     .previous, .next {
         width: 49%;
         padding-bottom: 20px;
-        border-bottom: 2px solid $brand-color-dark;
+        border-bottom: 2px solid #eaedee;
         text-decoration: none;
+        color: #7f929c;
 
         &:hover {
+            color: $brand-color;
             border-color: $brand-color;
         }
 

@@ -13,6 +13,9 @@ layout: default
         {{ content }}
     </article>
 
+    <div class="addthis_sharing_toolbox"></div>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-554624a10089c8b2" async="async"></script>
+
     <div class="post-navigation">
         {% if page.previous.url %}
             <a class="previous" href="{{page.previous.url}}" title="Previous Post:{{page.previous.title}}">
@@ -28,9 +31,6 @@ layout: default
             </a>
         {% endif %}
     </div>
-
-    <div class="addthis_sharing_toolbox"></div>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-554624a10089c8b2" async="async"></script>
 
     <div id="disqus_thread"></div>
     <script type="text/javascript">
