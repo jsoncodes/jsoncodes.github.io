@@ -64,3 +64,39 @@
 .pagination {
     margin-top: 40px;
 }
+
+.post-navigation {
+    padding-bottom: 30px;
+
+    .previous, .next {
+        width: 49%;
+        padding-bottom: 20px;
+        border-bottom: 2px solid $brand-color-dark;
+        text-decoration: none;
+
+        &:hover {
+            border-color: $brand-color;
+        }
+
+        label {
+            display: block;
+            font-size: $extra-small-font-size;
+            margin-bottom: 10px;
+        }
+    }
+
+    .previous {
+        float: left;
+    }
+
+    .next {
+        float: right;
+        text-align: right;
+    }
+}
+
+.post-navigation:after {
+    content: "";
+    display: table;
+    clear: both;
+}
