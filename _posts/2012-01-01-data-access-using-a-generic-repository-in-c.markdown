@@ -14,7 +14,7 @@ tags:
 The repository pattern is an abstraction layer which provides a well-organised approach to maintaining a separation between an applications data access and business logic layers.  This gives us the important advantages of making code more maintainable and readable and improving the testability of our code.  It also works great with dependency injection!
 
 
-
+# UPDATE: I have written a new article which provides a better implementation of a generic repository.  Check it out [here](/blog/generic-repository-and-the-specification-pattern/).
 
 When I started looking at the repository pattern I found that a lot of the samples on the internet used explicitly typed repositories such as ICustomerRepository and IOrderRepository.  However for a website I'm currently working on all of my CRUD operations were pretty much the same and I wanted to reduce the amount of code I needed to write so I implemented a basic generic repository which would work with any of my data model classes.
 

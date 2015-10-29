@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2015-10-08 21:37
+date: 2015-10-29 21:37
 layout: post
 title: Generic Repository and the Specification Pattern
 ---
@@ -8,9 +8,10 @@ title: Generic Repository and the Specification Pattern
 A few years back I wrote an article titled
 ["Data Access Using a Generic Repository in C#"](/blog/data-access-using-a-generic-repository-in-c/) which
 since it was published has been by far the most popular article on my blog.  This is somewhat frustrating given that the
-approach I described in that article is something I disagree with now.  In this article I'm going to share a generic repository
-implementation which makes use of the ["specification pattern"](https://en.wikipedia.org/wiki/Specification_pattern) to perform
-queries against an Entity Framework context.
+approach I described in that article (and repositories in general - but that's a different article) is something I disagree with
+now.  In this article I'm going to share a generic repository implementation which makes use of the
+["specification pattern"](https://en.wikipedia.org/wiki/Specification_pattern) to perform queries against an Entity Framework
+context.
 
 # What's wrong with the original implementation?
 
