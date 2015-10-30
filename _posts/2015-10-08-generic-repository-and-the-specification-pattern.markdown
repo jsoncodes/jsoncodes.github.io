@@ -39,7 +39,7 @@ them.
 
 For this example I will be using a simple interface which defines a single ```IsSatisfiedBy()``` method which returns an
 ```Expression``` for use in Entity Framework queries.  An overload could be implemented which accepts an object as a parameter
-for more general use but I've that for this article.
+for more general use but I've left that out for this article.
 
 {% gist jasonmitchell/62905f39a21979f14f06 ISpecification.cs %}
 
