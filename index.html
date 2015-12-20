@@ -2,44 +2,19 @@
 layout: main
 ---
 
-<header class="site-header hero">
-
-    <div class="wrapper">
-        <img src="https://gravatar.com/avatar/eee690831d746dde702efabb2294c110?s=150" class="avatar" />
-
-        <h1 class="site-title">{{ site.title }}</h1>
-
-        <p class="text">{{ site.description }}</p>
-
-        <nav class="links">
-
-            <a href="https://github.com/{{ site.github_username }}" title="Github">
-                <i class="fa fa-github"></i>
-            </a>
-
-            <a href="https://twitter.com/{{ site.twitter_username}}" title="Twitter">
-                <i class="fa fa-twitter"></i>
-            </a>
-
-            <a href="mailto:{{ site.email }}" title="Email">
-                <i class="fa fa-envelope"></i>
-            </a>
-
-            <a href="{{ site.baseUrl }}/blog" title="Blog">
-                <i class="fa fa-rss"></i>
-            </a>
-
-        </nav>
-    </div>
-
+<header class="hero">
+  <div class="container">
+    <img src="https://gravatar.com/avatar/eee690831d746dde702efabb2294c110?s=150" class="avatar" />
+    <p class="text">{{ site.description }}</p>
+  </div>
 </header>
 
-<section class="wrapper recent-posts">
-    <a class="view-all" href="{{ site.baseUrl }}/blog">View all</a>
-    <h1>Recent posts</h1>
+<section class="content">
+  <section class="post-collection">
+    <h1>Recent Posts</h1>
 
-    {% for post in site.posts limit:3 %}
-        <article class="post-excerpt">
+    {% for post in site.posts limit:1 %}
+        <article class="primary-post-excerpt">
             <h2>
                 <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a>
             </h2>
@@ -47,6 +22,17 @@ layout: main
             {{ post.excerpt }}
         </article>
     {% endfor %}
-</section>
 
-{% include footer.html %}
+    <div>
+      {% for post in site.posts offset:1 limit:3 %}
+          <article class="post-excerpt">
+              <h2>
+                  <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a>
+              </h2>
+
+              {{ post.excerpt | truncatewords: 30 }}
+          </article>
+      {% endfor %}
+    </div>
+  </section>
+</section>

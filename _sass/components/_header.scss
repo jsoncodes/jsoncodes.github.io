@@ -1,0 +1,34 @@
+.site-header {
+  position: fixed;
+  width: 100%;
+  background-color: $brand-color;
+  padding: $padding-small $padding-xlarge;
+  z-index: 1000;
+  @include clearfix;
+
+  h1 {
+    float: left;
+  }
+
+  nav {
+    float: right;
+
+    a {
+      margin-left: $margin-small;
+      color: #000000;
+      opacity: 0.4;
+      transition: color .3s, opacity .3s;
+
+      &:hover {
+        color: #ffffff;
+        opacity: 1;
+      }
+    }
+  }
+
+  a {
+    color: $text-color-light;
+    text-decoration: none;
+    font-size: $font-size-large;
+  }
+}

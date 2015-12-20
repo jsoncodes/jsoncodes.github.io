@@ -1,0 +1,53 @@
+@import "//fonts.googleapis.com/css?family=Open+Sans:300";
+
+$font-stack: 'Open Sans', sans-serif;
+$font-size-title: 32px;
+$font-size-xlarge: 24px;
+$font-size-large: 18px;
+$font-size-standard: 16px;
+$font-size-xsmall: 12px;
+$base-line-height: 1.5;
+
+$text-color: #333333;
+$text-color-light: $background-color;
+
+body {
+    font-family: $font-stack;
+    font-size: $font-size-standard;
+    font-weight: 300;
+    color: $text-color;
+    line-height: $base-line-height;
+    -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+a {
+  color: $text-color;
+  text-decoration: underline;
+
+  &:visited {
+    color: darken($brand-color, 15%);
+  }
+
+  &:hover {
+    color: $brand-color;
+    transition: color ease 0.3s;
+    text-decoration: none;
+  }
+}
+
+p {
+  margin: $margin-standard 0;
+  line-height: $font-size-standard * 1.25;
+}
+
+%title {
+  font-size: $font-size-title;
+}

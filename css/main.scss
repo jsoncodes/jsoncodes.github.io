@@ -4,57 +4,30 @@
 @charset "utf-8";
 @import "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
 
+$margin-standard: 15px;
+$margin-small: $margin-standard * 0.6667;
+$margin-xsmall: $margin-standard * 0.3333;
+$margin-large: $margin-standard * 1.3333;
+$margin-xlarge: $margin-standard * 1.6667;
 
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$extra-small-font-size:  $base-font-size * 0.75;
-$base-line-height: 1.5;
+$padding-standard: 15px;
+$padding-small: $padding-standard * 0.6667;
+$padding-xsmall: $padding-standard * 0.3333;
+$padding-large: $padding-standard * 1.3333;
+$padding-xlarge: $padding-standard * 1.6667;
 
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$text-color-light: invert($text-color);
-$background-color: #fdfdfd;
-$brand-color:      #518a61;
-$brand-color-dark: darken($brand-color, 10%);
-$brand-color-light: lighten($brand-color, 10%);
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
-
-
-
-// Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "header",
-        "hero",
-        "footer",
-        "page",
-        "post",
-        "syntax-highlighting"
+  "mixins/layout",
+  "core/reset",
+  "core/layout",
+  "core/base",
+  "core/typography",
+  "core/icons",
+  "core/code",
+  "components/header",
+  "components/footer",
+  "components/page",
+  "components/post",
+  "hero",
+  "home"
 ;

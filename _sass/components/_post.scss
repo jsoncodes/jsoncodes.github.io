@@ -1,0 +1,50 @@
+.post {
+  @extend .page;
+
+  header {
+    margin: $margin-standard 0;
+    position: relative;
+
+    h1 {
+      font-size: $font-size-xlarge;
+    }
+  }
+
+  .post-navigation {
+    padding: 10px 0;
+
+    .previous, .next {
+      width: 49%;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #eaedee;
+      text-decoration: none;
+      color: #7f929c;
+
+      &:hover {
+        color: $brand-color;
+        border-color: $brand-color;
+      }
+
+      label {
+        display: block;
+        font-size: $font-size-xsmall;
+        margin-bottom: 10px;
+      }
+    }
+
+    .previous {
+      float: left;
+    }
+
+    .next {
+      float: right;
+      text-align: right;
+    }
+  }
+
+  .post-navigation:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+}

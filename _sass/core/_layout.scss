@@ -1,0 +1,8 @@
+$on-mobile: 600px;
+$on-desktop: 800px;
+
+%content {
+  max-width: 1120px;
+  padding: $padding-xlarge $padding-large;
+  margin: 0 auto;
+}

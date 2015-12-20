@@ -2,7 +2,7 @@
 comments: true
 date: 2015-09-05 22:01
 layout: post
-title: Integrating Fluent Validation with ASP.NET Web API using Autofac
+title: Integrating Fluent Validation with Web API using Autofac
 ---
 
 [Fluent Validation](https://github.com/JeremySkinner/FluentValidation) is an excellent open source library for implementing

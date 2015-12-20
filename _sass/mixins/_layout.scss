@@ -1,0 +1,44 @@
+@mixin cover($backgroundColor, $height: 100%) {
+  //position: fixed;
+  display: block;
+  height: $height;
+  background-color: $backgroundColor;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include clearfix;
+
+  div {
+      width: 100%;
+      display: block;
+  }
+}
+
+@mixin cover-image($image, $height: 100%, $backgroundColor: #333333) {
+  @include cover($background-color, $height);
+
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=$image, sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=$image, sizingMethod='scale')";
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0px, rgba(0,0,0,0.5) 60px,rgba(0,0,0,0) 120px), url($image) no-repeat center center;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
