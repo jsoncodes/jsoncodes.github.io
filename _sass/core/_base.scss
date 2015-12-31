@@ -15,3 +15,10 @@ html, body {
 body {
     background-color: $background-color;
 }
+
+blockquote {
+  background-color: $grey-color-light;
+  border-left: 4px solid $brand-color;
+  padding: $padding-xsmall $padding-large;
+  margin: $margin-standard 0;
+}
