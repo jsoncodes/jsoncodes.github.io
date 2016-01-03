@@ -1,17 +1,33 @@
 .site-header {
   position: fixed;
   width: 100%;
-  background-color: $brand-color;
-  padding: $padding-small $padding-xlarge;
+  height: 50px;
+  background: $brand-color;
+  padding: 0 $padding-xlarge;
   z-index: 1000;
   @include clearfix;
 
+  .avatar {
+    float: left;
+    border: 1px solid $text-color-light;
+    height: 40px;
+    width: 40px;
+    margin: 5px $margin-small 5px 0;
+    float: left;
+
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+  }
+
   h1 {
     float: left;
+    padding: $padding-small 0;
   }
 
   nav {
     float: right;
+    padding: $padding-small 0;
 
     a {
       margin-left: $margin-small;
