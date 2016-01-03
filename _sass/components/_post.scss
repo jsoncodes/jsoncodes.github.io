@@ -10,6 +10,18 @@
     }
   }
 
+  ul, ol {
+    margin-left: $margin-xlarge;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
   .post-navigation {
     padding: 10px 0;
 
