@@ -18,6 +18,11 @@
     font-size: $font-size-xlarge;
   }
 
+  .view-all {
+    float: right;
+    margin-top: 15px;
+  }
+
   .primary-post-excerpt {
     margin-top: $margin-standard;
     margin-bottom: ($margin-standard * 2);
