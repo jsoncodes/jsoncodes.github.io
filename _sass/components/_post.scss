@@ -6,7 +6,7 @@
     position: relative;
 
     h1 {
-      font-size: $font-size-xlarge;
+      font-size: $font-size-title;
     }
   }
 
@@ -20,6 +20,12 @@
 
   ol {
     list-style-type: decimal;
+  }
+
+  .post-content {
+    h2, h3, h4 {
+      font-size: $font-size-xlarge;
+    }
   }
 
   .post-navigation {
