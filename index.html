@@ -21,6 +21,8 @@ layout: main
                 <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a>
             </h2>
 
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
             {{ post.excerpt }}
         </article>
     {% endfor %}
@@ -31,6 +33,8 @@ layout: main
               <h2>
                   <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a>
               </h2>
+
+              <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
               {{ post.excerpt | truncatewords: 30 }}
           </article>
