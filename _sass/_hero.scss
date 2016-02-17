@@ -1,5 +1,5 @@
 .hero {
-  @include cover($brand-color, 50%);
+  @include cover(red, 50%);
   color: $text-color-light;
 
   .container {
