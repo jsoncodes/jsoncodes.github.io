@@ -1,6 +1,7 @@
 .hero {
   @include cover($brand-color, 50%);
   color: $text-color-light;
+  font-weight: normal;
 
   .container {
     text-align: center;
