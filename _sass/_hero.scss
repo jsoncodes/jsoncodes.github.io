@@ -1,8 +1,6 @@
 .hero {
   @include cover-image('/images/hero.jpg', 100%, $brand-color);
-  background-size: 100%;
   color: $text-color-light;
-  border-bottom: lighten($text-color, 50%) 1px solid;
 
   h2, h3 {
     display: block;
