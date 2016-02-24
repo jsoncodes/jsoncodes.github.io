@@ -9,7 +9,7 @@
     } else {
       $(window).scroll(function() {
         var scroll = $(window).scrollTop();
-        $header.toggleClass('solid', scroll >= 100);
+        $header.toggleClass('solid', scroll >= 60);
       });
     }
   });

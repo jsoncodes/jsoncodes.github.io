@@ -10,6 +10,18 @@
 
   &.solid {
     background: $brand-color;
+
+    nav {
+      a {
+        color: #000000;
+        opacity: 0.4;
+
+        &:hover {
+          color: #ffffff;
+          opacity: 1;
+        }
+      }
+    }
   }
 
   .avatar {
@@ -36,12 +48,11 @@
 
     a {
       margin-left: $margin-small;
-      color: #000000;
-      opacity: 0.4;
+      color: #ffffff;
+      opacity: 0.6;
       transition: color .3s, opacity .3s;
 
       &:hover {
-        color: #ffffff;
         opacity: 1;
       }
     }
