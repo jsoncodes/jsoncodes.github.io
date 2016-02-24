@@ -10,13 +10,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   @include clearfix;
-
-  div {
-      width: 100%;
-      display: block;
-  }
 }
 
 @mixin cover-image($image, $height: 100%, $backgroundColor: #333333) {

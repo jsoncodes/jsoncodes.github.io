@@ -12,5 +12,12 @@
         $header.toggleClass('solid', scroll >= 60);
       });
     }
+
+    $('#scroll-down').click(function() {
+      var $target = $('#content');
+      $('html, body').animate({
+        scrollTop: $target.offset().top - $header.outerHeight()
+      }, 650);
+    });
   });
 }());
