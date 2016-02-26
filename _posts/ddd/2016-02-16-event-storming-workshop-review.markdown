@@ -45,7 +45,7 @@ Towards the end of the workshop we were really in the flow of things.  I was bei
 
 Once we were finished I asked for opinions on the workshop and everyone agreed that it was very useful.  We are now thinking about when we will do our next workshop and what we will focus on.
 
-I then sent a company-wide message out offering to discuss the workshop with anyone who was involved in order to try and get some wider interest in the hopes of maybe involving some other people in the future.  I only had one person ask me about it but that's better than none.
+I then sent a company-wide message out offering to discuss the workshop with anyone who wasn't involved in order to try and get some wider interest in the hopes of maybe involving some other people in the future.  I only had one person ask me about it but that's better than none.
 
 ## Retrospective
 
