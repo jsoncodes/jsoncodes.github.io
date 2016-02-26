@@ -1,3 +1,37 @@
+.post-cover {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+
+  &:after {
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    display:inline-block;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0px, rgba(0,0,0,0.6) 60px,rgba(0,0,0,0) 120px);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .post-cover-content {
+    @extend %content;
+    height: 100%;
+
+    h1 {
+      @include cover-text();
+      color: $text-color-light;
+      position: absolute;
+      bottom: 0px;
+      margin: $margin-large 0;
+    }
+  }
+}
+
 .post {
   @extend .page;
 
@@ -71,4 +105,8 @@
       display: table;
       clear: both;
   }
+}
+
+.post-cover + .post {
+  padding-top: 0;
 }

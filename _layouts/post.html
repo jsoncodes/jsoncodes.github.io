@@ -2,12 +2,24 @@
 layout: default
 ---
 
-<div class="post">
-    <header>
-        <h1>{{ page.title }}</h1>
-        <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-    </header>
+{% if page.cover %}
+  <header class="post-cover">
+    <img src="{{page.cover}}" alt="{{page.cover-alt}}" />
+    <div class="post-cover-content">
+      <h1>{{ page.title }}</h1>
+    </div>
+  </header>
+{% endif %}
 
+<div class="post">
+    {% if page.cover %}
+      <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    {% else %}
+      <header>
+          <h1>{{ page.title }}</h1>
+          <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+      </header>
+    {% endif %}
     <article class="post-content">
         {{ content }}
     </article>

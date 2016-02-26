@@ -4,7 +4,7 @@
   $(document).ready(function() {
     var $header = $('.site-header');
 
-    if ($('.hero').length === 0) {
+    if ($('.cover, .post-cover').length === 0) {
       $header.addClass('solid');
     } else {
       $(window).scroll(function() {

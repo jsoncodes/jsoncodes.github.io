@@ -3,13 +3,11 @@ comments: true
 date: 2016-02-17 19:00
 layout: post
 title: Event Storming Workshop Review
+cover: /images/blog/ddd/event-storming-review.jpg
+cover-alt: Finishing up the event storming session
 ---
 
 Yesterday we had our first Event Storming workshop with the team at the office and I wanted to write up some of my thoughts and opinions on how it went.  I ran a "big picture" session within a two hour time box in order to trial Event Storming within the business; the plan was that we would focus on events and hot spots only in order to fit within the time box.  Overall I felt like it all went smoothly and everyone agreed that it was valuable.
-
-## Action Shot: Finishing up the session
-
-![alt text](/images/blog/ddd/event-storming-review.jpg "Finishing up the event storming session")
 
 ## The Attendees
 
