@@ -1,66 +1,46 @@
 .site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   width: 100%;
-  height: 50px;
-  background: transparent;
-  padding: 0 $padding-xlarge;
+  background: darken($brand-color, 33%);
+  padding: $padding-xsmall $padding-xlarge;
   z-index: 1000;
-  transition: background .2s;
-  @include clearfix;
 
-  &.solid {
-    background: $brand-color;
+  .brand {
+    display: flex;
+    flex: none;
+    align-items: center;
 
-    nav {
-      a {
-        color: #000000;
-        opacity: 0.4;
+    .avatar {
+      height: 50px;
+      width: 50px;
+      margin-right: $margin-large;
+      @include border-radius(100%);
+    }
 
-        &:hover {
-          color: #ffffff;
-          opacity: 1;
-        }
-      }
+    h1 {
+      font-weight: 600;
     }
   }
 
-  .avatar {
-    float: left;
-    border: 1px solid $text-color-light;
-    height: 40px;
-    width: 40px;
-    margin: 5px $margin-small 5px 0;
-    float: left;
-
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px;
-  }
-
-  h1 {
-    float: left;
-    padding: $padding-small 0;
-  }
-
   nav {
-    float: right;
     padding: $padding-small 0;
 
     a {
-      margin-left: $margin-small;
-      color: #ffffff;
-      opacity: 0.6;
-      transition: color .3s, opacity .3s;
-      width: 22px;
+      @include border-radius($padding-large * 2);
+      padding: $padding-small $padding-large;
+      margin: 0 $margin-small;
+      color: $text-color-light;
+      background-color: transparent;
       display: inline-block;
       text-align: center;
-
-      &.blog {
-        font-size: 15px;
-      }
+      transition: background-color .3s;
 
       &:hover {
-        opacity: 1;
+        background-color: $brand-color;
       }
     }
   }
@@ -69,5 +49,18 @@
     color: $text-color-light;
     text-decoration: none;
     font-size: $font-size-large;
+  }
+
+  button {
+    @include border-radius($padding-large * 2);
+    background-color: $brand-color;
+    padding: $padding-small $padding-large;
+    color: $text-color-light;
+    font-size: $font-size-large;
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: $brand-color-light;
+    }
   }
 }
