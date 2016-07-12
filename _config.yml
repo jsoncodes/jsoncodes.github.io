@@ -1,7 +1,7 @@
 # Site settings
 #permalink: /blog/:categories/:title
 title: JSON Codes
-email: contact@jason-mitchell.com
+email: contact@json.codes
 description: >
   Irish software developer in Yorkshire.  Amateur Domain Driven Designer.
 baseurl: "" # the subpath of your site, e.g. /blog/
