@@ -5,7 +5,7 @@
   align-items: center;
   position: fixed;
   width: 100%;
-  background: #313532;
+  background: #2A413E;
   padding: $padding-xsmall $padding-xlarge;
   z-index: 1000;
 
@@ -26,18 +26,23 @@
     }
   }
 
+  %nav-button {
+    @include border-radius($padding-large * 2);
+    padding: $padding-small $padding-large;
+    color: $text-color-light;
+    font-size: $font-size-large;
+    transition: background-color .3s;
+    text-align: center;
+  }
+
   nav {
     padding: $padding-small 0;
 
     a {
-      @include border-radius($padding-large * 2);
-      padding: $padding-small $padding-large;
+      @extend %nav-button;
       margin: 0 $margin-small;
-      color: $text-color-light;
       background-color: transparent;
       display: inline-block;
-      text-align: center;
-      transition: background-color .3s;
 
       &:hover {
         background-color: $brand-color;
@@ -52,12 +57,8 @@
   }
 
   button {
-    @include border-radius($padding-large * 2);
+    @extend %nav-button;
     background-color: $brand-color;
-    padding: $padding-small $padding-large;
-    color: $text-color-light;
-    font-size: $font-size-large;
-    transition: background-color .3s;
 
     &:hover {
       background-color: $brand-color-light;
