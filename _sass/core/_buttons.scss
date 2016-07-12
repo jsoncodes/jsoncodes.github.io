@@ -1,16 +1,35 @@
-.nav-button {
+$min-button-width: 137px;
+
+button, .button {
   @include border-radius($padding-large * 2);
   padding: $padding-small $padding-xlarge;
   color: $text-color;
   font-size: $font-size-small;
   background-color: #fff;
   border: 1px solid lighten($text-color, 65%);
-  transition: background-color .3s;
+  transition: background .3s;
   text-align: center;
   text-decoration: none;
+  display: inline-block;
+  min-width: $min-button-width;
 
-  &:hover {
+  &.accent {
     background-color: $brand-color;
     color: $text-color-light;
+    border: 0;
+
+    &:hover {
+      background-color: $brand-color-light;
+      color: $text-color-light;
+    }
+  }
+
+  &:visited {
+    color: $text-color;
+  }
+
+  &:hover {
+    background-color: lighten($text-color, 65%);
+    color: $text-color;
   }
 }

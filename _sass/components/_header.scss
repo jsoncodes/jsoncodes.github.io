@@ -8,10 +8,24 @@
 
   .brand {
     @extend %flex;
-    flex: none;
+    align-items: center;
 
     h1 {
       font-weight: 600;
+    }
+
+    .avatar {
+      margin-right: $margin-large;
+    }
+  }
+
+  %nav-button {
+    @extend .button;
+    border: none;
+    color: $text-color-light;
+
+    &:visited, &:hover {
+      color: $text-color-light;
     }
   }
 
@@ -19,12 +33,9 @@
     padding: $padding-small 0;
 
     a {
-      @extend .nav-button;
+      @extend %nav-button;
       margin: 0 $margin-xsmall;
-      color: $text-color-light;
-      border: none;
       background-color: transparent;
-      display: inline-block;
 
       &:hover {
         background-color: $brand-color;
@@ -36,16 +47,5 @@
     color: $text-color-light;
     text-decoration: none;
     font-size: $font-size-large;
-  }
-
-  button {
-    @extend .nav-button;
-    color: $text-color-light;
-    background-color: $brand-color;
-    border: none;
-
-    &:hover {
-      background-color: $brand-color-light;
-    }
   }
 }

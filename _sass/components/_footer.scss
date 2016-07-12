@@ -4,6 +4,10 @@
   .brand {
     @extend %flex;
     flex: none;
+
+    .avatar {
+      margin-right: $margin-large;
+    }
   }
 
   .social-media {
@@ -16,18 +20,16 @@
         height: 50px;
         text-align: center;
         @include border-radius(100%);
-        transition: opacity .3s, background-color .3s;
 
         &:hover {
-          background-color: $brand-color-light;
-
           img {
-            opacity: .8;
+            opacity: 1;
           }
         }
       }
 
       img {
+        transition: opacity .3s;
         width: 20px;
         height: 20px;
         opacity: .6;

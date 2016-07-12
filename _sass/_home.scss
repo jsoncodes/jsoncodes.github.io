@@ -9,17 +9,18 @@
   header {
     @extend %flex;
   }
-
-  div {
-    //@include clearfix;
-  }
-
   h1 {
     @extend %title;
   }
 
   h2 {
     font-size: $font-size-xlarge;
+    display: block;
+    width: 100%;
+  }
+
+  div {
+    display: flex;
   }
 
   %post-excerpt {
@@ -27,6 +28,10 @@
     background-color: #fff;
     margin: 0 $margin-small;
     @include box-shadow(0px 1px 1px 1px lighten($text-color, 60%));
+
+    .post-meta {
+      color: lighten($text-color, 35%);
+    }
   }
 
   .primary-post-excerpt {
@@ -48,38 +53,47 @@
       margin-right: 0;
     }
   }
+}
 
-  @media screen and (min-width: 801px) {
-    div {
-      display: flex;
+#about-me {
+  background-color: #fff;
+
+  .container {
+    align-items: stretch;
+  }
+
+  header {
+    @extend .container;
+    @extend %flex;
+    padding-bottom: 0;
+    align-items: flex-start;
+
+    h1 {
+      @extend %title;
     }
   }
 
-  @media screen and (max-width: 800px) {
-    div {
-      display: static;
+  .technology {
+    padding: $padding-large;
+    padding-top: 0;
+    flex: 1 1 33.3333%;
+
+    h1 {
+      color: lighten($text-color, 40%);
+      text-shadow: -1px -1px 0 lighten($text-color, 30%);
+      font-size: $font-size-xlarge * 2;
+      font-weight: 600;
+      margin-top: 0;
+      text-transform: lowercase;
+      text-align: center;
     }
 
-    .primary-post-excerpt {
-      border-bottom: 1px solid $dividing-border-color;
+    &:first-child {
+      padding-left: 0;
     }
 
-    .post-excerpt {
-      flex: none;
-      display: block;
-      padding: 0;
-
-      &:first-child {
-        padding-left: 0;
-        padding-right: 0;
-        border-right: 0;
-      }
-
-      &:last-child {
-        padding-left: 0;
-        padding-right: 0;
-        border-left: 0;
-      }
+    &:last-child {
+      padding-right: 0;
     }
   }
 }
