@@ -1,43 +1,36 @@
 .site-footer {
-  @include clearfix;
-  @extend %content;
-  margin-bottom: $margin-xsmall;
+  background-color: #fff;
 
-  .avatar {
-    border: 2px solid $brand-color-dark;
-    height: 50px;
-    width: 50px;
-    margin-right: $margin-large;
-    float: left;
-
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
+  .brand {
+    @extend %flex;
+    flex: none;
   }
 
-  .contact-list,
-  .social-media-list {
-    list-style: none;
-    margin-left: 0;
-  }
+  .social-media {
+      a {
+        text-decoration: none;
+        padding: $padding-standard;
+        background-color: transparent;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        @include border-radius(100%);
+        transition: opacity .3s, background-color .3s;
 
-  .contact-list {
-    float: left;
-  }
+        &:hover {
+          background-color: $brand-color-light;
 
-  .social-media-list {
-    float: right;
-  }
+          img {
+            opacity: .8;
+          }
+        }
+      }
 
-  a {
-    text-decoration: none;
-  }
-
-  @media screen and (max-width: 450px) {
-    .avatar, .contact-list, .social-media-list {
-      display: block;
-      float: none;
-      margin-bottom: $margin-small;
-    }
+      img {
+        width: 20px;
+        height: 20px;
+        opacity: .6;
+      }
   }
 }

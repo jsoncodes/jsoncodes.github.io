@@ -1,8 +1,5 @@
 .site-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  @extend %flex;
   position: fixed;
   width: 100%;
   background: #2A413E;
@@ -10,16 +7,8 @@
   z-index: 1000;
 
   .brand {
-    display: flex;
+    @extend %flex;
     flex: none;
-    align-items: center;
-
-    .avatar {
-      height: 50px;
-      width: 50px;
-      margin-right: $margin-large;
-      @include border-radius(100%);
-    }
 
     h1 {
       font-weight: 600;

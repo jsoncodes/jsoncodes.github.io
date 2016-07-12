@@ -8,6 +8,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://json.codes" # the base hostname & protocol for your site
 twitter_username: jmitch18
 github_username:  jasonmitchell
+linkedin_username: jasonmitchell89
 
 # Build settings
 markdown: kramdown
