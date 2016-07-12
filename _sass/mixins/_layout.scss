@@ -18,7 +18,7 @@
 @mixin cover-image($image, $height: 100%, $backgroundColor: #333333) {
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=$image, sizingMethod='scale');
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=$image, sizingMethod='scale')";
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0px, rgba(0,0,0,0.6) 60px,rgba(0,0,0,0) 120px), url($image) no-repeat left top;
+  background: url($image) no-repeat left $header-height;
 
   @include cover($background-color, $height);
 }
