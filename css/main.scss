@@ -16,7 +16,7 @@ $padding-xsmall: $padding-standard * 0.3333;
 $padding-large: $padding-standard * 1.3333;
 $padding-xlarge: $padding-standard * 1.6667;
 
-$header-height: 76px;
+$header-height: 70px;
 
 @import
   "mixins/layout",
@@ -24,8 +24,8 @@ $header-height: 76px;
   "core/layout",
   "core/base",
   "core/typography",
+  "core/_buttons",
   "mixins/typography",
-  "core/icons",
   "core/code",
   "components/header",
   "components/footer",

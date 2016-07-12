@@ -57,3 +57,10 @@
   border-radius: $radius;
   background-clip: padding-box;  /* stops bg color from leaking outside the border: */
 }
+
+
+@mixin box-shadow($value) {
+  -moz-box-shadow:    $value;
+  -webkit-box-shadow: $value;
+  box-shadow:         $value;
+}

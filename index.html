@@ -17,8 +17,10 @@ layout: main
 
 <section id="content" class="content">
   <section class="post-collection">
-    <a href="/blog" class="view-all">View all</a>
-    <h1>Recent Posts</h1>
+    <header>
+      <h1>Latest Articles</h1>
+      <a href="/blog" class="nav-button">View Articles</a>
+    </header>
 
     {% for post in site.posts limit:1 %}
         <article class="primary-post-excerpt">
