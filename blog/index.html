@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: blog
 ---
 
-<div class="page">
-
+<div class="post-collection">
   {% for post in paginator.posts %}
     {% include posts/excerpt.html %}
   {% endfor %}
@@ -19,5 +18,4 @@ layout: default
       <a href="{{ paginator.next_page_path }}" class="next">Next &raquo;</a>
     {% endif %}
   </div>
-
 </div>

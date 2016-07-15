@@ -1,8 +1,9 @@
 ---
 comments: true
 date: 2013-09-19 22:59
-layout: post
+layout: series-post
 title: Getting started with ASP.NET MVC and KnockoutJS
+series: "ASP.NET MVC and KnockoutJS"
 ---
 
 This is the first article in what will hopefully be a series on using KnockoutJS with ASP.NET MVC and is intended
@@ -13,7 +14,7 @@ from a C# model in a MVC project.
 
 _**Note a sample project for this series of articles will be available [on Github](https://github.com/jasonmitchell/aspnetmvc-knockoutjs-quickstart)**_
 
-##The code
+## The code
 To get started **we need a simple C# model**. For this example I’ve created a Person model which looks like this:
 
 {% gist jasonmitchell/6608081 Person.cs %}
@@ -47,6 +48,6 @@ C# model and I use **Html.Raw() to ensure that the raw output is passed into my 
 representation. And that’s all there is to implementing a really simple KnockoutJS view model which is populated by
 data in a C# model.
 
-##What's next?
+## What's next?
 In the next part I will be creating a simple example of how to create a view model dynamically on the client side based
 on a C# model.

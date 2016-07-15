@@ -1,0 +1,21 @@
+$card-background-color: #fff;
+
+.card {
+  padding: $padding-large;
+  background-color: $card-background-color;
+  margin: 0 $margin-small;
+  @include box-shadow(0px 1px 1px 1px lighten($text-color, 60%));
+
+  h2, h3 {
+    display: block;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: $font-size-xlarge;
+  }
+
+  h3 {
+    font-size: $font-size-large;
+  }
+}

@@ -1,4 +1,3 @@
 .page {
-  @extend %content;
-  padding-top: ($padding-xlarge * 3);
+  padding-top: $header-height + $padding-standard;
 }

@@ -1,0 +1,30 @@
+.container.blog {
+  align-items: flex-start;
+}
+
+.post-collection {
+  flex-basis: 70%;
+  padding-right: $padding-xsmall;
+
+  .post-excerpt:first-child {
+    margin-top: 0;
+  }
+}
+
+.sidebar {
+  flex-basis: 30%;
+
+  .card {
+    margin-bottom: $margin-standard;
+
+    h2, h3 {
+      border-bottom: 1px solid darken($card-background-color, 10%);
+      margin-bottom: $margin-small;
+    }
+
+    nav a {
+      display: block;
+      margin-bottom: $margin-xsmall;
+    }
+  }
+}
