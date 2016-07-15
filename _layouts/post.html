@@ -1,55 +1,59 @@
 ---
-layout: default
+layout: blog
 ---
 
-{% if page.cover %}
-  <header class="post-cover">
-    <img src="{{page.cover}}" alt="{{page.cover-alt}}" />
-    <div class="post-cover-inner">
-      <h1>{{ page.title }}</h1>
-    </div>
-  </header>
-{% endif %}
+  <article class="post">
+    <div class="post-body">
+      {% if page.cover %}
+        <header class="post-cover">
+          <img src="{{page.cover}}" alt="{{page.cover-alt}}" />
+          <div class="post-cover-inner">
+            <h1>{{ page.title }}</h1>
+          </div>
+        </header>
+      {% endif %}
 
-<div class="post">
-    {% if page.cover %}
-      <p class="post-meta">
-        {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
-        &nbsp;|&nbsp;&nbsp;<a href="/blog">All posts</a>
-      </p>
-    {% else %}
-      <header>
-          <h1>{{ page.title }}</h1>
+      <div class="post-content">
+        {% if page.cover %}
           <p class="post-meta">
             {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
             &nbsp;|&nbsp;&nbsp;<a href="/blog">All posts</a>
           </p>
-      </header>
-    {% endif %}
-    <article class="post-content">
+        {% else %}
+          <header>
+              <h1>{{ page.title }}</h1>
+              <p class="post-meta">
+                {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
+                &nbsp;|&nbsp;&nbsp;<a href="/blog">All posts</a>
+              </p>
+          </header>
+        {% endif %}
+
         {{ content }}
-    </article>
-
-    <div class="addthis_sharing_toolbox"></div>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-554624a10089c8b2" async="async"></script>
-
-    <div class="post-navigation">
-        {% if page.previous.url %}
-            <a class="previous" href="{{page.previous.url}}" title="Previous Post:{{page.previous.title}}">
-                <label>Previous article</label>
-                &laquo; {{page.previous.title}}
-            </a>
-        {% endif %}
-
-        {% if page.next.url %}
-            <a class="next" href="{{page.next.url}}" title="Next Post:{{page.next.title}}">
-                <label>Next article</label>
-                {{page.next.title}} &raquo;
-            </a>
-        {% endif %}
+      </div>
     </div>
 
-    <div id="disqus_thread"></div>
+    {% if page.series %}
+      <aside class="series-post-list">
+        <h3>Posts in this series</h3>
+
+        <ol>
+          {% for post in site.posts reversed %}
+            {% if page.series == post.series %}
+            <li>
+              {% if page.url == post.url %}
+                {{ post.title }}
+              {% else %}
+                <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a>
+              {% endif %}
+            </li>
+            {% endif %}
+          {% endfor %}
+        </ol>
+      </aside>
+    {% endif %}
+
+    <div id="disqus_thread" class="comments">div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES * * */
         var disqus_shortname = 'jsoncodes';
@@ -64,4 +68,23 @@ layout: default
         })();
     </script>
 
-</div>
+    <section class="post-navigation">
+        {% if page.previous.url %}
+            <a class="previous" href="{{page.previous.url}}" title="Previous Post:{{page.previous.title}}">
+                <label>Previous article</label>
+                &laquo; {{page.previous.title}}
+            </a>
+        {% endif %}
+
+        {% if page.next.url %}
+            <a class="next" href="{{page.next.url}}" title="Next Post:{{page.next.title}}">
+                <label>Next article</label>
+                {{page.next.title}} &raquo;
+            </a>
+        {% endif %}
+    </section>
+
+  </article>
+
+      <!-- <div class="addthis_sharing_toolbox"></div>
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-554624a10089c8b2" async="async"></script> -->
