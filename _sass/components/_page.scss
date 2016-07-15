@@ -1,15 +1,4 @@
 .page {
   @extend %content;
   padding-top: ($padding-xlarge * 3);
-
-  .post-excerpt {
-    margin-top: $margin-standard;
-    margin-bottom: ($margin-standard * 2);
-    padding-bottom: $padding-standard;
-    border-bottom: 1px solid lighten($text-color, 65%);
-
-    h2 {
-      font-size: $font-size-xlarge;
-    }
-  }
 }

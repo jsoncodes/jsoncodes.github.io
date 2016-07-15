@@ -16,61 +16,9 @@ layout: main
 </header>
 
 <section id="about-me">
-  <header>
-    <h1>What I Do</h1>
-    <a href="/files/jason-mitchell-cv.pdf" class="button accent">Download CV</a>
-    <p>Alright, okay. Alright, there she is, George. Just go in there and invite her. Huh? Oh. I'll get it back to you, alright? You know Marty, I'm gonna be very sad to see you go. You've really mad a difference in my life, you've given me something to shoot for. Just knowing, that I'm gonna be around to se 1985, that I'm gonna succeed in this. That I'm gonna have a chance to travel through time. It's going to be really hard waiting 30 years before I could talk to you about everything that's happened in the past few days. I'm really gonna miss you, Marty.</p>
-  </header>
-
-  <div class="container">
-    <div class="technology">
-      <h1>.NET</h1>
-      <p>Are you gonna order something, kid? Let me show you my plan forsaksdjaskjdf ksanf aksd fsdajnkfa jskd fasdk fjaskdljf alskdbfasldjfb sadkjf ad fasdfasdfb asldflabsdflasbjdkfajsbf   jklbbsa fdb fbasdf as  asdnfaknsdfk aks dfn send nd sakjd kajs dask dk sd nijnk i  k  ing you home. Please excuse the crudity of this model, I didn't have time to build it to scale or to paint it.</p>
-    </div>
-
-    <div class="technology">
-      <h1>Javascript</h1>
-      <p>Are you gonna order something, kid? Let me show you my plan for sending you home. Please excuse the crudity of this model, I didn't have time to build it to scale or to paint it.</p>
-    </div>
-
-    <div class="technology">
-      <h1>Craftsmanship</h1>
-      <p>Are you gonna order something, kid? Let mhome. Please excuse the crudity of this model, I didn't have time to build it to scale or to paint it.</p>
-    </div>
-  </div>
+  {% include home/what-i-do.html %}
 </section>
 
 <section id="content" class="content">
-  <section class="post-collection">
-    <header>
-      <h1>Latest Articles</h1>
-      <a href="/blog" class="button">View Articles</a>
-    </header>
-
-    {% for post in site.posts limit:1 %}
-        <article class="primary-post-excerpt">
-          <span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
-
-          <h2>
-              <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a>
-          </h2>
-
-          {{ post.excerpt }}
-        </article>
-    {% endfor %}
-
-    <div>
-      {% for post in site.posts offset:1 limit:3 %}
-          <article class="post-excerpt">
-            <span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
-
-            <h2>
-                <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a>
-            </h2>
-
-            {{ post.excerpt | truncatewords: 30 }}
-          </article>
-      {% endfor %}
-    </div>
-  </section>
+  {% include home/latest-articles.html %}
 </section>

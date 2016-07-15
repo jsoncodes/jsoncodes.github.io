@@ -9,29 +9,13 @@
   header {
     @extend %flex;
   }
+
   h1 {
     @extend %title;
   }
 
-  h2 {
-    font-size: $font-size-xlarge;
-    display: block;
-    width: 100%;
-  }
-
   div {
     display: flex;
-  }
-
-  %post-excerpt {
-    padding: $padding-large;
-    background-color: #fff;
-    margin: 0 $margin-small;
-    @include box-shadow(0px 1px 1px 1px lighten($text-color, 60%));
-
-    .post-meta {
-      color: lighten($text-color, 35%);
-    }
   }
 
   .primary-post-excerpt {
