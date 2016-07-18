@@ -9,13 +9,17 @@ layout: blog
 
   <div class="pagination">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; Previous</a>
+      <a href="{{ paginator.previous_page_path }}" class="button previous">&laquo; Previous</a>
+    {%else %}
+      &nbsp;
     {% endif %}
 
-    <span class="page_number ">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    <span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
 
     {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">Next &raquo;</a>
+      <a href="{{ paginator.next_page_path }}" class="button next">Next &raquo;</a>
+    {% else %}
+      &nbsp;
     {% endif %}
   </div>
 </div>
