@@ -83,8 +83,9 @@
     margin-bottom: $margin-standard;
     max-width: 100%;
 
-    h2, h3, h4 {
+    h1, h2, h3, h4 {
       font-size: $font-size-xlarge;
+      margin-bottom: $margin-standard;
     }
 
     img {
