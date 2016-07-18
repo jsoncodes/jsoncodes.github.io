@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2013-09-27 17:26
-layout: series-post
+layout: post
 title: Creating a KnockoutJS model from an ASP.NET MVC model
 series: "ASP.NET MVC and KnockoutJS"
 ---

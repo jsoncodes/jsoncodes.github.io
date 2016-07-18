@@ -5,21 +5,21 @@
       {{site.title}}
     </div>
 
-    <nav class="social-media">
-      <a href="https://github.com/{{ site.github_username }}">
-        <img src="/images/icons/github-logo.svg" alt="Github" />
+    <nav>
+      <a href="https://github.com/{{ site.github_username }}" class="button icon">
+        <i class="fa fa-github"></i>
       </a>
 
-      <a href="https://twitter.com/{{ site.twitter_username }}">
-        <img src="/images/icons/twitter-logo.svg" alt="Twitter" />
+      <a href="https://twitter.com/{{ site.twitter_username }}" class="button icon">
+        <i class="fa fa-twitter"></i>
       </a>
 
-      <a href="https://uk.linkedin.com/in/{{ site.linkedin_username }}">
-        <img src="/images/icons/linkedin-logo.svg" alt="Linkedin" />
+      <a href="https://uk.linkedin.com/in/{{ site.linkedin_username }}" class="button icon">
+        <i class="fa fa-linkedin"></i>
       </a>
 
-      <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
-        <img src="/images/icons/rss-symbol.svg" alt="RSS" />
+      <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="button icon">
+        <i class="fa fa-rss"></i>
       </a>
     </nav>
 </footer>

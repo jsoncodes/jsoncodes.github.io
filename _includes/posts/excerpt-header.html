@@ -1,4 +1,8 @@
-<span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
+<div class="post-meta">
+  <span>
+    {{ post.date | date: "%-d %b %Y" }}
+  </span>
+</div>
 
 <h2>
   <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>

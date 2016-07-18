@@ -2,6 +2,8 @@
   @extend .card;
 
   .post-meta {
+    @extend %flex;
+    width: 100%;
     color: lighten($text-color, 35%);
   }
 }

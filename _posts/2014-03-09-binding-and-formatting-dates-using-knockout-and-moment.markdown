@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2014-03-09 15:07
-layout: series-post
+layout: post
 title: Binding and formatting dates using Knockout and Moment JS
 series: "ASP.NET MVC and KnockoutJS"
 ---

@@ -32,4 +32,38 @@ button, .button {
     background-color: lighten($text-color, 65%);
     color: $text-color;
   }
+
+  &.icon {
+    text-decoration: none;
+    padding: $padding-standard;
+    background-color: transparent;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    min-width: auto;
+    text-align: center;
+    transition: color .3s, background-color .3s;
+    border: none;
+    color: $text-color;
+    font-size: $font-size-large;
+    line-height: 1.25em;
+    @include border-radius(100%);
+
+    &:hover {
+      background-color: $brand-color;
+      color: $text-color-light;
+    }
+
+    &.facebook:hover {
+      background-color: #3b5998;
+    }
+
+    &.twitter:hover {
+      background-color: #6cadde;
+    }
+
+    &.google-plus:hover {
+      background-color: #de4a32;
+    }
+  }
 }

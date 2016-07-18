@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2013-09-19 22:59
-layout: series-post
+layout: post
 title: Getting started with ASP.NET MVC and KnockoutJS
 series: "ASP.NET MVC and KnockoutJS"
 ---

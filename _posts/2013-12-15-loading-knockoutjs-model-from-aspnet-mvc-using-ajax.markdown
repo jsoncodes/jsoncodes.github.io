@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2013-12-15 11:47
-layout: series-post
+layout: post
 title: Loading a KnockoutJS model from and ASP.NET MVC controller using ajax
 series: "ASP.NET MVC and KnockoutJS"
 ---

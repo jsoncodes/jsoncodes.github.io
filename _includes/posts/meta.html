@@ -1,0 +1,20 @@
+<div class="post-meta">
+  <span>
+    {{ page.date | date: "%-d %b %Y" }}
+  </span>
+
+  {% assign post_url = page.url | prepend: site.url %}
+  <nav>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ post_url }}" class="button icon facebook">
+      <i class="fa fa-facebook"></i>
+    </a>
+
+    <a href="https://twitter.com/intent/tweet?text={{ post_url }}" class="button icon twitter">
+      <i class="fa fa-twitter"></i>
+    </a>
+
+    <a href="https://plus.google.com/share?url={{ post_url }}" class="button icon google-plus">
+      <i class="fa fa-google-plus"></i>
+    </a>
+  </nav>
+</div>

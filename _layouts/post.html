@@ -2,89 +2,34 @@
 layout: blog
 ---
 
-  <article class="post">
-    <div class="post-body">
+<article class="post">
+  <div class="post-body">
+    {% if page.cover %}
+      <header class="post-cover">
+        <img src="{{page.cover}}" alt="{{page.cover-alt}}" />
+        <div class="post-cover-inner">
+          <h1>{{ page.title }}</h1>
+        </div>
+      </header>
+    {% endif %}
+
+    <div class="post-content">
       {% if page.cover %}
-        <header class="post-cover">
-          <img src="{{page.cover}}" alt="{{page.cover-alt}}" />
-          <div class="post-cover-inner">
-            <h1>{{ page.title }}</h1>
-          </div>
+        {% include posts/meta.html %}
+      {% else %}
+        <header>
+          {% include posts/meta.html %}
+          <h1>{{ page.title }}</h1>
         </header>
       {% endif %}
 
-      <div class="post-content">
-        {% if page.cover %}
-          <p class="post-meta">
-            {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
-            &nbsp;|&nbsp;&nbsp;<a href="/blog">All posts</a>
-          </p>
-        {% else %}
-          <header>
-              <h1>{{ page.title }}</h1>
-              <p class="post-meta">
-                {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
-                &nbsp;|&nbsp;&nbsp;<a href="/blog">All posts</a>
-              </p>
-          </header>
-        {% endif %}
-
-        {{ content }}
-      </div>
+      {{ content }}
     </div>
+  </div>
 
-    {% if page.series %}
-      <aside class="series-post-list">
-        <h3>Posts in this series</h3>
 
-        <ol>
-          {% for post in site.posts reversed %}
-            {% if page.series == post.series %}
-            <li>
-              {% if page.url == post.url %}
-                {{ post.title }}
-              {% else %}
-                <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a>
-              {% endif %}
-            </li>
-            {% endif %}
-          {% endfor %}
-        </ol>
-      </aside>
-    {% endif %}
+  {% include posts/series-list.html %}
+  {% include posts/disqus.html %}
+  {% include posts/navigation.html %}
 
-    <div id="disqus_thread" class="comments">div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES * * */
-        var disqus_shortname = 'jsoncodes';
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function () {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-
-    <section class="post-navigation">
-        {% if page.previous.url %}
-            <a class="previous" href="{{page.previous.url}}" title="Previous Post:{{page.previous.title}}">
-                <label>Previous article</label>
-                &laquo; {{page.previous.title}}
-            </a>
-        {% endif %}
-
-        {% if page.next.url %}
-            <a class="next" href="{{page.next.url}}" title="Next Post:{{page.next.title}}">
-                <label>Next article</label>
-                {{page.next.title}} &raquo;
-            </a>
-        {% endif %}
-    </section>
-
-  </article>
-
-      <!-- <div class="addthis_sharing_toolbox"></div>
-      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-554624a10089c8b2" async="async"></script> -->
+</article>

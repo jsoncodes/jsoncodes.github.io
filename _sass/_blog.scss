@@ -4,7 +4,25 @@
 
 .post, .post-collection {
   flex: 2 0 0;
+  max-width: 70%;
   padding-right: $padding-xsmall;
+
+  .post-meta {
+    @extend %flex;
+    color: lighten($text-color, 35%);
+
+    .facebook:hover {
+      background-color: #3b5998;
+    }
+
+    .twitter:hover {
+      background-color: #6cadde;
+    }
+
+    .google-plus:hover {
+      background-color: #de4a32;
+    }
+  }
 
   .card {
     margin-left: 0;
@@ -63,6 +81,7 @@
 
   .post-content {
     margin-bottom: $margin-standard;
+    max-width: 100%;
 
     h2, h3, h4 {
       font-size: $font-size-xlarge;
@@ -128,4 +147,8 @@
     margin-bottom: $margin-standard;
     border-bottom: 1px solid darken($card-background-color, 10%);
   }
+}
+
+.post-navigation {
+  @extend %flex;
 }
