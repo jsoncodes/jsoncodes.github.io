@@ -7,6 +7,12 @@
   max-width: 70%;
   padding-right: $padding-xsmall;
 
+  @include breakpoint(tablet) {
+    max-width: 100%;
+    width: 100%;
+    flex: none;
+  }
+
   .post-meta {
     @extend %flex;
     color: lighten($text-color, 35%);
@@ -39,8 +45,17 @@
 .sidebar {
   flex: 1 0 0;
 
+  @include breakpoint(tablet) {
+    margin-top: $margin-large;
+  }
+
   .card {
     margin-bottom: $margin-standard;
+
+    @include breakpoint(tablet) {
+      margin-left: 0;
+      margin-right: 0;
+    }
 
     h2, h3 {
       border-bottom: 1px solid darken($card-background-color, 10%);

@@ -16,6 +16,7 @@
 
   div {
     display: flex;
+    @include breakpoint(tablet) { display: block; }
   }
 
   .primary-post-excerpt {
@@ -28,6 +29,14 @@
     @extend %flex;
     align-items: flex-start;
     flex: 1 1 33.3333%;
+
+    @include breakpoint(tablet) { margin: $margin-standard 0; }
+
+    // @include breakpoint(mobile) {
+    //   flex: 1 0 100%;
+    //   flex-flow: column;
+    //   flex-wrap: wrap;
+    // }
 
     &:first-child {
       margin-left: 0;
@@ -44,6 +53,7 @@
 
   .container {
     align-items: stretch;
+    @include breakpoint(tablet) { display: block; }
   }
 
   header {
@@ -51,6 +61,7 @@
     @extend %flex;
     padding-bottom: 0;
     align-items: flex-start;
+    @include breakpoint(tablet) { display: flex; }
 
     h1 {
       @extend %title;
@@ -61,6 +72,11 @@
     padding: $padding-large;
     padding-top: 0;
     flex: 1 1 33.3333%;
+
+    @include breakpoint(tablet) {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
     h1 {
       color: lighten($text-color, 40%);

@@ -44,11 +44,11 @@
   @if $point == large {
     @media (min-width: 64.375em) { @content; }
   }
-  @else if $point == medium {
-    @media (min-width: 50em) { @content; }
+  @else if $point == tablet {
+    @media (max-width: 800px) { @content; }
   }
-  @else if $point == small {
-    @media (min-width: 37.5em)  { @content; }
+  @else if $point == mobile {
+    @media (max-width: 600px)  { @content; }
   }
 }
 

@@ -12,6 +12,7 @@ button, .button {
   text-decoration: none;
   display: inline-block;
   min-width: $min-button-width;
+  @include breakpoint(mobile) { min-width: auto; }
 
   &.accent {
     background-color: $brand-color;

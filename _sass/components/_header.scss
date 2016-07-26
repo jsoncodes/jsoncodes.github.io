@@ -5,6 +5,7 @@
   background: #2A413E;
   padding: $padding-xsmall $padding-xlarge;
   z-index: 1000;
+  @include breakpoint(tablet) { justify-content: flex-start;}
 
   .brand {
     @extend %flex;
@@ -12,10 +13,16 @@
 
     h1 {
       font-weight: 600;
+      @include breakpoint(tablet) { display: none; }
     }
 
     .avatar {
       margin-right: $margin-large;
+      @include breakpoint(mobile) {
+        margin-right: 0;
+        height: 40px;
+        width: 40px;
+      }
     }
   }
 
