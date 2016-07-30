@@ -11,4 +11,14 @@
       }, 650);
     });
   });
+
+  $(document).on('click', '#contact', function (e) {
+    e.preventDefault();
+    $('.modal').addClass('active');
+  });
+
+  $(document).on('click', '[data-action=close-modal]', function (e) {
+    e.preventDefault();
+    $('.modal').removeClass('active');
+  });
 }());
