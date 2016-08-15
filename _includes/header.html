@@ -1,5 +1,5 @@
 <header class="site-header">
-  <a href="{{ site.baseurl }}/">
+  <a href="{{ site.baseurl }}/" class="brand">
     <img src="https://gravatar.com/avatar/eee690831d746dde702efabb2294c110?s=150" class="avatar" />
     <h1>
         {{ site.title }}
@@ -7,17 +7,9 @@
   </a>
 
   <nav>
-    <a href="https://github.com/{{ site.github_username }}" title="Github">
-        <i class="fa fa-github"></i>
-    </a>
-    <a href="https://twitter.com/{{ site.twitter_username}}" title="Twitter">
-        <i class="fa fa-twitter"></i>
-    </a>
-    <a href="mailto:{{ site.email }}" title="Email">
-        <i class="fa fa-envelope"></i>
-    </a>
-    <a href="{{ site.baseUrl }}/blog" title="Blog" class="blog">
-        <i class="fa fa-file-text"></i>
-    </a>
+    <a href="/">Home</a>
+    <a href="/blog/">Articles</a>
   </nav>
+
+  <button id="contact" class="accent">Contact</button>
 </header>

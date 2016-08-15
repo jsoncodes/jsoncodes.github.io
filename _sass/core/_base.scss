@@ -1,8 +1,10 @@
-$background-color: #fdfdfd;
+$background-color: rgb(240, 240, 240);
 
-$brand-color:      #518a61;
+$brand-color:      #2aa74d;
 $brand-color-dark: darken($brand-color, 10%);
 $brand-color-light: lighten($brand-color, 10%);
+
+$accent-color: #743FB4;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);

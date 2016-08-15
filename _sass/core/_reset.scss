@@ -53,6 +53,10 @@ table {
   border-spacing: 0;
 }
 
-.button {
+button, .button {
     -webkit-appearance:none;
+    border: none;
+    font-weight: 300;
+    cursor: pointer;
+    outline: none;
 }

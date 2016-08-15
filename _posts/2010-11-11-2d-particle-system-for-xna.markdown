@@ -84,4 +84,5 @@ To use the particle effect there are four steps:
 The Samples project that is bundled with the source code, demonstrates how to load and display a particle effect and since it’s pretty simple I’m not going to write about that process here.
 
 I’m happy for anyone to take this project and use it for free or tear it apart or whatever people do with things these days.  I would ask that if you do use it that you let me know and send me links to some videos that I can put up to show people what it can do.  Or if you make a particularly cool component that could be added or you want to assist with the project, I would be happy to add you as a developer on the project.
+
 _**See [http://jason-mitchell.com/game-development/supernova-particle-system-for-monogame/](http://jason-mitchell.com/game-development/supernova-particle-system-for-monogame/) for a newer version which has been updated to use MonoGame.**_

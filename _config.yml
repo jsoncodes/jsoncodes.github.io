@@ -1,13 +1,14 @@
 # Site settings
 #permalink: /blog/:categories/:title
-title: Jason Mitchell
-email: contact@jason-mitchell.com
-description: > 
-  Irish software developer in Yorkshire.  Amateur Domain Driven Designer.
+title: JSON Codes
+email: contact@json.codes
+description: >
+  Software Development in Yorkshire.  .NET, Domain Driven Design and other stuff.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://json.codes" # the base hostname & protocol for your site
 twitter_username: jmitch18
 github_username:  jasonmitchell
+linkedin_username: jasonmitchell89
 
 # Build settings
 markdown: kramdown

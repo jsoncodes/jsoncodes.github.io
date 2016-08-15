@@ -1,0 +1,22 @@
+<section class="latest-post-collection">
+  <header>
+    <h1>Latest Articles</h1>
+    <a href="/blog" class="button">View Articles</a>
+  </header>
+
+  {% for post in site.posts limit:1 %}
+      <article class="primary-post-excerpt">
+        {% include posts/excerpt-header.html %}
+        {{ post.excerpt }}
+      </article>
+  {% endfor %}
+
+  <div>
+    {% for post in site.posts offset:1 limit:3 %}
+        <article class="post-excerpt">
+          {% include posts/excerpt-header.html %}
+          {{ post.excerpt | truncatewords: 30 }}
+        </article>
+    {% endfor %}
+  </div>
+</section>

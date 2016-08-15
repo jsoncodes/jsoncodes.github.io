@@ -83,9 +83,9 @@ Now we will create our **ViewModel** class called TweetViewModel.  The ViewMode
 
 
 
-[![image](/images/blog/MVVMforSilverlightWindowsPhone7App_E533/image_thumb_3.png)](/images/blog/MVVMforSilverlightWindowsPhone7App_E533/image_3.png) Next, I created the **View** for my application.  The View refers to all our visual elements and will bind to our ViewModel.  At this point, we can now use Blend's sample data feature to style our View without needing to write any code to download tweets.  This is a great feature for designing an application in Blend.  We can create our sample data from an existing class in our project but first we will need to build it from Blend's project menu.  Once it has been built, we can open the Data pane on the right-hand side, click the second button from the right, and then select "Create Sample Data from Class..." and then select our TweetViewModel class from the list.
+Next, I created the **View** for my application.  The View refers to all our visual elements and will bind to our ViewModel.  At this point, we can now use Blend's sample data feature to style our View without needing to write any code to download tweets.  This is a great feature for designing an application in Blend.  We can create our sample data from an existing class in our project but first we will need to build it from Blend's project menu.  Once it has been built, we can open the Data pane on the right-hand side, click the second button from the right, and then select "Create Sample Data from Class..." and then select our TweetViewModel class from the list.
 
-
+[![image](/images/blog/MVVMforSilverlightWindowsPhone7App_E533/image_thumb_3.png)](/images/blog/MVVMforSilverlightWindowsPhone7App_E533/image_3.png)
 
 
 In order to display our sample data, expand the TweetViewModel source and drag the Tweets collection to the controls LayoutRoot grid.  This will create a ListBox containing the sample data; reset it's margins to make it fill the entire grid.  You can now style the individual list items by editing the ListBox's ItemTemplate.

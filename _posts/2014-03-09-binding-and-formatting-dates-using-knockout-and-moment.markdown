@@ -3,6 +3,7 @@ comments: true
 date: 2014-03-09 15:07
 layout: post
 title: Binding and formatting dates using Knockout and Moment JS
+series: "ASP.NET MVC and KnockoutJS"
 ---
 
 This article is the fourth in a series of working with KnockoutJS and ASP.NET MVC. This article is not strictly about
@@ -16,7 +17,7 @@ the series:
 
 Note a sample project for this series of articles will be available [on Github](https://github.com/jasonmitchell/aspnetmvc-knockoutjs-quickstart)
 
-##The code
+## The code
 There isn’t a lot of code to this article; this sample is mostly based on the dynamic model loading sample from
 [a previous article](/blog/creating-knockoutjs-model-from-aspnet-mvc-model/). This sample makes use of the custom
 binding functionality in KnockoutJS which I’m not going to go through step by step. If you want to understand custom

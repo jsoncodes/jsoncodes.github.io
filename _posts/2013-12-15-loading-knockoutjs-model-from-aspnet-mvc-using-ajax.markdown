@@ -3,6 +3,7 @@ comments: true
 date: 2013-12-15 11:47
 layout: post
 title: Loading a KnockoutJS model from and ASP.NET MVC controller using ajax
+series: "ASP.NET MVC and KnockoutJS"
 ---
 
 This article will demonstrate how to load a KnockoutJS view model from a C# controller using ajax in an ASP.NET MVC
@@ -13,7 +14,7 @@ project and will build on the code from the previous articles in the series:
 
 Note a sample project for this series of articles will be available [on Github](https://github.com/jasonmitchell/aspnetmvc-knockoutjs-quickstart)
 
-##The code
+## The code
 I’m just going to jump straight into the code for this sample. To get started we need to create a new action in
 the controller. For the purposes of this sample this action will return a randomly populated Person object (see
 the previous articles for the definition) so that we can see the content changing. Here is the action:
@@ -49,6 +50,6 @@ and a link which is bound to the view models “getRandomModel” function.
 
 And that’s all there is to it. Please leave a comment if you have any questions.
 
-##What's next?
+## What's next?
 
 Next up in the series is creating a custom Knockout date binding which makes use of [Moment.js](http://momentjs.com/).

@@ -1,66 +1,51 @@
 .site-header {
+  @extend %flex;
   position: fixed;
   width: 100%;
-  height: 50px;
-  background: transparent;
-  padding: 0 $padding-xlarge;
+  background: #2A413E;
+  padding: $padding-xsmall $padding-xlarge;
   z-index: 1000;
-  transition: background .2s;
-  @include clearfix;
+  @include breakpoint(tablet) { justify-content: flex-start;}
 
-  &.solid {
-    background: $brand-color;
+  .brand {
+    @extend %flex;
+    align-items: center;
 
-    nav {
-      a {
-        color: #000000;
-        opacity: 0.4;
+    h1 {
+      font-weight: 600;
+      @include breakpoint(tablet) { display: none; }
+    }
 
-        &:hover {
-          color: #ffffff;
-          opacity: 1;
-        }
+    .avatar {
+      margin-right: $margin-large;
+      @include breakpoint(mobile) {
+        margin-right: 0;
+        height: 40px;
+        width: 40px;
       }
     }
   }
 
-  .avatar {
-    float: left;
-    border: 1px solid $text-color-light;
-    height: 40px;
-    width: 40px;
-    margin: 5px $margin-small 5px 0;
-    float: left;
+  %nav-button {
+    @extend .button;
+    border: none;
+    color: $text-color-light;
 
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px;
-  }
-
-  h1 {
-    float: left;
-    padding: $padding-small 0;
+    &:visited, &:hover {
+      color: $text-color-light;
+    }
   }
 
   nav {
-    float: right;
     padding: $padding-small 0;
 
     a {
-      margin-left: $margin-small;
-      color: #ffffff;
-      opacity: 0.6;
-      transition: color .3s, opacity .3s;
-      width: 22px;
-      display: inline-block;
-      text-align: center;
-
-      &.blog {
-        font-size: 15px;
-      }
+      @extend %nav-button;
+      margin: 0 $margin-xsmall;
+      background-color: transparent;
 
       &:hover {
-        opacity: 1;
+        background-color: $brand-color;
       }
     }
   }

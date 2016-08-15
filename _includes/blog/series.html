@@ -1,0 +1,14 @@
+{% assign series_groups = site.posts | group_by: 'series' | sort: 'name' %}
+
+<div class="card">
+  <h3>Series</h3>
+
+  <nav>
+    {% for series in series_groups %}
+      {% if series.name != '' %}
+        {% assign first_post = series.items | sort: 'date' | first %}
+        <a href="{{ first_post.url | prepend: site.baseurl }}">{{series.name}}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+</div>

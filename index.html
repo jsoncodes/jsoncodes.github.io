@@ -4,7 +4,7 @@ layout: main
 
 <header class="cover">
   <div class="container">
-    <h2>Irish software developer in Yorkshire</h2>
+    <h2>Software Development in Yorkshire</h2>
     <h3>.NET, Domain Driven Design and other stuff</h3>
   </div>
 
@@ -16,34 +16,11 @@ layout: main
 </header>
 
 <section id="content" class="content">
-  <section class="post-collection">
-    <a href="/blog" class="view-all">View all</a>
-    <h1>Recent Posts</h1>
+  {% include home/latest-articles.html %}
+</section>
 
-    {% for post in site.posts limit:1 %}
-        <article class="primary-post-excerpt">
-            <h2>
-                <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a>
-            </h2>
-
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-            {{ post.excerpt }}
-        </article>
-    {% endfor %}
-
-    <div>
-      {% for post in site.posts offset:1 limit:3 %}
-          <article class="post-excerpt">
-              <h2>
-                  <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a>
-              </h2>
-
-              <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-              {{ post.excerpt | truncatewords: 30 }}
-          </article>
-      {% endfor %}
+<section class="modal">
+    <div class="modal-content">
+      {% include home/contact.html %}
     </div>
-  </section>
 </section>

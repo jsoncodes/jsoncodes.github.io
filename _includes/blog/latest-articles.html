@@ -1,0 +1,9 @@
+<div class="card">
+  <h3>Latest Articles</h3>
+
+  <nav>
+    {% for post in site.posts limit:5 %}
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    {% endfor %}
+  </nav>
+</div>

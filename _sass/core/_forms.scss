@@ -1,0 +1,33 @@
+form {
+  header {
+    h2 {
+      font-size: $font-size-xlarge;
+    }
+  }
+
+  input, textarea {
+    font-size: $font-size-standard;
+    padding: $padding-small;
+    margin: $margin-standard 0;
+    background-color: #fff;
+    border: 1px solid lighten($text-color, 65%);
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    @include border-radius(3px);
+  }
+
+  textarea {
+    height: 200px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      min-width: auto;
+      margin-left: $margin-small;
+    }
+  }
+}

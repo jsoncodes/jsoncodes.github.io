@@ -1,32 +1,25 @@
 ---
-layout: default
+layout: blog
 ---
 
-<div class="page">
-
+<div class="post-collection">
   {% for post in paginator.posts %}
-  <article class="post-excerpt">
-    <h2>
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </h2>
-
-    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-    {{ post.excerpt }}
-  </article>
-
+    {% include posts/excerpt.html %}
   {% endfor %}
 
   <div class="pagination">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; Previous</a>
+      <a href="{{ paginator.previous_page_path }}" class="button previous">&laquo; Previous</a>
+    {%else %}
+      &nbsp;
     {% endif %}
 
-    <span class="page_number ">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    <span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
 
     {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">Next &raquo;</a>
+      <a href="{{ paginator.next_page_path }}" class="button next">Next &raquo;</a>
+    {% else %}
+      &nbsp;
     {% endif %}
   </div>
-
 </div>

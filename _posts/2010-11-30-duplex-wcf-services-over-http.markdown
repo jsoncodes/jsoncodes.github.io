@@ -45,7 +45,7 @@ To consume this service I created a class which implements the service’s callb
 Implementing the callback interface threw me a bit because I couldn’t use my interface defined in the services project (called IDataOutputCallback).  I tried to add a reference in my client project to my services project and used the interface from there and got the following exception when you try to consume the service:
 
 
-_The InstanceContext provided to the ChannelFactory contains a UserObject that does not implement the CallbackContractType 'ConsoleApplication1.ServiceReference1.IServiceWithCallbackCallback'._
+> _The InstanceContext provided to the ChannelFactory contains a UserObject that does not implement the CallbackContractType 'ConsoleApplication1.ServiceReference1.IServiceWithCallbackCallback'._
 
 
 This showed that by adding a new service reference, we not only get a proxy class generated but also a new callback interface with a different name to the original one.  This new name is of the format “&lt;ServiceContractName&gt;Callback” hence the confusing generated interface name in my exception above.

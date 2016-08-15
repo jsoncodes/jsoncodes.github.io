@@ -3,6 +3,7 @@ comments: true
 date: 2013-09-27 17:26
 layout: post
 title: Creating a KnockoutJS model from an ASP.NET MVC model
+series: "ASP.NET MVC and KnockoutJS"
 ---
 
 This article will demonstrate how to dynamically create a KnockoutJS view model from a C# model in an ASP.NET MVC
@@ -10,12 +11,12 @@ project and will build on the code from the previous article Getting Started Wit
 
 _**Note a sample project for this series of articles will be available [on Github](https://github.com/jasonmitchell/aspnetmvc-knockoutjs-quickstart)**_
 
-##The problem
+## The problem
 In the previous article I showed how to load and populate an existing KnockoutJS view model which mirrored the
 properties of a C# model. There is an obvious problem relating to maintainability here; when the **C# model changes
 we need to manually update the KnockoutJS view model**. Fortunately there is a solution!
 
-##The solution
+## The solution
 To deal with this problem we can use **the [Knockout Mapping plugin](http://knockoutjs.com/documentation/plugins-mapping.html)
 which provides functionality to map JSON to KnockoutJS observables**; you can either get it from the Knockout website
 or through [NuGet](http://www.nuget.org/packages/Knockout.Mapping/).
@@ -47,6 +48,6 @@ the Persons full name which can be bound to in the view. This view model can the
 
 {% gist jasonmitchell/6727372 DynamicModelLoadingWithClientSideFunctions.cshtml %}
 
-##What's next?
+## What's next?
 In the next article I will be creating a sample to show how to asynchronously load and update a dynamically created view
 model from the server using ajax.

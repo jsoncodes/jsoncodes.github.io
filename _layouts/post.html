@@ -1,67 +1,35 @@
 ---
-layout: default
+layout: blog
 ---
 
-{% if page.cover %}
-  <header class="post-cover">
-    <img src="{{page.cover}}" alt="{{page.cover-alt}}" />
-    <div class="post-cover-inner">
-      <h1>{{ page.title }}</h1>
-    </div>
-  </header>
-{% endif %}
-
-<div class="post">
+<article class="post">
+  <div class="post-body">
     {% if page.cover %}
-      <p class="post-meta">
-        {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
-        &nbsp;|&nbsp;&nbsp;<a href="/blog">All posts</a>
-      </p>
-    {% else %}
-      <header>
+      <header class="post-cover">
+        <img src="{{page.cover}}" alt="{{page.cover-alt}}" />
+        <div class="post-cover-inner">
           <h1>{{ page.title }}</h1>
-          <p class="post-meta">
-            {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
-            &nbsp;|&nbsp;&nbsp;<a href="/blog">All posts</a>
-          </p>
+        </div>
       </header>
     {% endif %}
-    <article class="post-content">
-        {{ content }}
-    </article>
 
-    <div class="addthis_sharing_toolbox"></div>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-554624a10089c8b2" async="async"></script>
+    <div class="post-content">
+      {% if page.cover %}
+        {% include posts/meta.html %}
+      {% else %}
+        <header>
+          {% include posts/meta.html %}
+          <h1>{{ page.title }}</h1>
+        </header>
+      {% endif %}
 
-    <div class="post-navigation">
-        {% if page.previous.url %}
-            <a class="previous" href="{{page.previous.url}}" title="Previous Post:{{page.previous.title}}">
-                <label>Previous article</label>
-                &laquo; {{page.previous.title}}
-            </a>
-        {% endif %}
-
-        {% if page.next.url %}
-            <a class="next" href="{{page.next.url}}" title="Next Post:{{page.next.title}}">
-                <label>Next article</label>
-                {{page.next.title}} &raquo;
-            </a>
-        {% endif %}
+      {{ content }}
     </div>
+  </div>
 
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES * * */
-        var disqus_shortname = 'jsoncodes';
 
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function () {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
+  {% include posts/series-list.html %}
+  {% include posts/disqus.html %}
+  {% include posts/navigation.html %}
 
-</div>
+</article>

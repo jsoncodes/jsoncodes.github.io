@@ -2,7 +2,30 @@ $on-mobile: 600px;
 $on-desktop: 800px;
 
 %content {
-  max-width: 1120px;
+  max-width: 1280px;
   padding: $padding-xlarge $padding-large;
   margin: 0 auto;
+}
+
+%flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  @extend %content;
+  @extend %flex;
+}
+
+.avatar {
+  height: 50px;
+  width: 50px;
+  @include border-radius(100%);
+
+  &.full {
+    height: 100%;
+    width: 100%;
+  }
 }

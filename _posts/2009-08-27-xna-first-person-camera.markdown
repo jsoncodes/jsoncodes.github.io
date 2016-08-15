@@ -32,7 +32,7 @@ To create the **Projection matrix**, we need to know the angle of the field of v
 
 For my game, I decided to make a base **camera** class which handles all this for me so I don't need to worry about it again.  The code for this class is very straight forward and simply handles the basic camera functionality.
 
-Camera.cs
+### Camera.cs
 
 
     using Microsoft.Xna.Framework;
@@ -80,7 +80,7 @@ For this class, I have made all it's variables public for the purposes of this a
 
 All this class does is allow us to point the camera in one direction and does not have any built in functionality for movement so that is our next step.  So far, I've always found myself wanting to be able to move around and get a better look at what I'm currently working on, so for that reason my next step was to create a **first person camera**.  This was a bit trickier, however with a bit of playing around I was eventually able to get it working!  Following is the code for the class and then I will explain it a bit afterwards.
 
-FirstPersonCamera.cs
+### FirstPersonCamera.cs
 
 
     using Microsoft.Xna.Framework;
@@ -128,7 +128,7 @@ It is worth noting that if you are rotating in any possible combination of the x
 
 Lastly we will need a way to test our camera out so here is a small class I used for my testing; I'm not going to explain it as it's all fairly straight forward!
 
-Game1.cs
+### Game1.cs
 
 
     using Microsoft.Xna.Framework;

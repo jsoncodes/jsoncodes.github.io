@@ -1,10 +1,11 @@
-@import "//fonts.googleapis.com/css?family=Open+Sans:300";
+@import "//fonts.googleapis.com/css?family=Open+Sans:300,600";
 
 $font-stack: 'Open Sans', sans-serif;
 $font-size-title: 32px;
 $font-size-xlarge: 24px;
 $font-size-large: 18px;
 $font-size-standard: 16px;
+$font-size-small: 14px;
 $font-size-xsmall: 12px;
 $base-line-height: 1.5;
 
@@ -45,7 +46,7 @@ a {
 
 p {
   margin: $margin-standard 0;
-  line-height: $font-size-standard * 1.25;
+  line-height: $font-size-standard * 1.5;
 }
 
 em {

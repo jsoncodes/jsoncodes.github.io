@@ -1,43 +1,12 @@
 .site-footer {
-  @include clearfix;
-  @extend %content;
-  margin-bottom: $margin-xsmall;
+  background-color: #fff;
 
-  .avatar {
-    border: 2px solid $brand-color-dark;
-    height: 50px;
-    width: 50px;
-    margin-right: $margin-large;
-    float: left;
+  .brand {
+    @extend %flex;
+    flex: none;
 
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-  }
-
-  .contact-list,
-  .social-media-list {
-    list-style: none;
-    margin-left: 0;
-  }
-
-  .contact-list {
-    float: left;
-  }
-
-  .social-media-list {
-    float: right;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  @media screen and (max-width: 450px) {
-    .avatar, .contact-list, .social-media-list {
-      display: block;
-      float: none;
-      margin-bottom: $margin-small;
+    .avatar {
+      margin-right: $margin-large;
     }
   }
 }
