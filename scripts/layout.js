@@ -5,7 +5,7 @@
     var $header = $('.site-header');
 
     $('#scroll-down').click(function() {
-      var $target = $('#about-me');
+      var $target = $('#content');
       $('html, body').animate({
         scrollTop: $target.offset().top - $header.outerHeight()
       }, 650);
