@@ -1,10 +1,10 @@
 ---
 comments: true
 date: 2016-06-21 00:00:00
-layout: series-post
+layout: post
 title: Versioning Events
 series: event-sourcing
-published: true
+published: false
 ---
 
 Sometimes things change - the events themselves may change over time because software never stands still

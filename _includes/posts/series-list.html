@@ -7,9 +7,19 @@
         {% if page.series == post.series %}
         <li>
           {% if page.url == post.url %}
-            {{ post.title }}
+            {% if post.series_post_title %}
+              {{ post.series_post_title }}
+            {% else %}
+              {{ post.title }}
+            {% endif %}
           {% else %}
-            <a href="{{ post.url | prepend: site.baseUrl }}">{{ post.title }}</a>
+            <a href="{{ post.url | prepend: site.baseUrl }}">
+              {% if post.series_post_title %}
+                {{ post.series_post_title }}
+              {% else %}
+                {{ post.title }}
+              {% endif %}
+            </a>
           {% endif %}
         </li>
         {% endif %}

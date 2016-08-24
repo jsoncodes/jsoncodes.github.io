@@ -1,10 +1,10 @@
 ---
 comments: true
 date: 2016-06-24 00:00:00
-layout: series-post
+layout: post
 title: Event Store Operations
 series: event-sourcing
-published: true
+published: false
 ---
 
 GES is operationally unfamiliar for many devs

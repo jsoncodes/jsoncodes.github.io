@@ -1,10 +1,10 @@
 ---
 comments: true
 date: 2016-06-23 00:00:00
-layout: series-post
+layout: post
 title: Creating Projections From an Event Store
 series: event-sourcing
-published: true
+published: false
 ---
 
 Projections are the read model. They are a pre-generated view of the event store in some convenient query mechanism.  e.g. sql, redis etc

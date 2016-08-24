@@ -1,10 +1,10 @@
 ---
 comments: true
 date: 2016-06-25 00:00:00
-layout: series-post
+layout: post
 title: Removing Data From an Event Store
 series: event-sourcing
-published: true
+published: false
 ---
 
 Compliance reasons

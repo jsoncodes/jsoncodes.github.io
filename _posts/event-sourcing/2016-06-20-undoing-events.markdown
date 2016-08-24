@@ -1,10 +1,10 @@
 ---
 comments: true
 date: 2016-06-20 00:00:00
-layout: series-post
+layout: post
 title: Undoing Events
 series: event-sourcing
-published: true
+published: false
 ---
 
 Reminder that streams are append only so we can't actually be remove old events

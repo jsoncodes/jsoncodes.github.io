@@ -1,10 +1,10 @@
 ---
 comments: true
 date: 2016-06-19 00:00:00
-layout: series-post
+layout: post
 title: The Basics of Event Sourcing
 series: event-sourcing
-published: true
+published: false
 ---
 
 What is an event? (historical record of something that happened)
