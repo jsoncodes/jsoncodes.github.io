@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2016-06-18 00:00:00
+date: 2016-08-30 00:00:00
 layout: post
 title: Things You Need to Know Before Event Sourcing
 series: Things You Need to Know Before Event Sourcing
@@ -16,9 +16,8 @@ Event sourcing is not a top-level architecture that needs to be applied to the e
 
 The list of topics I plan to cover includes:
 
-- Introduction to [Event Store](http://geteventstore.com)
 - Basics of event sourcing
-- Introduction to CQRS
+- Introduction to [Event Store](http://geteventstore.com)
 - Event versioning
 - Event sourcing and Domain Driven Design (including example code for event sourced aggregates)
 - Projections and read models
@@ -35,4 +34,6 @@ When it comes to event stores there are a few choices:
 - [SQL Stream Store](https://github.com/damianh/SqlStreamStore)
 - [Marten](https://github.com/JasperFx/marten)
 
-I'm sure there are others and you can always implement your own event storage mechanism if you wish using an RDBMS or document database.  Throughout this series I will be focusing on the use of Event Store/GES (known simply as Event Store from this point forward) - and with that it's on to the first article.
+I'm sure there are others and you can always implement your own event storage mechanism if you wish using an RDBMS or document database; throughout this series I will be focusing on the use of Event Store/GES (known simply as Event Store from this point forward).
+
+The [first article](/blog/basics-of-event-sourcing) in this series will introduce the basics of event sourcing before digging into more detailed topics.
