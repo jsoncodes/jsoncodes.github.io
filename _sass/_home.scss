@@ -50,22 +50,18 @@
     @include breakpoint(tablet) { display: block; }
   }
 
-  header {
+  footer {
     @extend .container;
     @extend %flex;
-    padding-bottom: 0;
-    align-items: flex-start;
+    padding-top: 0;
+    justify-content: flex-end;
     @include breakpoint(tablet) { display: flex; }
-
-    h1 {
-      @extend %title;
-    }
   }
 
-  .technology {
+  aside {
     padding: $padding-large;
     padding-top: 0;
-    flex: 1 1 33.3333%;
+    flex: 1 1 50%;
 
     @include breakpoint(tablet) {
       padding-left: 0;
@@ -73,13 +69,7 @@
     }
 
     h1 {
-      color: lighten($text-color, 40%);
-      text-shadow: -1px -1px 0 lighten($text-color, 30%);
-      font-size: $font-size-xlarge * 2;
-      font-weight: 600;
-      margin-top: 0;
-      text-transform: lowercase;
-      text-align: center;
+      @extend %title;
     }
 
     &:first-child {
