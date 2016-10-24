@@ -1,10 +1,10 @@
 ---
 comments: true
-date: 2016-06-19 00:00:00
+date: 2016-09-04 00:00:00
 layout: post
-title: The Basics of Event Sourcing
+title: Introduction to Event Store
 series: Things You Need to Know Before Event Sourcing
-published: false
+published: true
 ---
 
 Server

@@ -11,9 +11,9 @@ In this article I will briefly explain some of the core concepts in event sourci
 
 ## Events and Streams
 
-The basic principle of event sourcing is to store all changes of state in sequence rather than the current state.  These changes of state are called **events** and they are historical records of something that has occurred within the application; they are _facts_.  The sequence of events is known as a **stream**; events are saved to a stream in the order that they occurred.  These streams can then be replayed in order to reproduce state in the system.
+The basic principle of event sourcing is to store all changes of state in sequence rather than the current state.  These changes of state are called **events** and they are historical records of something that has occurred within the application; they are _facts_.  The sequence of events is known as a **stream**; events are saved to a stream in the order that they occurred.  These streams can then be replayed in order to reproduce state in the system.  The number of streams in an event store will vary based on specific application needs as there are no predefined rules on how events are partitioned.
 
-Typically, though not always, streams are treated as **append-only** and events cannot be modified once saved to a stream. This means that once an event has occurred within a system and been saved the record of it is always preserved.  There are some consequences to this that will be explored in a later article.
+Typically streams are treated as **append-only** and events cannot be modified once saved to a stream. This means that once an event has occurred within a system and been saved the record of it is always preserved.  There are some consequences to this that will be explored in a later article.
 
 ## Read Models and Projections
 
