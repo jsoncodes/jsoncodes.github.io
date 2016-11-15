@@ -8,9 +8,9 @@ series_post_title: Introduction
 published: true
 ---
 
-Event sourcing is a popular topic these days which I have found quite difficult to gather information on the realities of implementing and maintaining.  This series is aimed at providing a practical guide (including some .NET code samples) of things you need to know before building an event sourced application.
+Event sourcing is becoming a popular topic with a lot of information and talks available online describing the theory however in my experience I have found that information about event sourcing in practice is harder to come by.  This series is aimed at providing a practical guide (including some .NET code samples) of things you need to know before building an event sourced application.
 
-Event sourcing is not a top-level architecture that needs to be applied to the entire system but rather should be applied where appropriate within your software.  It is also not a magical silver bullet that will make everything perfect and I have found that in reality you trade one set of problems for another.  That said, event sourcing opens up a lot of interesting possibilities for your application which I will cover throughout.
+I am going to assume some knowledge of the theory of event sourcing (as there are better sources for this) though I will provide a quick introduction to the core concepts.
 
 ## Topics Covered
 
@@ -35,5 +35,7 @@ When it comes to event stores there are a few choices:
 - [Marten](https://github.com/JasperFx/marten)
 
 I'm sure there are others and you can always implement your own event storage mechanism if you wish using an RDBMS or document database; throughout this series I will be focusing on the use of Event Store/GES (known simply as Event Store from this point forward).
+
+## Up Next
 
 The [first article](/blog/basics-of-event-sourcing) in this series will introduce the basics of event sourcing before digging into more detailed topics.
