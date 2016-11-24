@@ -5,7 +5,6 @@ layout: post
 title: Things You Need to Know Before Event Sourcing
 series: Things You Need to Know Before Event Sourcing
 series_post_title: Introduction
-published: true
 ---
 
 Event sourcing is becoming a popular topic with a lot of information and talks available online describing the theory however in my experience I have found that information about event sourcing in practice is harder to come by.  This series is aimed at providing a practical guide (including some .NET code samples) of things you need to know before building an event sourced application.
@@ -18,9 +17,9 @@ The list of topics I plan to cover includes:
 
 - Basics of event sourcing
 - Introduction to [Event Store](http://geteventstore.com)
-- Event versioning
 - Event sourcing and Domain Driven Design (including example code for event sourced aggregates)
 - Projections and read models
+- Event versioning
 - Event Store operations
 
 I won't claim to have all the answers in this series and will be asking some questions throughout that you should perhaps ask yourself (and share your answers for) before making use of event sourcing.

@@ -4,12 +4,13 @@ date: 2016-08-30 00:00:01
 layout: post
 title: The Basics of Event Sourcing
 series: Things You Need to Know Before Event Sourcing
-published: true
 ---
 
 In this article I will briefly explain some of the core concepts in event sourcing; it is important to explain these now as I will be using the terminology introduced in this article throughout the series.
 
 Event sourcing is not a top-level architecture that should be applied to the entire system but rather applied where appropriate within your software.  It is not a silver bullet and in fact you may find that by applying event sourcing you are trading one set of problems for another.  That said, event sourcing opens up a lot of interesting possibilities for your application which I will cover throughout this series.
+
+Before proceeding it's important to clarify that event sourcing is not directly related to Domain Driven Design and while both are regularly described together, they are actually distinct things which can be used without each other.
 
 ## Events and Streams
 
@@ -42,4 +43,5 @@ It also comes with some disadvantages:
 - Less commonly known so new team members may have additional on-boarding time
 
 ## Up Next
+
 The [next article](/blog/introduction-to-event-store) will take a look at Event Store which I will be using throughout this series.
