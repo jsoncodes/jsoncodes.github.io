@@ -6,6 +6,8 @@ title: The Basics of Event Sourcing
 series: Things You Need to Know Before Event Sourcing
 ---
 
+WORK IN: "State changes should be an explicit part of our (domain) model, and have names"
+
 Event sourcing can open up a lot of interesting possibilities within software but it is important to be aware of the fact that it comes with its own set of problems in exchange. It's important to clarify that event sourcing is not directly related to Domain Driven Design and while both are regularly described together, they are distinct things which can be used without each other.
 
 ## Events and Streams
