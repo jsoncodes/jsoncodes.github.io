@@ -3,6 +3,7 @@ comments: true
 date: 2015-05-06 17:24
 layout: post
 title: Goodbye Wordpress, hello Jekyll!
+published: false
 ---
 
 Ever since I started blogging back in 2009 I've always run it on Wordpress.  I always found Wordpress to be okay but was never
