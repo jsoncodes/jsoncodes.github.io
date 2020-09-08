@@ -7,6 +7,8 @@ import Layout from 'components/layout'
 import SEO from 'views/seo'
 import { rhythm } from 'utils/typography'
 
+import ArticleCard from 'components/article-card'
+
 const PostTitle = styled.h3`
   margin-bottom: ${rhythm(1 / 4)};
 `
@@ -21,30 +23,39 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Home" />
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
+
         return (
-          <article key={node.fields.slug}>
-            <header>
-              <PostTitle>
-                <PostLink to={node.fields.slug}>
-                  {title}
-                </PostLink>
-              </PostTitle>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
+          <ArticleCard>
+            {title}
+          </ArticleCard>
         )
+
+        // const title = node.frontmatter.title || node.fields.slug
+        // return (
+        //   <article key={node.fields.slug}>
+        //     <header>
+        //       <PostTitle>
+        //         <PostLink to={node.fields.slug}>
+        //           {title}
+        //         </PostLink>
+        //       </PostTitle>
+        //       <small>{node.frontmatter.date}</small>
+        //     </header>
+        //     <section>
+        //       <p
+        //         dangerouslySetInnerHTML={{
+        //           __html: node.frontmatter.description || node.excerpt,
+        //         }}
+        //       />
+        //     </section>
+        //   </article>
+        // )
       })}
+      <Link to="/posts">All posts</Link>
     </Layout>
   )
 }
@@ -58,20 +69,20 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
+    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, limit: 6) {
+    edges {
+      node {
+        frontmatter {
+          title
+          date(formatString: "DD MMM YYYY")
+        }
+        timeToRead
+        excerpt
+        fields {
+          slug
         }
       }
     }
+  }
   }
 `

@@ -48,6 +48,39 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  const postsPerPage = 6
+  const numPages = Math.ceil(posts.length / postsPerPage)
+  Array.from({ length: numPages }).forEach((_, i) => {
+    const currentPage = i + 1;
+    const previousPage = currentPage > 1 ? currentPage - 1 : undefined;
+    const nextPage = currentPage < numPages ? currentPage + 1 : undefined;
+
+    let previousPageLink;
+    if (previousPage === 1) {
+      previousPageLink = '/posts';
+    } else if (previousPage !== undefined) {
+      previousPageLink = `/posts/${previousPage}`;
+    }
+
+    let nextPageLink;
+    if (nextPage !== undefined) {
+      nextPageLink = `/posts/${nextPage}`;
+    }
+
+    createPage({
+      path: i === 0 ? `/posts` : `/posts/${currentPage}`,
+      component: path.resolve("./src/templates/post-list.js"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: currentPage,
+        previousPageLink: previousPageLink,
+        nextPageLink: nextPageLink
+      },
+    })
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
