@@ -1,10 +1,33 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import styled from 'styled-components'
+import { Link, graphql } from 'gatsby'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import Bio from 'views/bio'
+import Layout from 'components/layout'
+import SEO from 'views/seo'
+import { rhythm } from 'utils/typography'
+
+const PostTitle = styled.h1`
+  margin-top: ${rhythm(1)};
+  margin-bottom: 0;
+`
+
+const PostDatestamp = styled.p`
+  display: block;
+  margin-bottom: ${rhythm(1)};
+`
+
+const Divider = styled.hr`
+  margin-bottom: ${rhythm(1)};
+`
+
+const NavigationLinks = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+`
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -19,45 +42,22 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <article>
         <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
+          <PostTitle>
             {post.frontmatter.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
+          </PostTitle>
+          <PostDatestamp>
             {post.frontmatter.date}
-          </p>
+          </PostDatestamp>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <Divider />
         <footer>
           <Bio />
         </footer>
       </article>
 
       <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        <NavigationLinks>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -72,7 +72,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </Link>
             )}
           </li>
-        </ul>
+        </NavigationLinks>
       </nav>
     </Layout>
   )

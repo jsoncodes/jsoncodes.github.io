@@ -1,10 +1,19 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import styled from 'styled-components'
+import { Link, graphql } from 'gatsby'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import Bio from 'views/bio'
+import Layout from 'components/layout'
+import SEO from 'views/seo'
+import { rhythm } from 'utils/typography'
+
+const PostTitle = styled.h3`
+  margin-bottom: ${rhythm(1 / 4)};
+`
+
+const PostLink = styled(Link)`
+  box-shadow: none;
+`
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -19,15 +28,11 @@ const BlogIndex = ({ data, location }) => {
         return (
           <article key={node.fields.slug}>
             <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+              <PostTitle>
+                <PostLink to={node.fields.slug}>
                   {title}
-                </Link>
-              </h3>
+                </PostLink>
+              </PostTitle>
               <small>{node.frontmatter.date}</small>
             </header>
             <section>

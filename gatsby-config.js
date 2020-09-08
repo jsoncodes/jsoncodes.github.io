@@ -1,14 +1,16 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Jason Mitchell`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Jason Mitchell`,
+      summary: `hurr durr herp a derp`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `https://jasonmitchell.dev`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `jmitch18`,
     },
   },
   plugins: [
@@ -70,12 +72,22 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
+    { 
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        components: path.join(__dirname, 'src/components'),
+        views: path.join(__dirname, 'src/views'),
+        pages: path.join(__dirname, 'src/pages'),
+        templates: path.join(__dirname, 'src/templates'),
+        utils: path.join(__dirname, 'src/utils')
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
