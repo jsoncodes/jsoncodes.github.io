@@ -1,0 +1,7 @@
+namespace Hello
+{
+    class Derp
+    {
+
+    }
+}

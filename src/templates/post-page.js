@@ -37,6 +37,10 @@ const Body = styled.section`
   h1, h2, h3 {
     margin-bottom: 0.75em;
   }
+
+  pre {
+    font-size: 14px;
+  }
 `
 
 const Footer = styled.footer`
