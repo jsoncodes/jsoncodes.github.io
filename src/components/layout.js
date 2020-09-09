@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import Image from 'gatsby-image'
-import { accent } from 'utils/palette'
+import { accent, subtle } from 'utils/palette'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -71,6 +71,12 @@ const ProfileImage = styled(Image).attrs(_ => ({
   border-radius: 100%;
 `
 
+const Footer = styled.footer`
+  margin-top: 1.5em;
+  text-align: right;
+  color: ${subtle};
+`
+
 const Layout = ({title, children }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -111,11 +117,9 @@ const Layout = ({title, children }) => {
           </TitleLink>
         </Header>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer>
+          © {new Date().getFullYear()}, Jason Mitchell
+        </Footer>
       </SiteContainer>
     </>
   )
