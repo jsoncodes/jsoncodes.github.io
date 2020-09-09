@@ -11,6 +11,8 @@ module.exports = {
     siteUrl: `https://jasonmitchell.dev`,
     social: {
       twitter: `jmitch18`,
+      github: `jasonmitchell`,
+      linkedin: `jasonmitchell89`,
     },
   },
   plugins: [
@@ -85,9 +87,11 @@ module.exports = {
         views: path.join(__dirname, 'src/views'),
         pages: path.join(__dirname, 'src/pages'),
         templates: path.join(__dirname, 'src/templates'),
+        layouts: path.join(__dirname, 'src/layouts'),
         utils: path.join(__dirname, 'src/utils')
       }
-    }
+    },
+    `gatsby-plugin-styled-components`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -1,6 +1,9 @@
 ---
 title: My Fifth Post!
 date: "2020-05-07T23:46:37.121Z"
+coverImage: ./mobo-small.jpg
+subject: Test Subject
+description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
 
 Wow! I love blogging so much already.

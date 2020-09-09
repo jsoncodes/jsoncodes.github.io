@@ -1,6 +1,8 @@
 ---
 title: My Seventh Post!
 date: "2020-05-10T23:46:37.121Z"
+coverImage: ./mobo.jpg
+subject: Test Subject
 ---
 
 Wow! I love blogging so much already.

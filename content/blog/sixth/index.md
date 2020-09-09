@@ -1,6 +1,7 @@
 ---
 title: My Sixth Post!
 date: "2020-05-08T23:46:37.121Z"
+coverImage: ./mobo-small.jpg
 ---
 
 Wow! I love blogging so much already.

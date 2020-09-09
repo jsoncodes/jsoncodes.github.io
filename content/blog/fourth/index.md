@@ -1,6 +1,8 @@
 ---
 title: My Fourth Post!
 date: "2020-05-06T23:46:37.121Z"
+coverImage: ./mobo-small.jpg
+subject: Test Subject
 ---
 
 Wow! I love blogging so much already.

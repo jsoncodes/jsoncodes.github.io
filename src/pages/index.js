@@ -1,20 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link, graphql } from 'gatsby'
-
-import Bio from 'views/bio'
+import { graphql } from 'gatsby'
+import Bio from 'components/bio'
 import Layout from 'components/layout'
-import SEO from 'views/seo'
-import { rhythm } from 'utils/typography'
+import SEO from 'components/seo'
+import PostsGrid from 'components/posts-grid'
+import { ButtonLink } from 'components/buttons'
 
-import ArticleCard from 'components/article-card'
-
-const PostTitle = styled.h3`
-  margin-bottom: ${rhythm(1 / 4)};
-`
-
-const PostLink = styled(Link)`
-  box-shadow: none;
+const PostsFooter = styled.footer`
+  text-align: right;
 `
 
 const BlogIndex = ({ data, location }) => {
@@ -24,38 +18,11 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" />
-      <Bio />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-
-        return (
-          <ArticleCard>
-            {title}
-          </ArticleCard>
-        )
-
-        // const title = node.frontmatter.title || node.fields.slug
-        // return (
-        //   <article key={node.fields.slug}>
-        //     <header>
-        //       <PostTitle>
-        //         <PostLink to={node.fields.slug}>
-        //           {title}
-        //         </PostLink>
-        //       </PostTitle>
-        //       <small>{node.frontmatter.date}</small>
-        //     </header>
-        //     <section>
-        //       <p
-        //         dangerouslySetInnerHTML={{
-        //           __html: node.frontmatter.description || node.excerpt,
-        //         }}
-        //       />
-        //     </section>
-        //   </article>
-        // )
-      })}
-      <Link to="/posts">All posts</Link>
+      {/* <Bio /> */}
+      <PostsGrid title="Recent Posts" posts={posts} />
+      <PostsFooter>
+        <ButtonLink to="/posts">More Posts →</ButtonLink>
+      </PostsFooter>
     </Layout>
   )
 }
@@ -74,10 +41,19 @@ export const pageQuery = graphql`
       node {
         frontmatter {
           title
+          description
+          subject
           date(formatString: "DD MMM YYYY")
+          coverImage {
+            childImageSharp {
+              fixed(width: 400, height: 175, fit: COVER, cropFocus: CENTER) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
         }
         timeToRead
-        excerpt
+        excerpt(format: PLAIN)
         fields {
           slug
         }

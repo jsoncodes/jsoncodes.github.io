@@ -2,9 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link, graphql } from 'gatsby'
 
-import Bio from 'views/bio'
 import Layout from 'components/layout'
-import SEO from 'views/seo'
+import SEO from 'components/seo'
 import { rhythm } from 'utils/typography'
 
 const PostTitle = styled.h1`
@@ -37,7 +36,7 @@ const PostListTemplate = ({ data, pageContext, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title={siteTitle} /> 
-      
+
       {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return <div key={node.fields.slug}>{title}</div>
