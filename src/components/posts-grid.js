@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import PostCard from 'components/post-card'
+import {subtle} from 'utils/palette'
 
 const PostsHeader = styled.h3`
   text-transform: uppercase;
   font-size: 0.75em;
   margin-bottom: 1em;
-  color: #777;
+  color: ${subtle};
 `;
 
 const PostGrid = styled.div`

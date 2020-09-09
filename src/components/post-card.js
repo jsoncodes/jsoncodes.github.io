@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Image from 'gatsby-image'
 import { ButtonLink } from 'components/buttons'
+import { subtle } from 'utils/palette'
 
 const Post = styled.article`
   height: 100%;
@@ -27,8 +28,8 @@ const Title = styled.h2`
 const Subject = styled.h3`
   text-transform: uppercase;
   font-size: 0.75em;
-  margin-bottom: 1em;
-  color: #999;
+  margin-bottom: 0.5em;
+  color: ${subtle};
 `;
 
 const Excerpt = styled.section`
@@ -47,7 +48,7 @@ const ReadLinkWrapper = styled(Link)`
 `
 
 const DateStamp = styled.small`
-  color: #999;
+  color: ${subtle};
   flex: 0;
   white-space: nowrap;
 `

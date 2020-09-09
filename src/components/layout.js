@@ -2,11 +2,14 @@ import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import Image from 'gatsby-image'
-import { rhythm } from 'utils/typography'
+import { accent } from 'utils/palette'
 
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
+    font-family: 'Source Sans Pro', 'sans-serif';
+    font-size: 18px;
+    line-height: 1.5;
   }
 
   *, *:before, *:after {
@@ -14,27 +17,38 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: inherit;
+    color: ${accent};
+
+    :hover {
+      text-decoration: none;
+    }
   }
 
   h1, h2, h3 {
+    color: #000;
     padding: 0;
     margin: 0;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1em;
   }
 `
 
 const SiteContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: ${rhythm(36)};
-  padding: ${rhythm(3 / 4)};
+  max-width: 1080px;
+  padding: 1em;
 `;
 
 const Header = styled.header`
   display: flex;
   align-items: center;
   padding-bottom: 0.5em;
-  margin-bottom: ${rhythm(3 / 4)};
+  margin-bottom: 0.75em;
   border-bottom: 1px solid #dddddd;
 `;
 
@@ -42,7 +56,7 @@ const TitleLink = styled(Link)`
   text-decoration: none;
 
   h1 {
-    font-size: ${rhythm(0.75)};
+    font-size: 1.5em;
   }
 `;
 
@@ -51,7 +65,7 @@ const ProfileImage = styled(Image).attrs(_ => ({
     borderRadius: `50%`,
   }
 }))`
-  margin-right: ${rhythm(1 / 2)};
+  margin-right: 0.5em;
   margin-bottom: 0;
   min-width: 35px;
   border-radius: 100%;
