@@ -6,35 +6,48 @@ import SEO from 'components/seo'
 import PostsGrid from 'components/posts-grid'
 import { ButtonLink } from 'components/buttons'
 
-const PostsFooter = styled.footer`
+const Footer = styled.footer`
   text-align: right;
 `
 
-const BlogIndex = ({ data, location }) => {
+const Pagination = ({previousPageLink, nextPageLink}) => {
+  return (
+    <Footer>
+      {previousPageLink && <ButtonLink to={previousPageLink} rel="prev">← Previous</ButtonLink>}
+      {nextPageLink && <ButtonLink to={nextPageLink} rel="next">Next →</ButtonLink>}
+    </Footer>
+  )
+}
+
+const PostsPageTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
+  const { previousPageLink, nextPageLink } = pageContext
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Home" />
-      <PostsGrid title="Recent Posts" posts={posts} />
-      <PostsFooter>
-        <ButtonLink to="/posts">More Posts →</ButtonLink>
-      </PostsFooter>
+      <SEO title="All Posts" />
+
+      <PostsGrid title="All Posts" posts={posts} />
+      {(previousPageLink || nextPageLink) && <Pagination {...pageContext} />}
     </Layout>
   )
 }
 
-export default BlogIndex
+export default PostsPageTemplate
 
 export const pageQuery = graphql`
-  query {
+  query ($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, limit: 6) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           frontmatter {

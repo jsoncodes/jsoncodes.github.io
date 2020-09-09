@@ -70,7 +70,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: i === 0 ? `/posts` : `/posts/${currentPage}`,
-      component: path.resolve("./src/templates/post-list.js"),
+      component: path.resolve("./src/templates/posts-page.js"),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
