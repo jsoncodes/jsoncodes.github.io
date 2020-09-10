@@ -5,9 +5,9 @@ module.exports = {
     title: `Jason Mitchell`,
     author: {
       name: `Jason Mitchell`,
-      summary: `hurr durr herp a derp`,
+      summary: ``
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Software design and development related ramblings.`,
     siteUrl: `https://jasonmitchell.dev`,
     social: {
       twitter: `jmitch18`,
@@ -57,29 +57,23 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-56358073-4`,
       },
     },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Jason Mitchell`,
+        short_name: `Jason Mitchell`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/profile-pic.jpg`,
       },
     },
     `gatsby-plugin-react-helmet`,
-    // {
-    //   resolve: `gatsby-plugin-typography`,
-    //   options: {
-    //     pathToConfigModule: `src/utils/typography`,
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-root-import',
       options: {

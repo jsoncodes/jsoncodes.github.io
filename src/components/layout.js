@@ -3,6 +3,8 @@ import styled, { createGlobalStyle } from 'styled-components'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import Image from 'gatsby-image'
 import { accent, subtle } from 'utils/palette'
+import { github, linkedin, twitter } from 'utils/icons'
+import Icon from 'components/icon'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -52,6 +54,11 @@ const Header = styled.header`
   border-bottom: 1px solid #dddddd;
 `;
 
+const TitleWrapper = styled.div`
+  display: flex;
+  flex: 1;
+`
+
 const TitleLink = styled(Link)`
   text-decoration: none;
 
@@ -75,7 +82,24 @@ const Footer = styled.footer`
   margin-top: 1.5em;
   text-align: right;
   color: ${subtle};
+
+  a {
+    color: inherit;
+  }
 `
+
+const SocialLinks = styled.nav`
+  display: flex;
+  flex: 0;
+`
+
+const SocialLink = styled.a`
+  color: inherit;
+  font-size: 1.25em;
+  margin-left: 0.5em;
+  cursor: pointer;
+  outline: none;
+`;
 
 const Layout = ({title, children }) => {
   const data = useStaticQuery(graphql`
@@ -94,6 +118,8 @@ const Layout = ({title, children }) => {
             summary
           }
           social {
+            github
+            linkedin
             twitter
           }
         }
@@ -101,24 +127,38 @@ const Layout = ({title, children }) => {
     }
   `)
 
-  const { author } = data.site.siteMetadata
+  const { author, social } = data.site.siteMetadata
 
   return (
     <>
       <GlobalStyle />
       <SiteContainer>
         <Header>
-          <ProfileImage
-            fixed={data.avatar.childImageSharp.fixed}
-            alt={author.name} />
+          <TitleWrapper>
+            <ProfileImage
+              fixed={data.avatar.childImageSharp.fixed}
+              alt={author.name} />
 
-          <TitleLink to={`/`}>
-            <h1>{title}</h1>
-          </TitleLink>
+            <TitleLink to={`/`}>
+              <h1>{title}</h1>
+            </TitleLink>
+          </TitleWrapper>
+
+          <SocialLinks>
+            <SocialLink href={`https://www.linkedin.com/in/${social.linkedin}`} target="_blank" rel="noopener noreferrer">
+              <Icon icon={linkedin} />
+            </SocialLink>
+            <SocialLink href={`https://github.com/${social.github}`} target="_blank" rel="noopener noreferrer">
+              <Icon icon={github} />
+            </SocialLink>
+            <SocialLink href={`https://twitter.com/${social.twitter}`} target="_blank" rel="noopener noreferrer">
+              <Icon icon={twitter} />
+            </SocialLink>
+          </SocialLinks>
         </Header>
         <main>{children}</main>
         <Footer>
-          © {new Date().getFullYear()}, Jason Mitchell
+          © {new Date().getFullYear()} Jason Mitchell, <a href="/rss.xml">RSS</a>
         </Footer>
       </SiteContainer>
     </>
