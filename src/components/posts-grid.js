@@ -18,6 +18,7 @@ const PostGrid = styled.div`
 
 const PostWrapper = styled.div`
   width: 30%;
+  min-width: 320px;
   margin-bottom: 2em;
 `;
 
