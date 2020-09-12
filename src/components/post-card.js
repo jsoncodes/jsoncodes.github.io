@@ -1,24 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import Image from 'gatsby-image'
 import { ButtonLink } from 'components/buttons'
+import CoverImage from 'components/cover-image'
 import { subtle } from 'utils/palette'
 
 const Post = styled.article`
   height: 100%;
   display: flex;
   flex-direction: column;
-`
-
-const CoverImage = styled(Image)`
-  max-width: 100%;
-  height: 175px;
-  border-radius: 4px;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 0.75em;
 `
 
 const Title = styled.h2`
@@ -58,7 +48,7 @@ const PostCard = ({frontmatter, fields, excerpt}) => {
 
   return (
     <Post>
-      {coverImage && <CoverImage fixed={coverImage.childImageSharp.fixed} objectFit="contain" alt={title} />}
+      <CoverImage subject={subject || title} coverImage={coverImage} />
       <header>
         {subject && <Subject>{subject}</Subject>}
         <Title>{title}</Title>
