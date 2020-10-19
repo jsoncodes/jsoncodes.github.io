@@ -4,6 +4,8 @@ title: A Fresh Start with Gatsby
 description: ""
 date: "2020-09-16T22:00:00.000Z"
 coverImage: ./gatsby.png
+coverImageCredit: Gatsby
+coverImageCreditUrl: https://www.gatsbyjs.com/
 ---
 
 I have had multiple iterations of blogs throughout my career using various technologies including Wordpress,

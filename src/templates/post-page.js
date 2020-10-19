@@ -6,6 +6,10 @@ import SEO from 'components/seo'
 import {ButtonLink} from 'components/buttons'
 import {subtle} from 'utils/palette'
 
+const CoverImageContainer = styled.div`
+  margin-bottom: 0.75em;
+`;
+
 const CoverImage = styled.img`
   max-width: 100%;
   width: 100%;
@@ -13,12 +17,18 @@ const CoverImage = styled.img`
   overflow: hidden;
   margin: 0;
   padding: 0;
-  margin-bottom: 0.75em;
-`
+`;
+
+const CreditLink = styled.a`
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+  font-style: italic;
+  float: right;
+`;
 
 const Title = styled.h1`
   margin-bottom: 0;
-`
+`;
 
 const Subject = styled.h3`
   text-transform: uppercase;
@@ -67,6 +77,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
   const coverImage = post.frontmatter.coverImage
+  const {coverImageCredit, coverImageCreditUrl} = post.frontmatter
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -74,7 +85,17 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
            description={post.frontmatter.description || post.excerpt} />
       <article>
 
-        {coverImage && <CoverImage src={coverImage.childImageSharp.fixed.src} alt={post.frontmatter.title} />}
+        {coverImage && (
+          <CoverImageContainer>
+            <CoverImage src={coverImage.childImageSharp.fixed.src} alt={post.frontmatter.title} />
+
+            {coverImageCredit && (
+              <CreditLink href={coverImageCreditUrl} alt={coverImageCredit} target="_blank">
+                Image credit: {coverImageCredit}
+              </CreditLink>
+            )}
+          </CoverImageContainer>
+        )}
 
         <header>
           <Subject>{post.frontmatter.subject}</Subject>
@@ -133,6 +154,8 @@ export const pageQuery = graphql`
             }
           }
         }
+        coverImageCredit
+        coverImageCreditUrl
       }
     }
   }
