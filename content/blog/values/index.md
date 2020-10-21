@@ -20,8 +20,8 @@ Aligning teams behind a shared set of values is a great way to help define your 
 make happier teams who are more productive because they understand how to set priorities according to
 the values. However getting buy-in can be difficult especially when they are defined by the top of the
 organisation and imposed on the teams further down the chain. My experience has been that values defined
-in this way are often shallow and meaningless values such as "teamwork" or "take ownership" with little
-substance backing them up.
+in this way are often shallow and meaningless values such as "teamwork" with little substance backing
+them up.
 
 If you want the people on your teams to get behind common values then they need to have a voice in
 creating them and you need to elaborate on *why* it is important to your teams. GitLab do a great job
