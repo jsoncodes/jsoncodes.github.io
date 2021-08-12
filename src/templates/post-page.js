@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
 import {ButtonLink} from 'components/buttons'
-import {subtle} from 'utils/palette'
+import {accent, subtle} from 'utils/palette'
 
 const CoverImageContainer = styled.div`
   margin-bottom: 0.75em;
@@ -50,6 +50,18 @@ const Body = styled.section`
 
   pre {
     font-size: 14px;
+  }
+
+  blockquote {
+    background: #eeeeee;
+    margin: 0;
+    margin-bottom: 1em;
+    padding: 0.5em 2em;
+    border-left: 3px solid ${accent};
+
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 `
 

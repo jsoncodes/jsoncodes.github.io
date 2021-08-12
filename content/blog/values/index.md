@@ -43,7 +43,8 @@ in which I will define my personal values to help me clarify my thoughts and opi
 the following list for my first pass at my personal values; over time I will write additional articles
 to elaborate on them.
 
-* Continuous improvement
+**My Personal Values**
+* [Continuous improvement](continuous-improvement)
 * Sustainability
 * Locality and empowerment
 * Simplicity
