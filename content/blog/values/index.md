@@ -15,19 +15,10 @@ help to resolve conflicts of opinion, and improve productivity due to aligned pr
 also help with people management activities such as recruitment, performance reviews, and on-boarding
 new employees without diluting the culture.
 
-<<<<<<< HEAD
-Aligning teams behind a shared set of values is a great way to help define your culture and can help to
-make happier teams who are more productive because they understand how to set priorities according to
-the values. However getting buy-in can be difficult especially when they are defined by the top of the
-organisation and imposed on the teams further down the chain. My experience has been that values defined
-in this way are often shallow and meaningless values such as "teamwork" with little substance backing
-them up.
-=======
 Many developers will have some experiences of shared values and much of the time view them quite
 negatively. Shared values are often criticised for being shallow, vague and corporate fluff which is
 being driven by a top-down mandate from managers who don't understand the nature of the day-to-day
 work.
->>>>>>> values-rewrite
 
 Nearly every company I have worked for has had a variant of the same set of the same set of values
 such as teamwork and honesty. The values are generally positive behaviours such as "teamwork" or
