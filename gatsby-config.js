@@ -10,7 +10,7 @@ module.exports = {
     description: `Software design and development related ramblings.`,
     siteUrl: `https://jasonmitchell.dev`,
     social: {
-      twitter: `jmitch18`,
+      twitter: `jsoncodes`,
       github: `jasonmitchell`,
       linkedin: `jasonmitchell89`,
     },
@@ -55,9 +55,19 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: `UA-56358073-4`,
+        trackingIds: [
+          'G-D4QKQSRMGF'
+        ],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+        },
       },
     },
     `gatsby-plugin-feed`,
@@ -100,7 +110,7 @@ module.exports = {
           },
         ],
       },
-    },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
