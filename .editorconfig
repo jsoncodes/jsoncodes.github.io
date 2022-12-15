@@ -5,6 +5,7 @@ insert_final_newline=false
 indent_style=space
 indent_size=2
 tab_width=2
+end_of_line=lf
 
-[*.{js,ts}]
+[*.{js,ts,jsx,tsx}]
 insert_final_newline = true

@@ -12,6 +12,10 @@ declare module 'styled-components' {
 
     layout: {
       maxWidth: string;
+      breakpoints: {
+        mobile: string;
+        full: string;
+      }
     }
 
     palette: {
@@ -24,14 +28,18 @@ declare module 'styled-components' {
 export const defaultTheme: DefaultTheme = {
   typography: {
     baselineFontSize: '16px',
-    lineHeight: '1.6',
+    lineHeight: '1.4',
     color: '#000000',
-    fontFamily: `'EB Garamond', Arial, 'san-serif'`,
-    headingFontFamily: `Georgia, 'Times New Roman', Times, serif`
+    fontFamily: `'Source Sans Pro', 'EB Garamond', Arial, 'san-serif'`,
+    headingFontFamily: `'Source Sans Pro', 'EB Garamond', Arial, 'san-serif'`
   },
 
   layout: {
-    maxWidth: '1024px'
+    maxWidth: '1280px',
+    breakpoints: {
+      mobile: 'max-width: 800px',
+      full: 'max-width: 1300px'
+    }
   },
 
   palette: {

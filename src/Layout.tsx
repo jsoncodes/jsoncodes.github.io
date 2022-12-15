@@ -1,37 +1,80 @@
-import { StaticImage } from "gatsby-plugin-image"
-import React, { ReactNode } from "react"
-import { ThemeProvider } from "styled-components"
-import { GlobalStyle } from "./GlobalStyle"
-import { defaultTheme } from "./theme"
+import { Link } from 'gatsby';
+import React, { ReactNode } from 'react';
+import styled, { css, ThemeProvider } from 'styled-components';
+import { ProfileImage } from './components/ProfileImage';
+import { GlobalStyle } from './GlobalStyle';
+import { defaultTheme } from './theme';
 
-type Props = { children: ReactNode }
+const Root = styled.main`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
 
-const ProfileImage = () => {
+const constrained = css`
+  max-width: ${props => props.theme.layout.maxWidth};
+  margin: 0 auto;
+`;
+
+const HeadingRoot = styled.header`
+  flex: 0;
+  display: flex;
+  gap: 0.5em;
+  width: 100%;
+  align-items: center;
+  padding: 1em 0;
+  ${constrained}
+
+  @media (${props => props.theme.layout.breakpoints.full}) {
+    padding: 1em 2em;
+  }
+`;
+
+const Title = styled.h1`
+  font-size: 1.5rem;
+`;
+
+const TitleLink = styled(Link)`
+  text-decoration: none;
+  color: ${props => props.theme.typography.color};
+`;
+
+const Body = styled.section`
+  flex: 1;
+  overflow: auto;
+`;
+
+const Content = styled.div`
+  height: 100%;
+  ${constrained}
+
+  @media (${props => props.theme.layout.breakpoints.full}) {
+    padding: 0 2em;
+  }
+`;
+
+const Heading = () => {
   return (
-    <StaticImage
-      src="images/profile.jpg"
-      alt="Jason Mitchell Profile"
-      placeholder="blurred"
-      layout="fixed"
-      width={64}
-      height={64}
-      style={{ borderRadius: "50%" }}
-    />
-  )
-}
+    <HeadingRoot>
+      <ProfileImage />
+      <TitleLink to="/">
+        <Title>Jason Mitchell</Title>
+      </TitleLink>
+    </HeadingRoot>
+  );
+};
 
-export const Layout = ({ children }: Props) => {
+export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
 
-      <main>
-        <header>
-          <ProfileImage />
-          Jason Mitchell
-        </header>
-        {children}
-      </main>
+      <Root>
+        <Heading />
+        <Body>
+          <Content>{children}</Content>
+        </Body>
+      </Root>
     </ThemeProvider>
-  )
-}
+  );
+};

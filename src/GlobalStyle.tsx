@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone');
@@ -27,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme.typography.color};
   }
 
-  html, body, #root {
+  html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
     overflow: hidden;
   }
@@ -41,6 +41,7 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4 {
     padding: 0;
     margin: 0;
+    font-weight: bold;
     font-family: ${props => props.theme.typography.headingFontFamily};
   }
 
@@ -49,4 +50,4 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin-bottom: 1em;
   }
-`
+`;

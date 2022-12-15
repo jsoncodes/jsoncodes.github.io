@@ -28,6 +28,13 @@ const config: GatsbyConfig = {
       },
       __key: 'pages'
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./content/blog`,
+        name: `blog`,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`
