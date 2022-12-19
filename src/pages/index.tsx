@@ -4,23 +4,27 @@ import { Layout } from '../Layout';
 import { LatestPosts, Post } from '../components/LatestPosts';
 import { ImageDataLike } from 'gatsby-plugin-image';
 
+type AllMdx = {
+  nodes: {
+    frontmatter: {
+      date: string;
+      title: string;
+      subject: string;
+      coverImage: ImageDataLike;
+    };
+    excerpt: string;
+    id: string;
+  }[];
+};
+
 type DataProps = {
-  allMdx: {
-    nodes: {
-      frontmatter: {
-        date: string;
-        title: string;
-        subject: string;
-        coverImage: ImageDataLike;
-      };
-      excerpt: string;
-      id: string;
-    }[];
-  };
+  latestPost: AllMdx;
+  recentPosts: AllMdx;
 };
 
 const IndexPage = ({ data }: PageProps<DataProps>) => {
-  const posts: Post[] = data.allMdx.nodes.map(node => ({
+  const allPosts = [data.latestPost.nodes[0], ...data.recentPosts.nodes];
+  const posts: Post[] = allPosts.map(node => ({
     title: node.frontmatter.title,
     subject: node.frontmatter.subject,
     excerpt: node.excerpt,
@@ -40,7 +44,7 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    allMdx(sort: { frontmatter: { date: DESC } }) {
+    latestPost: allMdx(limit: 1, sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
@@ -49,7 +53,33 @@ export const query = graphql`
           coverImage {
             childImageSharp {
               gatsbyImageData(
-                width: 200
+                width: 640
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
+          coverImageCredit
+          coverImageCreditUrl
+        }
+        excerpt(pruneLength: 250)
+        id
+      }
+    }
+    recentPosts: allMdx(
+      skip: 1
+      limit: 10
+      sort: { frontmatter: { date: DESC } }
+    ) {
+      nodes {
+        frontmatter {
+          date(formatString: "MMMM D, YYYY")
+          title
+          subject
+          coverImage {
+            childImageSharp {
+              gatsbyImageData(
+                width: 160
                 placeholder: BLURRED
                 formats: [AUTO, WEBP, AVIF]
               )
