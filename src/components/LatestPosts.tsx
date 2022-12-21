@@ -1,78 +1,59 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GatsbyImage, getImage, ImageDataLike } from 'gatsby-plugin-image';
+import { ArticleSummary, Post } from './ArticleSummary';
 
 const Root = styled.section`
   display: flex;
-  gap: 1em;
+  gap: 2em;
 
-  @media (${props => props.theme.layout.breakpoints.mobile}) {
+  @media (${props => props.theme.layout.breakpoints.mid}) {
     flex-direction: column;
     gap: 0em;
   }
 `;
 
-const FixedColumn = styled.article`
+const FixedColumn = styled.section`
   flex: 1;
   position: sticky;
   top: 0;
   align-self: flex-start;
 
-  @media (${props => props.theme.layout.breakpoints.mobile}) {
+  @media (${props => props.theme.layout.breakpoints.mid}) {
     position: static;
   }
 `;
 
 const ScrollingColumn = styled.section`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-bottom: 1em;
 `;
 
-export type Post = {
-  title: string;
-  subject: string;
-  excerpt: string;
-  date: string;
-  id: string;
-  coverImage: ImageDataLike;
-};
+const RecentPostsTitle = styled.h3`
+  font-size: 1.5em;
+
+  @media (${props => props.theme.layout.breakpoints.mobile}) {
+    display: none;
+  }
+`;
 
 type PostsProps = {
   posts: Post[];
-};
-
-const Article = (props: Post) => {
-  const image = getImage(props.coverImage!);
-
-  return (
-    <article>
-      {image && <GatsbyImage image={image} alt={props.title} />}
-      <h4>{props.subject}</h4>
-      <h3>{props.title}</h3>
-      <p>{props.excerpt}</p>
-      <p>{props.date}</p>
-    </article>
-  );
-};
-
-const FeaturedArticle = (props: Post) => {
-  return <Article {...props} />;
-};
-
-const RecentArticle = (props: Post) => {
-  return <Article {...props} />;
 };
 
 export const LatestPosts = ({ posts }: PostsProps) => {
   return (
     <Root>
       <FixedColumn>
-        <FeaturedArticle {...posts[0]} />
+        <ArticleSummary {...posts[0]} variant="featured" />
       </FixedColumn>
       <ScrollingColumn>
-        <h2>Recent Posts</h2>
+        <RecentPostsTitle>Recent Posts</RecentPostsTitle>
 
         {posts.slice(1).map(post => (
-          <RecentArticle key={post.id} {...post} />
+          <ArticleSummary key={post.id} {...post} variant="compact" />
         ))}
       </ScrollingColumn>
     </Root>

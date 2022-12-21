@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeadFC, PageProps, graphql } from 'gatsby';
 import { Layout } from '../Layout';
-import { LatestPosts, Post } from '../components/LatestPosts';
+import { LatestPosts } from '../components/LatestPosts';
 import { ImageDataLike } from 'gatsby-plugin-image';
 
 type AllMdx = {
@@ -24,7 +24,7 @@ type DataProps = {
 
 const IndexPage = ({ data }: PageProps<DataProps>) => {
   const allPosts = [data.latestPost.nodes[0], ...data.recentPosts.nodes];
-  const posts: Post[] = allPosts.map(node => ({
+  const posts = allPosts.map(node => ({
     title: node.frontmatter.title,
     subject: node.frontmatter.subject,
     excerpt: node.excerpt,
@@ -47,7 +47,7 @@ export const query = graphql`
     latestPost: allMdx(limit: 1, sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
-          date(formatString: "MMMM D, YYYY")
+          date(formatString: "DD MMM YYYY")
           title
           subject
           coverImage {
@@ -73,13 +73,13 @@ export const query = graphql`
     ) {
       nodes {
         frontmatter {
-          date(formatString: "MMMM D, YYYY")
+          date(formatString: "DD MMM YYYY")
           title
           subject
           coverImage {
             childImageSharp {
               gatsbyImageData(
-                width: 160
+                width: 300
                 placeholder: BLURRED
                 formats: [AUTO, WEBP, AVIF]
               )
@@ -88,7 +88,6 @@ export const query = graphql`
           coverImageCredit
           coverImageCreditUrl
         }
-        excerpt(pruneLength: 250)
         id
       }
     }

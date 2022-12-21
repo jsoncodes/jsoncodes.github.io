@@ -1,5 +1,10 @@
 import { DefaultTheme } from "styled-components";
 
+// https://colors.lol/beauish
+export const green = '#47C072';
+export const pink = '#FF0789';
+export const orange = '#FCB005';
+
 declare module 'styled-components' {
   export interface DefaultTheme {
     typography: {
@@ -14,6 +19,7 @@ declare module 'styled-components' {
       maxWidth: string;
       breakpoints: {
         mobile: string;
+        mid: string;
         full: string;
       }
     }
@@ -21,6 +27,7 @@ declare module 'styled-components' {
     palette: {
       background: string;
       border: string;
+      accent: string;
     }
   }
 }
@@ -37,13 +44,15 @@ export const defaultTheme: DefaultTheme = {
   layout: {
     maxWidth: '1280px',
     breakpoints: {
-      mobile: 'max-width: 800px',
+      mobile: 'max-width: 460px',
+      mid: 'max-width: 800px',
       full: 'max-width: 1300px'
     }
   },
 
   palette: {
     background: '#ffffff',
-    border: '#cccccc'
+    border: '#cccccc',
+    accent: pink
   }
 };
