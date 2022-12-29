@@ -2,6 +2,7 @@
 subject: values
 title: Test Post 10
 description: ''
+slug: test-post-10
 date: '2021-08-12T21:11:00.000Z'
 coverImage: ./continuous-improvement.jpg
 coverImageCredit: Jungwoo Hong on Unsplash

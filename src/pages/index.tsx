@@ -4,12 +4,13 @@ import { Layout } from '../Layout';
 import { LatestPosts } from '../components/LatestPosts';
 import { ImageDataLike } from 'gatsby-plugin-image';
 
-type AllMdx = {
+type AllMarkdownRemark = {
   nodes: {
     frontmatter: {
       date: string;
       title: string;
       subject: string;
+      slug: string;
       coverImage: ImageDataLike;
     };
     excerpt: string;
@@ -18,8 +19,8 @@ type AllMdx = {
 };
 
 type DataProps = {
-  latestPost: AllMdx;
-  recentPosts: AllMdx;
+  latestPost: AllMarkdownRemark;
+  recentPosts: AllMarkdownRemark;
 };
 
 const IndexPage = ({ data }: PageProps<DataProps>) => {
@@ -30,7 +31,8 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
     excerpt: node.excerpt,
     date: node.frontmatter.date,
     id: node.id,
-    coverImage: node.frontmatter.coverImage
+    coverImage: node.frontmatter.coverImage,
+    link: `posts/${node.frontmatter.slug}`
   }));
 
   return (
@@ -44,12 +46,16 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    latestPost: allMdx(limit: 1, sort: { frontmatter: { date: DESC } }) {
+    latestPost: allMarkdownRemark(
+      limit: 1
+      sort: { frontmatter: { date: DESC } }
+    ) {
       nodes {
         frontmatter {
           date(formatString: "DD MMM YYYY")
           title
           subject
+          slug
           coverImage {
             childImageSharp {
               gatsbyImageData(
@@ -62,11 +68,16 @@ export const query = graphql`
           coverImageCredit
           coverImageCreditUrl
         }
+        parent {
+          ... on File {
+            name
+          }
+        }
         excerpt(pruneLength: 250)
         id
       }
     }
-    recentPosts: allMdx(
+    recentPosts: allMarkdownRemark(
       skip: 1
       limit: 10
       sort: { frontmatter: { date: DESC } }
@@ -76,6 +87,7 @@ export const query = graphql`
           date(formatString: "DD MMM YYYY")
           title
           subject
+          slug
           coverImage {
             childImageSharp {
               gatsbyImageData(
@@ -87,6 +99,11 @@ export const query = graphql`
           }
           coverImageCredit
           coverImageCreditUrl
+        }
+        parent {
+          ... on File {
+            name
+          }
         }
         id
       }

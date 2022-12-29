@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import { ImageDataLike } from 'gatsby-plugin-image';
 import { lighten } from 'polished';
 import React from 'react';
@@ -25,6 +26,11 @@ const CompactRoot = styled.article`
     gap: 0;
     margin-top: 1em;
   }
+`;
+
+const ArticleLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `;
 
 const CompactCoverImage = styled(CoverImage)`
@@ -79,22 +85,31 @@ export type Post = {
   date: string;
   id: string;
   coverImage: ImageDataLike;
+  link: string;
 };
 
 type ArticleProps = Post & {
   variant: ArticleVariant;
 };
 
-const CompactArticleSummary = ({ title, subject, date, coverImage }: Post) => {
+const CompactArticleSummary = ({
+  title,
+  subject,
+  date,
+  coverImage,
+  link
+}: Post) => {
   return (
-    <CompactRoot>
-      <CompactCoverImage coverImage={coverImage} altText={title} />
-      <ArticleContent>
-        <ArticleCategory>{subject}</ArticleCategory>
-        <ArticleTitle>{title}</ArticleTitle>
-        <ArticleDate>on {date}</ArticleDate>
-      </ArticleContent>
-    </CompactRoot>
+    <ArticleLink to={link}>
+      <CompactRoot>
+        <CompactCoverImage coverImage={coverImage} altText={title} />
+        <ArticleContent>
+          <ArticleCategory>{subject}</ArticleCategory>
+          <ArticleTitle>{title}</ArticleTitle>
+          <ArticleDate>on {date}</ArticleDate>
+        </ArticleContent>
+      </CompactRoot>
+    </ArticleLink>
   );
 };
 
@@ -103,18 +118,21 @@ const FeaturedArticleSummary = ({
   subject,
   excerpt,
   date,
-  coverImage
+  coverImage,
+  link
 }: Post) => {
   return (
-    <FeaturedRoot>
-      <FeaturedCoverImage coverImage={coverImage} altText={title} />
-      <ArticleContent>
-        <ArticleCategory>{subject}</ArticleCategory>
-        <FeaturedArticleTitle>{title}</FeaturedArticleTitle>
-        <FeaturedExcerpt>{excerpt}</FeaturedExcerpt>
-        <ArticleDate>on {date}</ArticleDate>
-      </ArticleContent>
-    </FeaturedRoot>
+    <ArticleLink to={link}>
+      <FeaturedRoot>
+        <FeaturedCoverImage coverImage={coverImage} altText={title} />
+        <ArticleContent>
+          <ArticleCategory>{subject}</ArticleCategory>
+          <FeaturedArticleTitle>{title}</FeaturedArticleTitle>
+          <FeaturedExcerpt>{excerpt}</FeaturedExcerpt>
+          <ArticleDate>on {date}</ArticleDate>
+        </ArticleContent>
+      </FeaturedRoot>
+    </ArticleLink>
   );
 };
 

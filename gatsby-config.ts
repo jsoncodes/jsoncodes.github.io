@@ -11,15 +11,8 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-google-gtag',
     'gatsby-plugin-sitemap',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        'icon': './src/images/profile-pic.jpg'
-      }
-    },
-    'gatsby-plugin-mdx',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

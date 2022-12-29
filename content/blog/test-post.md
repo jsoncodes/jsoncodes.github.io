@@ -2,8 +2,8 @@
 subject: values
 title: Test Post 1
 description: ''
-slug: 'does-this-work'
-date: '2021-08-12T21:11:00.000Z'
+slug: test-post-1-yeo
+date: '2021-12-30T21:11:00.000Z'
 coverImage: ./continuous-improvement.jpg
 coverImageCredit: Jungwoo Hong on Unsplash
 coverImageCreditUrl: https://unsplash.com/photos/cYUMaCqMYvI
