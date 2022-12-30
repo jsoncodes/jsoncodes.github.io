@@ -35,7 +35,7 @@ declare module 'styled-components' {
 export const defaultTheme: DefaultTheme = {
   typography: {
     baselineFontSize: '16px',
-    lineHeight: '1.4',
+    lineHeight: '1.6',
     color: '#000000',
     fontFamily: `'Source Sans Pro', 'EB Garamond', Arial, 'san-serif'`,
     headingFontFamily: `'Source Sans Pro', 'EB Garamond', Arial, 'san-serif'`

@@ -2,7 +2,7 @@ import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `JSON Codes`,
+    title: `Jason Mitchell`,
     siteUrl: `https://json.codes`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
@@ -12,7 +12,20 @@ const config: GatsbyConfig = {
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sitemap',
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        'icon': './src/images/profile.jpg'
+      }
+    },
+    {
+      resolve:'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-prismjs'
+        ]
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

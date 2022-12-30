@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: ${props => props.theme.typography.fontFamily};
     font-size: ${props => props.theme.typography.baselineFontSize};
+    font-weight: 550;
     line-height: ${props => props.theme.typography.lineHeight};
     color: ${props => props.theme.typography.color};
     -webkit-font-smoothing: antialiased;
@@ -33,6 +34,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
+    color: ${props => props.theme.palette.accent};
+
     :hover {
       text-decoration: none;
     }

@@ -3,6 +3,7 @@ import { HeadFC, PageProps, graphql } from 'gatsby';
 import { Layout } from '../Layout';
 import { LatestPosts } from '../components/LatestPosts';
 import { ImageDataLike } from 'gatsby-plugin-image';
+import { SEO } from '../components/SEO';
 
 type AllMarkdownRemark = {
   nodes: {
@@ -46,10 +47,7 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    latestPost: allMarkdownRemark(
-      limit: 1
-      sort: { frontmatter: { date: DESC } }
-    ) {
+    latestPost: allMarkdownRemark(limit: 1, sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
           date(formatString: "DD MMM YYYY")
@@ -58,11 +56,7 @@ export const query = graphql`
           slug
           coverImage {
             childImageSharp {
-              gatsbyImageData(
-                width: 640
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(width: 640, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
           coverImageCredit
@@ -77,11 +71,7 @@ export const query = graphql`
         id
       }
     }
-    recentPosts: allMarkdownRemark(
-      skip: 1
-      limit: 10
-      sort: { frontmatter: { date: DESC } }
-    ) {
+    recentPosts: allMarkdownRemark(skip: 1, limit: 10, sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
           date(formatString: "DD MMM YYYY")
@@ -90,11 +80,7 @@ export const query = graphql`
           slug
           coverImage {
             childImageSharp {
-              gatsbyImageData(
-                width: 300
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(width: 300, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
           coverImageCredit
@@ -111,4 +97,4 @@ export const query = graphql`
   }
 `;
 
-export const Head: HeadFC = () => <title>Home Page</title>;
+export const Head: HeadFC = () => <SEO />;

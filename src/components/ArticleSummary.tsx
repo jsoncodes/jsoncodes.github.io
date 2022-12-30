@@ -9,6 +9,7 @@ const FeaturedRoot = styled.article`
   display: flex;
   flex-direction: column;
   height: 100%;
+  line-height: 1.3;
 `;
 
 const FeaturedCoverImage = styled(CoverImage)`
@@ -19,6 +20,7 @@ const FeaturedCoverImage = styled(CoverImage)`
 const CompactRoot = styled.article`
   display: flex;
   gap: 1em;
+  line-height: 1.3;
 
   @media (${props => props.theme.layout.breakpoints.mobile}) {
     flex: 1;
@@ -74,6 +76,7 @@ const ArticleDate = styled.p`
 
 const FeaturedExcerpt = styled.p`
   font-size: 1.2em;
+  font-weight: 500;
 `;
 
 type ArticleVariant = 'featured' | 'compact';
@@ -92,13 +95,7 @@ type ArticleProps = Post & {
   variant: ArticleVariant;
 };
 
-const CompactArticleSummary = ({
-  title,
-  subject,
-  date,
-  coverImage,
-  link
-}: Post) => {
+const CompactArticleSummary = ({ title, subject, date, coverImage, link }: Post) => {
   return (
     <ArticleLink to={link}>
       <CompactRoot>
@@ -113,14 +110,7 @@ const CompactArticleSummary = ({
   );
 };
 
-const FeaturedArticleSummary = ({
-  title,
-  subject,
-  excerpt,
-  date,
-  coverImage,
-  link
-}: Post) => {
+const FeaturedArticleSummary = ({ title, subject, excerpt, date, coverImage, link }: Post) => {
   return (
     <ArticleLink to={link}>
       <FeaturedRoot>
