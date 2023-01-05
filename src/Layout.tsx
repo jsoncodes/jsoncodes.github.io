@@ -1,4 +1,5 @@
 import { Link } from 'gatsby';
+import { lighten } from 'polished';
 import React, { ReactNode } from 'react';
 import styled, { css, ThemeProvider } from 'styled-components';
 import { ProfileImage } from './components/ProfileImage';
@@ -64,6 +65,13 @@ const Content = styled.div`
   }
 `;
 
+const Footer = styled.footer`
+  padding: 0 1em;
+  display: flex;
+  justify-content: flex-end;
+  color: ${props => lighten(0.75, props.theme.typography.color)};
+`;
+
 const Heading = () => {
   return (
     <HeadingRoot>
@@ -88,6 +96,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
         <Body>
           <Content>{children}</Content>
         </Body>
+        <Footer>© {new Date().getFullYear()} Jason Mitchell</Footer>
       </Root>
     </ThemeProvider>
   );
