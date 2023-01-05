@@ -39,10 +39,6 @@ const HeadingLink = styled(Link)`
   font-size: 1.2rem;
   text-decoration: none;
   color: ${props => props.theme.typography.color};
-
-  &:hover {
-    color: ${props => props.theme.palette.accent};
-  }
 `;
 
 const Navigation = styled.nav`
@@ -66,7 +62,7 @@ const Content = styled.div`
 `;
 
 const Footer = styled.footer`
-  padding: 0 1em;
+  padding: 0 2em;
   display: flex;
   justify-content: flex-end;
   color: ${props => lighten(0.75, props.theme.typography.color)};

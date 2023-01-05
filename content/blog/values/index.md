@@ -2,7 +2,6 @@
 subject: values
 title: Shared Values in Software Development Teams
 description: ''
-slug: values
 date: '2021-04-09T08:00:00.000Z'
 coverImage: ./hands.jpg
 coverImageCredit: Hannah Busing on Unsplash

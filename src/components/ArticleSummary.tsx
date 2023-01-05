@@ -3,6 +3,7 @@ import { ImageDataLike } from 'gatsby-plugin-image';
 import { lighten } from 'polished';
 import React from 'react';
 import styled from 'styled-components';
+import { Post } from '../types';
 import { CoverImage } from './CoverImage';
 
 const FeaturedRoot = styled.article`
@@ -80,16 +81,6 @@ const FeaturedExcerpt = styled.p`
 `;
 
 type ArticleVariant = 'featured' | 'compact';
-
-export type Post = {
-  title: string;
-  subject: string;
-  excerpt: string;
-  date: string;
-  id: string;
-  coverImage: ImageDataLike;
-  link: string;
-};
 
 type ArticleProps = Post & {
   variant: ArticleVariant;

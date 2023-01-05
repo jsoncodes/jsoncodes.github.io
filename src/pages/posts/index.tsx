@@ -1,9 +1,26 @@
 import React from 'react';
-import { HeadFC, PageProps, graphql } from 'gatsby';
+import { HeadFC, PageProps, graphql, Link } from 'gatsby';
 import { Layout } from '../../Layout';
 import { LatestPosts } from '../../components/LatestPosts';
 import { SEO } from '../../components/SEO';
-import { AllMarkdownRemark } from '../../types';
+import { AllMarkdownRemark, markdownRemarkToPost } from '../../types';
+import styled from 'styled-components';
+
+const Root = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
+const Body = styled.div`
+  flex: 1;
+`;
+
+const Footer = styled.footer`
+  flex: 0;
+  display: flex;
+  justify-content: flex-end;
+`;
 
 type DataProps = {
   latestPost: AllMarkdownRemark;
@@ -12,19 +29,18 @@ type DataProps = {
 
 const IndexPage = ({ data }: PageProps<DataProps>) => {
   const allPosts = [data.latestPost.nodes[0], ...data.recentPosts.nodes];
-  const posts = allPosts.map(node => ({
-    title: node.frontmatter.title,
-    subject: node.frontmatter.subject,
-    excerpt: node.excerpt,
-    date: node.frontmatter.date,
-    id: node.id,
-    coverImage: node.frontmatter.coverImage,
-    link: node.frontmatter.slug
-  }));
+  const posts = allPosts.map(node => markdownRemarkToPost(node));
 
   return (
     <Layout>
-      <LatestPosts posts={posts} />
+      <Root>
+        <Body>
+          <LatestPosts posts={posts} />
+        </Body>
+        <Footer>
+          <Link to="/posts/1">More posts</Link>
+        </Footer>
+      </Root>
     </Layout>
   );
 };
@@ -35,11 +51,13 @@ export const query = graphql`
   query {
     latestPost: allMarkdownRemark(limit: 1, sort: { frontmatter: { date: DESC } }) {
       nodes {
+        fields {
+          slug
+        }
         frontmatter {
           date(formatString: "DD MMM YYYY")
           title
           subject
-          slug
           coverImage {
             childImageSharp {
               gatsbyImageData(width: 640, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
@@ -52,13 +70,15 @@ export const query = graphql`
         id
       }
     }
-    recentPosts: allMarkdownRemark(skip: 1, limit: 10, sort: { frontmatter: { date: DESC } }) {
+    recentPosts: allMarkdownRemark(skip: 1, limit: 9, sort: { frontmatter: { date: DESC } }) {
       nodes {
+        fields {
+          slug
+        }
         frontmatter {
           date(formatString: "DD MMM YYYY")
           title
           subject
-          slug
           coverImage {
             childImageSharp {
               gatsbyImageData(width: 300, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])

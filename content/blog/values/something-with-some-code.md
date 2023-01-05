@@ -2,7 +2,6 @@
 subject: code
 title: Something with some code
 description: ''
-slug: some-code
 date: '2022-12-30T08:00:00.000Z'
 coverImage: ./hands.jpg
 coverImageCredit: Hannah Busing on Unsplash

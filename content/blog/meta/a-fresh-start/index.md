@@ -2,7 +2,6 @@
 subject: meta
 title: A Fresh Start with Gatsby
 description: ''
-slug: meta/a-fresh-start
 date: '2020-09-16T22:00:00.000Z'
 coverImage: ./gatsby.png
 coverImageCredit: Gatsby

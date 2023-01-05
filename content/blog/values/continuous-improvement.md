@@ -2,7 +2,6 @@
 subject: values
 title: Continuous Improvement
 description: ''
-slug: values/continuous-improvement
 date: '2021-08-12T21:11:00.000Z'
 coverImage: ./continuous-improvement.jpg
 coverImageCredit: Jungwoo Hong on Unsplash

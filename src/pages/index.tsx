@@ -2,7 +2,7 @@ import React from 'react';
 import { HeadFC, PageProps, graphql, Link } from 'gatsby';
 import { Layout } from '../Layout';
 import { SEO } from '../components/SEO';
-import { AllMarkdownRemark } from '../types';
+import { AllMarkdownRemark, markdownRemarkToPost } from '../types';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { ArticleSummary } from '../components/ArticleSummary';
@@ -74,6 +74,11 @@ const LatestPostTitle = styled.h3`
   color: ${props => lighten(0.5, props.theme.typography.color)};
 `;
 
+const ImageWrapper = styled.div`
+  width: 200px;
+  height: 200px;
+`;
+
 type DataProps = {
   site: {
     siteMetadata: {
@@ -90,28 +95,22 @@ type DataProps = {
 const IndexPage = ({ data }: PageProps<DataProps>) => {
   const social = data.site.siteMetadata.social;
   const node = data.latestPost.nodes[0];
-  const post = {
-    title: node.frontmatter.title,
-    subject: node.frontmatter.subject,
-    excerpt: node.excerpt,
-    date: node.frontmatter.date,
-    id: node.id,
-    coverImage: node.frontmatter.coverImage,
-    link: `posts/${node.frontmatter.slug}`
-  };
+  const post = markdownRemarkToPost(node);
 
   return (
     <Layout>
       <Body>
-        <StaticImage
-          src="../images/profile.jpg"
-          alt="Jason Mitchell Profile"
-          placeholder="blurred"
-          layout="constrained"
-          height={200}
-          aspectRatio={1}
-          style={{ borderRadius: '50%' }}
-        />
+        <ImageWrapper>
+          <StaticImage
+            src="../images/profile.jpg"
+            alt="Jason Mitchell Profile"
+            placeholder="blurred"
+            layout="constrained"
+            height={200}
+            width={200}
+            style={{ borderRadius: '50%' }}
+          />
+        </ImageWrapper>
 
         <Summary>
           <p>Hi, I'm Jason</p>
@@ -156,11 +155,13 @@ export const query = graphql`
     }
     latestPost: allMarkdownRemark(limit: 1, sort: { frontmatter: { date: DESC } }) {
       nodes {
+        fields {
+          slug
+        }
         frontmatter {
           date(formatString: "DD MMM YYYY")
           title
           subject
-          slug
           coverImage {
             childImageSharp {
               gatsbyImageData(width: 640, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
