@@ -34,9 +34,20 @@ const Title = styled.h1`
   font-size: 1.5rem;
 `;
 
-const TitleLink = styled(Link)`
+const HeadingLink = styled(Link)`
+  font-size: 1.2rem;
   text-decoration: none;
   color: ${props => props.theme.typography.color};
+
+  &:hover {
+    color: ${props => props.theme.palette.accent};
+  }
+`;
+
+const Navigation = styled.nav`
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const Body = styled.section`
@@ -57,9 +68,12 @@ const Heading = () => {
   return (
     <HeadingRoot>
       <ProfileImage />
-      <TitleLink to="/">
+      <HeadingLink to="/">
         <Title>Jason Mitchell</Title>
-      </TitleLink>
+      </HeadingLink>
+      <Navigation>
+        <HeadingLink to="/posts">Posts</HeadingLink>
+      </Navigation>
     </HeadingRoot>
   );
 };

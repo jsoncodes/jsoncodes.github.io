@@ -10,6 +10,7 @@ export const ProfileImage = () => {
       layout="fixed"
       width={32}
       height={32}
+      aspectRatio={1}
       style={{ borderRadius: '50%' }}
     />
   );
