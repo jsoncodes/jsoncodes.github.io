@@ -19,7 +19,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
     date: node.frontmatter.date,
     id: node.id,
     coverImage: node.frontmatter.coverImage,
-    link: `posts/${node.frontmatter.slug}`
+    link: node.frontmatter.slug
   }));
 
   return (
