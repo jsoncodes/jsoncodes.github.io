@@ -78,6 +78,7 @@ const Body = styled.section`
 type DataProps = {
   markdownRemark: {
     html: string;
+    excerpt: string;
     frontmatter: {
       date: string;
       title: string;
@@ -129,10 +130,12 @@ export const query = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      excerpt(pruneLength: 160)
       frontmatter {
         date(formatString: "DD MMM YYYY")
         title
         subject
+        description
         coverImage {
           childImageSharp {
             gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
@@ -146,7 +149,9 @@ export const query = graphql`
 `;
 
 export const Head: HeadFC<DataProps> = ({ data }: HeadProps<DataProps>) => {
-  return (
-    <SEO title={data.markdownRemark.frontmatter.title} description={data.markdownRemark.frontmatter.description} />
-  );
+  var markdownRemark = data.markdownRemark;
+  var description = markdownRemark.frontmatter.description || markdownRemark.excerpt.replace('…', '');
+  console.log(markdownRemark.frontmatter);
+
+  return <SEO title={markdownRemark.frontmatter.title} description={description} />;
 };
