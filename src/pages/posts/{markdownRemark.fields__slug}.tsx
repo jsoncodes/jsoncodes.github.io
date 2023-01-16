@@ -151,7 +151,6 @@ export const query = graphql`
 export const Head: HeadFC<DataProps> = ({ data }: HeadProps<DataProps>) => {
   var markdownRemark = data.markdownRemark;
   var description = markdownRemark.frontmatter.description || markdownRemark.excerpt.replace('…', '');
-  console.log(markdownRemark.frontmatter);
 
   return <SEO title={markdownRemark.frontmatter.title} description={description} />;
 };

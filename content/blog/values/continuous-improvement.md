@@ -3,6 +3,10 @@ subject: values
 title: Continuous Improvement
 description: ''
 date: '2021-08-12T21:11:00.000Z'
+tags:
+  - code
+  - sql
+  - test
 coverImage: ./continuous-improvement.jpg
 coverImageCredit: Jungwoo Hong on Unsplash
 coverImageCreditUrl: https://unsplash.com/photos/cYUMaCqMYvI
