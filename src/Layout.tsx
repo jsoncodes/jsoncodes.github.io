@@ -10,6 +10,7 @@ const Root = styled.main`
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding-bottom: 1em;
 `;
 
 const constrained = css`
@@ -61,13 +62,6 @@ const Content = styled.div`
   }
 `;
 
-const Footer = styled.footer`
-  padding: 0 2em;
-  display: flex;
-  justify-content: flex-end;
-  color: ${props => lighten(0.75, props.theme.typography.color)};
-`;
-
 const Heading = () => {
   return (
     <HeadingRoot>
@@ -92,7 +86,6 @@ export const Layout = ({ children }: { children: ReactNode }) => {
         <Body>
           <Content>{children}</Content>
         </Body>
-        <Footer>© {new Date().getFullYear()} Jason Mitchell</Footer>
       </Root>
     </ThemeProvider>
   );

@@ -1,4 +1,4 @@
-import { graphql, HeadFC, PageProps } from 'gatsby';
+import { graphql, HeadFC, HeadProps, PageProps } from 'gatsby';
 import React from 'react';
 import { PagedPosts } from '../components/PagedPosts';
 import { SEO } from '../components/SEO';
@@ -6,6 +6,7 @@ import { Layout } from '../Layout';
 import { AllMarkdownRemark, markdownRemarkToPost } from '../types';
 
 type PageContextProps = {
+  tag: string;
   nextPageLink: string;
   previousPageLink: string;
 };
@@ -14,12 +15,12 @@ type DataProps = {
   allMarkdownRemark: AllMarkdownRemark;
 };
 
-const PostListsPage = ({ pageContext, data }: PageProps<DataProps, PageContextProps>) => {
+const TaggedPostPage = ({ pageContext, data }: PageProps<DataProps, PageContextProps>) => {
   const posts = data.allMarkdownRemark.nodes.map(node => markdownRemarkToPost(node));
 
   return (
     <Layout>
-      <h2>All Posts</h2>
+      <h2>Posts tagged '{pageContext.tag}'</h2>
       <PagedPosts
         posts={posts}
         previousPageLink={pageContext.previousPageLink}
@@ -29,13 +30,20 @@ const PostListsPage = ({ pageContext, data }: PageProps<DataProps, PageContextPr
   );
 };
 
-export default PostListsPage;
+export default TaggedPostPage;
 
-export const Head: HeadFC = () => <SEO title="Posts" />;
+export const Head: HeadFC<DataProps, PageContextProps> = ({ pageContext }: HeadProps<DataProps, PageContextProps>) => {
+  return <SEO title={`Posts tagged '${pageContext.tag}'`} />;
+};
 
 export const pageQuery = graphql`
-  query ($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: $limit, skip: $skip) {
+  query ($tag: String!, $skip: Int!, $limit: Int!) {
+    allMarkdownRemark(
+      sort: { frontmatter: { date: DESC } }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
+      limit: $limit
+      skip: $skip
+    ) {
       nodes {
         fields {
           slug

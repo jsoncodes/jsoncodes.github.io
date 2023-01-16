@@ -20,6 +20,7 @@ const Footer = styled.footer`
   flex: 0;
   display: flex;
   justify-content: flex-end;
+  gap: 0.5em;
 `;
 
 type DataProps = {
@@ -38,6 +39,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           <LatestPosts posts={posts} />
         </Body>
         <Footer>
+          <Link to="/posts/tags">Tags</Link>
           <Link to="/posts/1">More posts</Link>
         </Footer>
       </Root>

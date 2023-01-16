@@ -3,6 +3,10 @@ subject: meta
 title: A Fresh Start with Gatsby
 description: ''
 date: '2020-09-16T22:00:00.000Z'
+tags:
+  - sql
+  - whatever
+  - code
 coverImage: ./gatsby.png
 coverImageCredit: Gatsby
 coverImageCreditUrl: https://www.gatsbyjs.com/

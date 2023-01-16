@@ -3,6 +3,10 @@ subject: values
 title: Shared Values in Software Development Teams
 description: ''
 date: '2021-04-09T08:00:00.000Z'
+tags:
+  - sql
+  - whatever
+  - code
 coverImage: ./hands.jpg
 coverImageCredit: Hannah Busing on Unsplash
 coverImageCreditUrl: https://unsplash.com/photos/Zyx1bK9mqmA
