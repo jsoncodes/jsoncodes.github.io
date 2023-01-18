@@ -36,6 +36,7 @@ const Badge = styled.div`
   padding: 0 0.5em;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 `;
 
 const PostCount = styled.div`
