@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import { ArticleSummary } from '../components/ArticleSummary';
 import { lighten } from 'polished';
 import { Icon } from '../components/Icon';
-import { github, linkedin, mastodon } from '../icons';
+import { github, linkedin, mastodon, medium } from '../icons';
 
 const Body = styled.section`
   padding: 1em;
@@ -86,6 +86,7 @@ type DataProps = {
         mastodon: string;
         linkedin: string;
         github: string;
+        medium: string;
       };
     };
   };
@@ -114,18 +115,23 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
 
         <Summary>
           <p>Hi, I'm Jason</p>
+          <p>Here are some links about me</p>
 
           <Social>
-            <a href={social.github} target="_blank" rel="noopener noreferrer">
+            <a href={social.github} target="_blank" rel="noopener noreferrer" title="Github">
               <Icon icon={github} />
             </a>
 
-            <a href={social.linkedin} target="_blank" rel="noopener noreferrer">
+            <a href={social.linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn">
               <Icon icon={linkedin} />
             </a>
 
-            <a href={social.mastodon} target="_blank" rel="noopener noreferrer">
+            <a href={social.mastodon} target="_blank" rel="noopener noreferrer" title="Mastodon">
               <Icon icon={mastodon} />
+            </a>
+
+            <a href={social.medium} target="_blank" rel="noopener noreferrer" title="Medium">
+              <Icon icon={medium} />
             </a>
           </Social>
         </Summary>
@@ -149,6 +155,7 @@ export const query = graphql`
           mastodon
           linkedin
           github
+          medium
         }
       }
     }

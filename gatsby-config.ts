@@ -9,6 +9,7 @@ const config: GatsbyConfig = {
       mastodon: `https://hachyderm.io/@jsoncodes`,
       github: `https://github.com/jasonmitchell`,
       linkedin: `https://www.linkedin.com/in/jasonmitchell89`,
+      medium: `https://medium.com/@jsoncodes`
     }
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
