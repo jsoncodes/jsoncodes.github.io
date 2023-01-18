@@ -1,2 +1,2 @@
 import 'typeface-source-sans-pro'
-import 'prismjs/themes/prism-tomorrow.css'
+import 'prismjs/themes/prism.css'
