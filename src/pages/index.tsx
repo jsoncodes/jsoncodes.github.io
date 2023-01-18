@@ -114,7 +114,6 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
 
         <Summary>
           <p>Hi, I'm Jason</p>
-          <p>I like to write about and share my ideas and experiences in software design, development, and delivery.</p>
 
           <Social>
             <a href={social.github} target="_blank" rel="noopener noreferrer">
