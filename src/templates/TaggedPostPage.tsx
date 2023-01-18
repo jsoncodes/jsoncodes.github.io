@@ -33,7 +33,7 @@ const TaggedPostPage = ({ pageContext, data }: PageProps<DataProps, PageContextP
 export default TaggedPostPage;
 
 export const Head: HeadFC<DataProps, PageContextProps> = ({ pageContext }: HeadProps<DataProps, PageContextProps>) => {
-  return <SEO title={`Posts tagged '${pageContext.tag}'`} />;
+  return <SEO title={`Posts tagged '${pageContext.tag}'`} description={`Posts tagged '${pageContext.tag}'`} />;
 };
 
 export const pageQuery = graphql`
