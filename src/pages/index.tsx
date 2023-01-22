@@ -40,7 +40,7 @@ const Social = styled.nav`
   justify-content: center;
   gap: 0.75em;
   font-size: 1.5em;
-  padding: 0.5em 0;
+  padding: 0;
 
   a {
     color: ${props => props.theme.typography.color};
@@ -55,18 +55,12 @@ const Social = styled.nav`
 
 const LatestPost = styled.div`
   flex: 0;
-  padding: 1.5rem 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.5em;
-
-  @media (${props => props.theme.layout.breakpoints.mobile}) {
-    .gatsby-image-wrapper {
-      display: none;
-    }
-  }
 `;
 
 const LatestPostTitle = styled.h3`
@@ -114,9 +108,6 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
         </ImageWrapper>
 
         <Summary>
-          <p>Hi, I'm Jason</p>
-          <p>Here are some links about me</p>
-
           <Social>
             <a href={social.github} target="_blank" rel="noopener noreferrer" title="Github">
               <Icon icon={github} />
@@ -138,7 +129,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
 
         <LatestPost>
           <LatestPostTitle>Latest post</LatestPostTitle>
-          <ArticleSummary variant="compact" {...post} />
+          <ArticleSummary variant="featured" {...post} />
         </LatestPost>
       </Body>
     </Layout>

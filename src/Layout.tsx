@@ -1,5 +1,4 @@
 import { Link } from 'gatsby';
-import { lighten } from 'polished';
 import React, { ReactNode } from 'react';
 import styled, { css, ThemeProvider } from 'styled-components';
 import { ProfileImage } from './components/ProfileImage';
@@ -10,7 +9,6 @@ const Root = styled.main`
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 1em;
 `;
 
 const constrained = css`
