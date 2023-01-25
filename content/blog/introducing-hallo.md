@@ -8,7 +8,6 @@ tags:
   - http api
   - hypermedia
 coverImage: ./introducing-hallo.jpg
-
 coverImageCredit: Julian Hochgesang on Unsplash
 coverImageCreditUrl: https://unsplash.com/photos/XnX-vA4B9-0
 ---
