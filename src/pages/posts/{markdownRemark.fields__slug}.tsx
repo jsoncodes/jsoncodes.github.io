@@ -18,6 +18,7 @@ const CoverImageContainer = styled.div`
 `;
 
 const PostCoverImage = styled(CoverImage)`
+  min-height: 40vh;
   max-height: 60vh;
   width: 100%;
   max-width: 100%;
@@ -94,22 +95,20 @@ type DataProps = {
 
 const MarkdownPage = ({ data }: PageProps<DataProps>) => {
   const post = data.markdownRemark;
-  const { coverImage, coverImageCredit, coverImageCreditUrl } = post.frontmatter;
+  const { coverImage, coverImageCredit, coverImageCreditUrl, subject } = post.frontmatter;
 
   return (
     <Layout>
       <BlogPost>
-        {coverImage && (
-          <CoverImageContainer>
-            <PostCoverImage coverImage={coverImage} />
+        <CoverImageContainer>
+          <PostCoverImage coverImage={coverImage} altText={subject} />
 
-            {coverImageCredit && (
-              <CreditLink href={coverImageCreditUrl} target="_blank">
-                Image credit: {coverImageCredit}
-              </CreditLink>
-            )}
-          </CoverImageContainer>
-        )}
+          {coverImage && coverImageCredit && (
+            <CreditLink href={coverImageCreditUrl} target="_blank">
+              Image credit: {coverImageCredit}
+            </CreditLink>
+          )}
+        </CoverImageContainer>
 
         <header>
           <Subject>{post.frontmatter.subject}</Subject>

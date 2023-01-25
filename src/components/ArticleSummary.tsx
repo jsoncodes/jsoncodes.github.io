@@ -16,6 +16,10 @@ const FeaturedRoot = styled.article`
 const FeaturedCoverImage = styled(CoverImage)`
   flex: 1;
   margin-bottom: 1em;
+
+  &:is([data-type='cover-img-fallback']) {
+    min-height: 25vh;
+  }
 `;
 
 const CompactRoot = styled.article`
@@ -90,7 +94,7 @@ const CompactArticleSummary = ({ title, subject, date, coverImage, link }: Post)
   return (
     <ArticleLink to={link}>
       <CompactRoot>
-        <CompactCoverImage coverImage={coverImage} altText={title} />
+        <CompactCoverImage coverImage={coverImage} altText={subject} />
         <ArticleContent>
           <ArticleCategory>{subject}</ArticleCategory>
           <ArticleTitle>{title}</ArticleTitle>
@@ -105,7 +109,7 @@ const FeaturedArticleSummary = ({ title, subject, excerpt, date, coverImage, lin
   return (
     <ArticleLink to={link}>
       <FeaturedRoot>
-        <FeaturedCoverImage coverImage={coverImage} altText={title} />
+        <FeaturedCoverImage coverImage={coverImage} altText={subject} />
         <ArticleContent>
           <ArticleCategory>{subject}</ArticleCategory>
           <FeaturedArticleTitle>{title}</FeaturedArticleTitle>
