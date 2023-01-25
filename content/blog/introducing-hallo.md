@@ -2,6 +2,7 @@
 subject: Open Source
 title: Introducing Hallo
 date: '2023-01-18T21:00:00.000Z'
+description: Hallo is a .NET library to support content negotiated HAL responses in ASP.NET APIs
 tags:
   - open source
   - http api
