@@ -24,6 +24,7 @@ const Footer = styled.footer`
   display: flex;
   justify-content: flex-end;
   gap: 0.5em;
+  padding-bottom: 0.5em;
 `;
 
 type Props = {
