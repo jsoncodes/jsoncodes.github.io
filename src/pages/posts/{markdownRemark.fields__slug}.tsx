@@ -1,6 +1,6 @@
 import { graphql, HeadFC, HeadProps, PageProps } from 'gatsby';
 import { ImageDataLike } from 'gatsby-plugin-image';
-import { lighten } from 'polished';
+import { darken, invert, lighten, setSaturation } from 'polished';
 import React from 'react';
 import styled from 'styled-components';
 import { CoverImage } from '../../components/CoverImage';
@@ -67,11 +67,40 @@ const Body = styled.section`
     background: #eeeeee;
     margin: 0;
     margin-bottom: 1em;
-    padding: 0.5em 2em;
+    padding: 0.5em 1.5em;
     border-left: 3px solid ${props => props.theme.palette.accent};
 
     p:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    margin-bottom: 1em;
+
+    thead {
+      background: #13274f;
+      color: ${props => invert(props.theme.typography.color)};
+    }
+
+    tr {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    tbody {
+      tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    th,
+    td {
+      padding: 0 4px;
     }
   }
 `;
