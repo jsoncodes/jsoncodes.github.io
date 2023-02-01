@@ -22,8 +22,6 @@ const Body = styled.section`
 `;
 
 const Summary = styled.div`
-  flex: 1;
-
   p {
     text-align: center;
     font-size: 1.1em;
@@ -54,7 +52,6 @@ const Social = styled.nav`
 `;
 
 const LatestPost = styled.div`
-  flex: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
