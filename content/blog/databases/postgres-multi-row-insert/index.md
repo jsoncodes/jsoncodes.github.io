@@ -5,8 +5,6 @@ date: '2023-01-30T21:00:00.000Z'
 tags:
   - database
   - postgres
-  - code sample
-  - c#
 coverImage: ./shipping-containers.jpg
 coverImageCredit: Ian Taylor on Unsplash
 coverImageCreditUrl: https://unsplash.com/photos/jOqJbvo1P9g
