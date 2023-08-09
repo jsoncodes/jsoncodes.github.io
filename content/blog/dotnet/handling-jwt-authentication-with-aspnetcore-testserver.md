@@ -1,6 +1,6 @@
 ---
 subject: .NET
-title: Handling JWT authentication with ASP.NET Core TestServer
+title: Handling JWT Authentication with ASP.NET Core TestServer
 date: '2023-06-02T22:45:00.000Z'
 tags:
   - testing
