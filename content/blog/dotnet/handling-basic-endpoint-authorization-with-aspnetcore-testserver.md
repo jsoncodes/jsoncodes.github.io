@@ -10,8 +10,8 @@ coverImageCredit: Dim Hou on Unsplash
 coverImageCreditUrl: https://unsplash.com/photos/BjD3KhnTIkg
 ---
 
-My recent articles on [JWT](handling-jwt-authentication-with-aspnetcore-testserver/) and
-[Cookie](handling-cookie-authentication-with-aspnetcore-testserver/) authentication reminded me of a problem I
+My recent articles on [JWT](../handling-jwt-authentication-with-aspnetcore-testserver/) and
+[Cookie](../handling-cookie-authentication-with-aspnetcore-testserver/) authentication reminded me of a problem I
 wanted to solve when testing authentication and authorization with the ASP.NET Core Test Server.
 I really like to write unit tests which hit my API running in test server and I like to verify
 my authorization policies as part of that. I found myself writing tests which looked like

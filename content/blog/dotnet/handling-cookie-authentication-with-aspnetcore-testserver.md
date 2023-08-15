@@ -11,7 +11,7 @@ coverImageCreditUrl: https://unsplash.com/photos/pQhV76X37P0
 ---
 
 Following up on my article about handling
-[JWT authentication with the ASP.NET Core TestServer](handling-jwt-authentication-with-aspnetcore-testserver/),
+[JWT authentication with the ASP.NET Core TestServer](../handling-jwt-authentication-with-aspnetcore-testserver/),
 this post will cover the equivalent approach but for cookie based authentication. As a reminder, the idea
 is to ensure our tests also execute the authorization policies defined by the application so that we can
 be sure we are verifying the most complete slice through our API as possible.
