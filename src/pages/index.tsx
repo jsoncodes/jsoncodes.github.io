@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeadFC, PageProps, graphql, Link } from 'gatsby';
+import { HeadFC, PageProps, graphql } from 'gatsby';
 import { Layout } from '../Layout';
 import { SEO } from '../components/SEO';
 import { AllMarkdownRemark, markdownRemarkToPost } from '../types';
@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import { ArticleSummary } from '../components/ArticleSummary';
 import { lighten } from 'polished';
 import { Icon } from '../components/Icon';
-import { github, linkedin, mastodon, medium } from '../icons';
+import { github, linkedin, bluesky } from '../icons';
 
 const Body = styled.section`
   padding: 1em;
@@ -74,10 +74,9 @@ type DataProps = {
   site: {
     siteMetadata: {
       social: {
-        mastodon: string;
         linkedin: string;
         github: string;
-        medium: string;
+        bsky: string;
       };
     };
   };
@@ -114,12 +113,8 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
               <Icon icon={linkedin} />
             </a>
 
-            <a href={social.mastodon} target="_blank" rel="noopener noreferrer" title="Mastodon">
-              <Icon icon={mastodon} />
-            </a>
-
-            <a href={social.medium} target="_blank" rel="noopener noreferrer" title="Medium">
-              <Icon icon={medium} />
+            <a href={social.bsky} target="_blank" rel="noopener noreferrer" title="Bluesky">
+              <Icon icon={bluesky} />
             </a>
           </Social>
         </Summary>
@@ -140,10 +135,9 @@ export const query = graphql`
     site: site {
       siteMetadata {
         social {
-          mastodon
           linkedin
           github
-          medium
+          bsky
         }
       }
     }

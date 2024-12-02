@@ -3,5 +3,6 @@ export {
   faLinkedin as linkedin,
   faTwitter as twitter,
   faMastodon as mastodon,
-  faMedium as medium
-} from '@fortawesome/free-brands-svg-icons'
+  faMedium as medium,
+  faBluesky as bluesky
+} from '@fortawesome/free-brands-svg-icons';
