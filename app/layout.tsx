@@ -18,7 +18,15 @@ export const metadata: Metadata = {
     template: `%s | ${siteMetadata.title}`
   },
   description: `Blog by ${siteMetadata.title}`,
-  metadataBase: new URL(siteMetadata.siteUrl)
+  metadataBase: new URL(siteMetadata.siteUrl),
+  manifest: '/manifest.webmanifest',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' }
+    ],
+    apple: '/apple-touch-icon.png'
+  }
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
